@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,14 +18,47 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 
+
+    <!-- Custom styles for MMMMAAAAAAPPPPPP-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen" />
+
+    <link rel="stylesheet" type="text/css" href="xbf/main.css" media="screen" />
+    <link rel="stylesheet" href="Xinyuan/css/causeAndPhase.css">
+    <link rel="stylesheet" href="xusi/xs_css/style.css">
+    <link rel= "stylesheet" type="text/css" href="ruizhao/rz_css/gunviz.css" media= "all">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript" src="ruizhao/rz_libraries/dictionary.js"></script>
+    <script type="text/javascript" src="ruizhao/rz_libraries/easeljs-0.5.0.min.js"></script>
+    <script type="text/javascript" src="ruizhao/rz_libraries/TweenMax.min.js"></script>
+    <script type="text/javascript" src="ruizhao/rz_libraries/BezierPlugin.min.js"></script>
+    <script type="text/javascript" src="ruizhao/rz_libraries/Tooltip.js"></script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-3509031-10']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+    <!--
+       <link rel="stylesheet" type="text/css" href="css/flexslider.css" media="screen and (max-device-width: 1024px)" />
+       -->
+
     <!-- Theme CSS -->
     <link href="css/grayscale.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -102,48 +134,207 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>About MH370</h2>
-                <br><br><br><br>
                 <p>In this part, tell a sad story about <a href="http://www.google.com/">MH370</a>.</p>
-                <br><br><br><br><br><br><br>
-            </div>
-        </div>
-    </section>
-
-    <section id="about2" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>MH 370 VIDEO</h2>
-                <br>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZQHl5SmA08A" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
     <section id="about3" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>MH370 Visualization</h2>
-                <br><br><br><br>
-                <p>In this part, give a great visulization about <a href="http://www.google.com/">MH370</a>.</p>
-                <br><br><br><br><br><br><br>
+        <div id="container" class="introzr">
+            <div class="header">
+                <h1>MH 370</h1>
             </div>
+
+            <div id="peoplebox">
+                <span id="peoplecount" onselectstart="return false;">0</span>
+                <br>
+                <span id="peoplelabel" onselectstart="return false;">PEOPLE KILLED</span>
+            </div>
+
+            <div id="yearsbox">
+                <span id="yearscount" onselectstart="return false;">0</span>
+                <br>
+                <span id="yearlabel" onselectstart="return false;">STOLEN YEARS</span>
+            </div>
+
+            <img id="questionMark" src="ruizhao/rz_img/questionMark.gif" />
+
+            <div id="c">
+                <canvas id="stage" width="940" height="625"></canvas>
+                <canvas id="distributionView" width = "940" height="625"></canvas>
+                <canvas id="overstage" width="940" height="625"></canvas>
+            </div>
+
+            <span class= "leftWhiteLabel percent" id= "pctTop" onselectstart="return false;">0%</span>
+            <!--span class= "leftWhiteLabel number" id= "numTop" onselectstart="return false;">0</span-->
+            <span class= "leftWhiteLabel filterName" id= "topFilter"></span>
+
+            <!--<button id= "distSwitch" onclick="gunviz.testMouseDown('axismimic')" onmouseover="gunviz.delayMove('axismimic')" onmouseout="gunviz.delayMove('notaxismimic')">+</button>-->
+
+            <hr class="axis" style="top: 346px; border-width: 0px 2px 1px 2px;">
+            <hr class="axis" style="top: 350px; border-width: 0px 2px 0px 2px;">
+            <span class="axisLabel" style="left: 50px;">AGE 0</span>
+            <span class="axisLabel" style="left: 964px;">100</span>
+
+            <div id="distSwitch"></div>
+
+            <span class= "leftWhiteLabel percent" id= "pctBot" onselectstart="return false;">0%</span>
+            <!--span class= "leftWhiteLabel number" id= "numBot" onselectstart="return false;">0</span-->
+            <span class= "leftWhiteLabel filterName" id= "botFilter"></span>
+
+            <span class= "rightWhiteLabel" id= "topHistLabel"></span>
+
+            <ul id= "menuBox">
+                <!--li>
+                    <a class="menuTitle" onselectstart="return false;" onclick="gunviz.sortArrays('nofilter')">
+                        NO FILTER
+                    </a>
+                </li-->
+                <li>
+                    <a data="SEX" class="menuTitle" id="sexes" onselectstart="return false;" onclick="gunviz.sortArrays('', $(this))">
+                        SEX
+                    </a>
+                    <ul id= "Group3" class= "menuGroup">
+                        <li id= "maleButton" onclick="gunviz.sortArrays('male', $(this))">MEN</li>
+                        <li onclick="gunviz.sortArrays('female', $(this))">WOMEN</li>
+                    </ul>
+                </li>
+                <li>
+                    <a data="AGE GROUP" class="menuTitle" id="ages" onselectstart="return false;" onclick="gunviz.sortArrays('', $(this))">
+                        AGE GROUP
+                    </a>
+                    <ul id= "Group4" class= "menuGroup">
+                        <li onclick="gunviz.sortArrays('child', $(this))">CHILDREN 0-18</li>
+                        <li id= "yadultButton" onclick="gunviz.sortArrays('yadult', $(this))">YOUNG ADULT 0-30</li>
+                        <li id= "oadultButton" onclick="gunviz.sortArrays('oadult', $(this))">PEOPLE OVER 30</li>
+                    </ul>
+                </li>
+                <li>
+                    <a data="Nation" class="menuTitle" id="nations" onselectstart="return false;" onclick="gunviz.sortArrays('', $(this))">
+                        Nation
+                    </a>
+                    <ul id= "Group5" class= "menuGroup">
+                        <li onclick="gunviz.sortArrays('china', $(this))">China</li>
+                        <li id= "malaysiaButton" onclick="gunviz.sortArrays('malaysia', $(this))">Malaysia</li>
+                        <li id= "franceButton" onclick="gunviz.sortArrays('france', $(this))">France</li>
+                        <li id= "russiaButton" onclick="gunviz.sortArrays('russia', $(this))">Russia</li>
+                        <li id= "australiaButton" onclick="gunviz.sortArrays('australia', $(this))">Australia</li>
+                        <li id= "ukraineButton" onclick="gunviz.sortArrays('ukraine', $(this))">Ukraine</li>
+                        <li id= "canadaButton" onclick="gunviz.sortArrays('canada', $(this))">Canada</li>
+                        <li id= "indonesiaButton" onclick="gunviz.sortArrays('indonesia', $(this))">Indonesia</li>
+                        <li id= "italyButton" onclick="gunviz.sortArrays('italy', $(this))">Italy</li>
+                        <li id= "usaButton" onclick="gunviz.sortArrays('usa', $(this))">USA</li>
+                        <li id= "austriaButton" onclick="gunviz.sortArrays('austria', $(this))">Austria</li>
+                        <li id= "netherlandsButton" onclick="gunviz.sortArrays('netherlands', $(this))">Netherlands</li>
+                        <li id= "new_zealandButton" onclick="gunviz.sortArrays('new_zealand', $(this))">New zealand</li>
+                    </ul>
+                </li>
+            </ul>
+
         </div>
     </section>
 
     <!-- Download Section -->
-    <section id="download" class="content-section text-center">
+    <section id="download2" class="content-section text-center">
         <div class="download-section">
             <div class="container">
                 <div class="col-lg-10 col-lg-offset-1">
                     <h2>Just like MH370 </h2>
                     <p>All over the world, so many people have gone throungh such great loss of loloved ones...</p>
-                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Click to see the Sad World Map</a>
+                    <a href="" class="btn btn-default btn-lg">Click to see the Sad World Map</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="download" class="container content-section text-center">
+
+    <section id="download" class="mysection container content-section">
+
+
+
+            <div id="map-page">
+                <div id="map">
+                    <svg>
+                        <defs>
+                            <linearGradient id="originLinkStroke1" spreadMethod="pad">
+                                <stop offset="10%" stop-color="#ef3753"></stop>
+                                <stop offset="50%" stop-opacity="10%" stop-color="#7887a0"></stop>
+                                <stop offset="90%" stop-color="#00d7ed"></stop>
+                            </linearGradient>
+                            <linearGradient id="originLinkStroke2" spreadMethod="pad">
+                                <stop offset="10%" stop-color="#00d7ed"></stop>
+                                <stop offset="50%" stop-opacity="10%" stop-color="#7887a0"></stop>
+                                <stop offset="90%" stop-color="#ef3753"></stop>
+                            </linearGradient>
+                            <linearGradient id="asylumLinkStroke1" spreadMethod="pad">
+                                <stop offset="10%" stop-color="#ef3753"></stop>
+                                <stop offset="50%" stop-opacity="10%" stop-color="#7887a0"></stop>
+                                <stop offset="90%" stop-color="#00d7ed"></stop>
+                            </linearGradient>
+                            <linearGradient id="asylumLinkStroke2" spreadMethod="pad">
+                                <stop offset="10%" stop-color="#00d7ed"></stop>
+                                <stop offset="50%" stop-opacity="10%" stop-color="#7887a0"></stop>
+                                <stop offset="90%" stop-color="#ef3753"></stop>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div id="map-timeline">
+                    <div id="play-button" class="frame play">
+                        <a></a>
+                    </div>
+                    <svg>
+                    </svg>
+                </div>
+                <div id="map-nav-background">
+                </div>
+                <div id="map-nav-head">
+                    <div id="year-region" class="ppppp">
+                        <span id="year"></span>
+                        <span id="year-border">&VerticalSeparator;</span>
+                        <span id="region"></span>
+                    </div>
+                    <div id="story-head" class="ppppp"></div>
+                </div>
+                <div id="map-nav-body" >
+                    <div id="stats" >
+                        <dl>
+                            <dt class="ppppp">VIEWING</dt>
+                            <hr>
+                            <dd></dd>
+                            <dd>
+                                <div id="type-mode-button" class="toggle-button origins">
+                                    <a></a>
+                                </div>
+                                <div id="value-mode-button" class="toggle-button origin-refugees">
+                                    <a></a>
+                                </div>
+                            </dd>
+
+                            <dt id="refugee-mode" class="ppppp">TOTAL DEATH</dt>
+                            <!-- <dt class="region">WORLD</dt> -->
+                            <dd id="refugees" class="value-mode-value"></dd>
+                            <!--
+                            <dt>POPULATION</dt>
+                            <dd id="population"></dd>
+                            <dt>REFUGEES / POPULATION</dt>
+                            <dd id="refugeesPopulation"></dd>
+                            -->
+                            <dt id="top-label" class="ppppp"></dt>
+                            <dd id="top-values" class="value-mode-value"></dd>
+
+
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        <!--
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>World MAP Visualization</h2>
@@ -152,10 +343,16 @@
                 <br><br><br><br><br><br><br>
             </div>
         </div>
+-->
     </section>
 
 
-    <section id="download2" class="content-section text-center">
+
+
+
+
+
+    <section id="download3" class="content-section text-center">
         <div class="download-section-2">
             <div class="container">
                 <div class="col-lg-10 col-lg-offset-1">
@@ -180,6 +377,26 @@
         </div>
     </section>
 
+
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-md-6"> <div id="sunburst_chart"></div></div>
+            <div class="col-md-6"> <div id="sunburst_show"></div></div>
+        </div>
+
+    </section>
+
+
+    <section id="contact" class="container content-section text-center">
+
+        <div class="row">
+            <div class="col-md-12">
+                <div id="phase_chart"></div>
+            </div>
+        </div>
+    </section>
+
+
     <section id="airplan" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
@@ -192,8 +409,19 @@
     </section>
 
 
-
-
+    <section id="airplan" class="container content-section text-center">
+        <div class="row">
+            <h1>Air Accidents by Month</h1>
+            <h2>From 1919 to 2014</h2>
+            <div class="col-md-5">
+                <div id="barchart_month"></div>
+                <div id="areachart"></div>
+            </div>
+            <div class="col-md-7">
+                <div id="linechart"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Team Section -->
     <section id="about-us" class="container content-section text-center">
@@ -279,23 +507,22 @@
         </div>
     </section>
 
-
-    <section id="about-us" class="container content-section text-center">
+    <section id="about-us2" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contact us</h2>
                 <p>Feel free to email us to provide some feedback on our visualization, give us suggestions or new dataset, or just say hi.</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@castleinthesky.com</a>
+                <p><a href="mailto:feedback@castleInTheSky.com">feedback@castleinthesky.com</a>
                 </p>
                 <ul class="list-inline banner-social-buttons">
                     <li>
-                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        <a href="" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                     </li>
                     <li>
-                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                        <a href="" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                     </li>
                     <li>
-                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                        <a href="" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
                     </li>
                 </ul>
             </div>
@@ -305,9 +532,9 @@
 
 
 
-    <!-- Map Section -->
+    <!-- Map Section
     <div id="map"></div>
-
+-->
 
     <!-- Footer -->
     <footer>
@@ -326,10 +553,192 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <!--
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+    -->
 
     <!-- Theme JavaScript -->
-    <script src="js/grayscale.min.js"></script>
+    <script src="js/grayscale.js"></script>
+
+
+
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate.min.js"></script>
+    <!--
+    <script src="js/jquery.autoellipsis.min.js"></script>
+    -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/d3.min.js"></script>
+    <script src="js/topojson.min.js"></script>
+    <script src="js/queue.min.js"></script>
+
+    <script src="xbf/desktop.js"></script>
+
+    <script src="Xinyuan/js/fisheye.js"></script>
+    <script src="Xinyuan/js/causeAndPhase.js"></script>
+    <script src="Xinyuan/js/sunburstChart.js"></script>
+    <script src="Xinyuan/js/sunburstShow.js"></script>
+    <script src="Xinyuan/js/phaseChart.js"></script>
+
+    <script src="xusi/xs_js/barchart_month.js"></script>
+    <script src="xusi/xs_js/Areachart.js"></script>
+    <script src="xusi/xs_js/linecharts.js"></script>
+    <!-- Load data, create visualizations -->
+    <script src="xusi/xs_js/main.js"></script>
+
+    <script type="text/javascript" src="ruizhao/rz_js/gunviz.js"></script>
+
+
+
+    <script>
+        var periTooltip = periscopic.ui.Tooltip;
+        //periTooltip.DEFAULT_STROKE_THICKNESS = 1;
+        periTooltip.DEFAULT_STROKE_COLOR = 'rgba(0,0,0,0.2)';
+        periTooltip.DEFAULT_RADIUS = 5;
+        periTooltip.DEFAULT_BACKGROUND_COLOR = 'rgba(62,62,62,0.85)';
+        periTooltip.DEFAULT_TIP_WIDTH = 4;
+        periTooltip.DEFAULT_COPY_CLASS = 'tooltipCopy';
+
+
+        function showList(e) {
+            $(this).children("ul").addClass("shownList");
+        }
+
+        function hideList() {
+            $(this).children("ul").removeClass("shownList");
+        }
+
+        function moveOnList(e) {
+            e.stopPropagation();
+        }
+
+        $("#menuBox > li").hover(showList, hideList).click(hideList).mousemove(moveOnList);
+
+        function stop() {
+            createjs.Ticker.removeAllListeners();
+            TweenMax.killAll();
+        }
+
+        function showCanvas(canvasid) {
+            document.getElementById(canvasid).style.display = "block";
+        }
+
+        function hideCanvas(canvasid) {
+            document.getElementById(canvasid).style.display = "none";
+        }
+
+        function exportAndView(canvasid) {
+            var data = document.getElementById(canvasid).toDataURL("image/png");
+            var screenshot = document.createElement("img");
+            screenshot.src = data;
+            $(document.body).html(screenshot);
+        }
+
+        var activePersonTooltip;
+
+        //declare mouseover delay here so the yearsTooltip has access to it
+        var delayWatcher;
+
+        var uiTooltips = (function() {
+
+            var yearsTooltip = new periscopic.ui.Tooltip();
+
+            $("#yearsbox").hover(makeYearsLabel, removeYearsLabel).mousemove(moveOnList);
+            $("#questionMark").hover(makeYearsLabel, removeYearsLabel).mousemove(moveOnList);
+
+            function makeYearsLabel(e) {
+                clearTimeout(delayWatcher);
+
+                var w = $("#yearsbox").width();
+                var h = $("#yearsbox").height();
+                var numPpl = $("#peoplecount").html();
+
+                yearsTooltip.copy("We determine the potential lifespans of victims from different countries using data from the World Health Organization.");
+
+                yearsTooltip.horizontal(false)
+                    .mirror(false)
+                    .copyClass("bigTooltip")
+                    .x(w - 10).y(h + 5);
+
+                yearsTooltip.el()
+                    .appendTo("#yearsbox");
+
+                yearsTooltip.setTipPosition(1).shrinkWidth(250);
+
+                yearsTooltip.render().position();
+
+                yearsTooltip.el().show();
+
+                e.stopPropagation();
+            }
+
+            function removeYearsLabel() {
+                yearsTooltip.el().hide();
+            }
+
+            var mTooltip = new periscopic.ui.Tooltip();
+
+            mTooltip.horizontal(false)
+                .mirror(false)
+                .copyClass("methodsTooltip");
+
+            function makeMethods() {
+                var w = $("#container").width();
+                var h = $("#container").height();
+
+                var div = document.createElement('div');
+                div.setAttribute("id", "shadow");
+                div.style.backgroundColor = "rgba(20,20,20,0.8)";
+                div.style.width = w;
+                div.style.height = h;
+                div.style.position = "absolute";
+                div.style.top = "0px";
+                div.style.zIndex = 2;
+                document.getElementById("container").appendChild(div);
+
+                mTooltip.el()
+                    .appendTo("#container");
+
+                mTooltip.render().position();
+                mTooltip.el().show();
+
+                $("#shadow").click(removeMethods);
+                mTooltip.el().find('.close').click(removeMethods);
+            }
+
+            function removeMethods() {
+                mTooltip.el().hide();
+                $("#shadow").remove();
+            }
+
+            return {
+                makeYearsLabel : makeYearsLabel,
+                removeYearsLabel : removeYearsLabel,
+                makeMethods : makeMethods,
+                removeMethods : removeMethods
+            }
+        }());
+
+    </script>
+
+
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    </script>
+
+
 
 </body>
 
