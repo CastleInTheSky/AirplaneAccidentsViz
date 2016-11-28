@@ -1,0 +1,40 @@
+category,cause
+Pilot Error,Improper procedure
+Pilot Error,Flying VFR into IFR conditions
+Pilot Error,Controlled flight into terrain
+Pilot Error,Descending below minima
+Pilot Error,Spatial disorientation
+Pilot Error,Premature descent
+Pilot Error,Excessive landing speed
+Pilot Error,Missed runway
+Pilot Error,Fuel starvation
+Pilot Error,Navigation error
+Pilot Error,Wrong runway takeoff/landing
+Pilot Error,Midair collision caused by both pilots
+Mechanical,Engine failure
+Mechanical,Equipment failure
+Mechanical,Structural failure
+Mechanical,Design flaw
+Mechanical,Maintenance error
+Weather,Severe turbulence
+Weather,Windshear
+Weather,Mountain wave
+Weather,Poor visibility
+Weather,Heave rain
+Weather,Severe winds
+Weather,Icing
+Weather,Thunderstorms
+Weather,Lightning strike
+Sabotage,Hijacking
+Sabotage,Shot down
+Sabotage,Explosive device aboard
+Other,ATC error
+Other,Ground crew error
+Other,Overloaded
+Other,Improperly loaded cargo
+Other,Bird strike
+Other,Fuel contamination
+Other,Pilot incapacitation
+Other,Obstruction on runway
+Other,Midair collision caused by other plane
+Other,Fire/smoke in flight
