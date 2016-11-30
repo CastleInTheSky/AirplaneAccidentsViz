@@ -755,7 +755,7 @@ function updateTimeline() {
 
                 var valueLabel;
 
-                valueLabel = (valueMode) ? (' persons were world refugees') : ' world refugees'
+                valueLabel = (valueMode) ? (' persons were world refugees') : ' total death'
 
                 if (selected) {
                     var name = codeCountries.get(selected.id);
@@ -763,10 +763,10 @@ function updateTimeline() {
                     if (typeMode)
                         valueLabel = (valueMode) ? (' persons reside in ' + name) : ' refugees reside in ' + name;
                     else
-                        valueLabel = (valueMode) ? (' persons from ' + name + ' left') : ' airplane from ' + name;
+                        valueLabel = (valueMode) ? (' persons from ' + name + ' left') : ' daeth from ' + name;
                 }
 
-                title = '<span class="tooltip-value">' + value + '</span>\n' + valueLabel;
+                title = '<span class="tooltip-value">' + value + '</span>\n' + valueLabel + ' in ' + d;
             }
 
             var id = '#frame-' + d + '.frame';
