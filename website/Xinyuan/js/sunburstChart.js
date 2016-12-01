@@ -117,13 +117,18 @@ sunburstChart.prototype.initVis = function(){
             .attr("transform", "translate(" + 0 + "," + (12 + vis.height/2)  +")")
             .style("pointer-events", "none");
 
+
         //add label
-       /* vis.label = vis.svg.append("text")
+    /*    vis.label = vis.svg.append("text")
         .attr("transform", function(d) { return "rotate(" + computeLabelRotation(d) + ")"; })
         .attr("x", function(d) { return vis.y(d.y); })
         .attr("dx", "6") // margin
         .attr("dy", ".35em") // vertical-align
-        .text(function(d) { return d.name; });*/
+        .text(function(d) { return d.key; });
+
+    function computeTextRotation(d) {
+        return (vis.x(d.x + d.dx / 2) - Math.PI / 2) / Math.PI * 180;
+    }*/
 
         // Add the title.
       /*  vis.svg.append("text")

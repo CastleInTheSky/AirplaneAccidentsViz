@@ -36,7 +36,8 @@ sunburstShow.prototype.updateVis = function(){
     vis.text.enter()
         .append("text")
         .attr("class","explain")
-        .attr("font-size", 30);
+        .attr("font-size", 30)
+        .attr("fill", "white");
         //.attr("text-anchor", "middle");
 
     vis.text.text(vis.key);
