@@ -265,6 +265,15 @@ line.link-hitarea {
     width: 700px;
     height: 450px;
 }
+
+#worldmap-play{
+    position: absolute;
+    bottom:-100px;
+    left:50px;
+    width: 100px;
+    height: 100px;
+}
+
 #year-region {
     z-index: 2001;
     color:#EF3753;
@@ -369,25 +378,21 @@ image.story-button {
 #value-mode-button.origin-refugees a {
     display: block;
     height: 30px;
-    background: url(/imgs/origin-refugees.png) no-repeat;
     background-size: 57px;
 }
 #value-mode-button.origin-refugees-population a {
     display: block;
     height: 30px;
-    background: url(/imgs/origin-refugees-population.png) no-repeat;
     background-size: 57px;
 }
 #value-mode-button.asylum-refugees a {
     display: block;
     height: 30px;
-    background: url(/imgs/asylum-refugees.png) no-repeat;
     background-size: 57px;
 }
 #value-mode-button.asylum-refugees-population a {
     display: block;
     height: 30px;
-    background: url(/imgs/asylum-refugees-population.png) no-repeat;
     background-size: 57px;
 }
 #value-mode-button a:hover {
@@ -397,13 +402,11 @@ image.story-button {
 #type-mode-button.origins a {
     display: block;
     height: 30px;
-    background: url(/imgs/origins.png) no-repeat;
     background-size: 57px;
 }
 #type-mode-button.asylums a {
     display: block;
     height: 30px;
-    background: url(/imgs/asylums.png) no-repeat;
     background-size: 57px;
 } 
 #type-mode-button a:hover {
@@ -457,27 +460,46 @@ image.story-button {
     font-size: 14px;
     font-family:'Gotham XNarrow SSm A', 'Gotham XNarrow SSm B';
 }
+
+/*
+
+later
+ */
+
+
 #world-zoom-button {
     position: absolute;
-    top: 100px;
-    right: 0px;
-    z-index: 5000;
-    display: block;
+    top: 30px;
+    right: 10px;
     width: 100px;
     height: 100px;
-    opacity: 0;
     cursor: pointer;
-    cursor: hand;
-}
-#world-zoom-button a {
-    display: block;
-    height: 30px;
-    background: #ffffff url(/imgs/world-zoom.png) no-repeat;
+    background: url(../img/world-zoom.png) no-repeat;
     background-size: 57px;
 }
-#world-zoom-button a:hover {
-    background-position: 0 -30px;
+
+#world-zoom-button :hover {
+    opacity: 100;
+    background-size: 57px;
 }
+
+/*
+#world-zoom-button {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    width: 100px;
+    height: 100px;
+    background: url(../img/world-zoom.png) no-repeat;
+    background-size: 57px;
+}
+
+#world-zoom-button a:hover {
+    background: url(../img/explore.png) no-repeat;
+    background-size: 57px;
+}
+
+*/
 #home-button img {
     width: 150px;
     height: 13px;
@@ -502,11 +524,11 @@ image.story-button {
     background-color: white;
 }
 #play-button.play a {
-    background: url(/imgs/play.png) no-repeat;
+    background: url(../img/play.png) no-repeat;
     background-size: 20px;
 }
 #play-button.pause a {
-    background: url(/imgs/pause.png) no-repeat;
+    background: url(../img/pause.png) no-repeat;
     background-size: 20px;
 }
 /*#play-button a:hover {
@@ -625,7 +647,7 @@ image.story-button {
     /*border-top-color: rgba(0, 215, 237, .75);*/
 }
 
-.tooltip.link-asylum .tooltip-inner {  
+.tooltip.link-asylum .tooltip-inner {
     background-color: #00d7ed;
     background-color: rgba(0, 215, 237, .75);
     white-space:pre-wrap;

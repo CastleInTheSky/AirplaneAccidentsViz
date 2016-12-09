@@ -346,14 +346,15 @@ function load(error, mapData, countryCodeData, refugeeData, populationData, stor
     updateMapNavSize();
     setupTimeline();
 
-
+/*
 
     if (location.hash == '' || location.hash == '#' || location.hash == '#/') {
         gotoAndPlay(yearDomain[0]);
     } else
         gotoURL();
-    gotoYear(2010);
-    showMap(1500);
+*/
+    gotoYear(1950);
+    showMap(1000);
 
 
     /*
@@ -409,16 +410,16 @@ function load(error, mapData, countryCodeData, refugeeData, populationData, stor
              */
         });
 
-    /*
+
      d3.select('#play-button')
      .on('click', function() {
-     togglePlay();
+         togglePlay();
 
-     ga('send', 'event', 'button', 'click', 'play button');
+         ga('send', 'event', 'button', 'click', 'play button');
      });
 
-     updateToggleButtons()
-     */
+     //updateToggleButtons()
+
 
 
 }
@@ -548,7 +549,7 @@ function zoomToCountry(country, duration) {
 
     hideMapTooltips();
 
-    d3.select('#world-zoom-button').transition().duration(duration).style('opacity', 1);
+    //d3.select('#world-zoom-button').transition().duration(duration).style('opacity', 1);
 }
 
 function zoomToWorld(duration) {
@@ -568,7 +569,7 @@ function zoomToWorld(duration) {
 
     hideMapTooltips();
 
-    d3.select('#world-zoom-button').transition().duration(duration).style('opacity', 0);
+    //d3.select('#world-zoom-button').transition().duration(duration).style('opacity', 0);
 }
 
 function updateStrokeWeights() {
@@ -589,10 +590,10 @@ function updateStrokeWeights() {
 }
 
 function setupPlay() {
-    playSize = frameW * .6;
+    playSize = frameW * 3;
 
     d3.select('#play-button')
-        .style('width', Math.round(frameW) + 'px')
+        .style('width', Math.round(frameW * 3) + 'px')
         .on('mouseover', function(d) {
             d3.select('#play-button a').style('background-position', '0px -' + Math.round(playSize) + 'px');
         })
@@ -602,7 +603,7 @@ function setupPlay() {
 
     d3.select('#play-button a')
         .style('top', frameH / 2 - playSize / 2 + 'px')
-        .style('left', frameW / 2 - playSize / 2 + 'px')
+        .style('left', frameW * 3 / 2 - playSize / 2 + 'px')
         .style('width', playSize + 'px')
         .style('height', playSize + 'px')
         .style('background-size', playSize + 'px');
@@ -639,7 +640,7 @@ function setupTimeline() {
         })
         .attr('class', 'frame-background')
         .attr('x', function(d, i) {
-            return frameW * (i + 1);
+            return frameW * (i) + frameW * 3;
         })
         .attr('y', 0)
         .attr('width', frameW)
@@ -655,7 +656,7 @@ function setupTimeline() {
             return d;
         })
         .attr('x', function(d, i) {
-            return frameW * (i + 1) + frameW / 2;
+            return frameW * (i) + frameW * 3 + frameW / 2;
         })
         .attr('y', frameH / 2 + frameHeaderH);
 
@@ -666,7 +667,7 @@ function setupTimeline() {
         })
         .attr('class', 'frame-refugees')
         .attr('x', function(d, i) {
-            return frameW * (i + 1);
+            return frameW * (i) + frameW * 3;
         })
         .attr('y', 0)
         .attr('width', frameW)
@@ -756,13 +757,15 @@ function updateTimeline() {
                     if (typeMode)
                         valueLabel = (valueMode) ? (' persons reside in ' + name) : ' refugees reside in ' + name;
                     else
-                        valueLabel = (valueMode) ? (' persons from ' + name + ' left') : ' daeth from ' + name;
+                        valueLabel = (valueMode) ? (' persons from ' + name + ' left') : ' death from ' + name;
                 }
 
                 title = '<span class="tooltip-value">' + value + '</span>\n' + valueLabel + ' in ' + d;
             }
 
             var id = '#frame-' + d + '.frame';
+
+            //console.log(title);
 
             $(id)
                 .tooltip('destroy')
@@ -964,6 +967,9 @@ function updateMapNavSize() {
         .style('height', (height - 225 - padding) + 'px');
 
     d3.select('#stats').style('width', Math.max(col1minwidth, col1width) + 'px');
+
+
+
 
     if (!storyBody.empty()) {
         d3.select('#story-body-border').style('height', (height - 225) + 'px');
@@ -1518,7 +1524,8 @@ function animateInLink() {
 }
 
 function linkMousedOver(d) {
-    var country = codeCountries.get((typeMode) ? d[0].origin : d[0].asylum)
+    var country = codeCountries.get((typeMode) ? d[0].origin : d[0].asylum);
+    var oricountry = codeCountries.get(d[0].origin);
     var type = ((typeMode) ? 'origin' : 'asylum');
     var direction = (typeMode) ? 'came from ' : 'went to ';
 
@@ -1529,29 +1536,34 @@ function linkMousedOver(d) {
 
     var refugees = numberFormat(d[0].refugees);
 
-    var title = '<span class="tooltip-value">' + refugees + ' people died' + '</span>\n in airplanes ' + direction + country + '.\n(' + countryRank + ' of ' + countryCount + ' ' + type + 's)';
+    var title = '<span class="tooltip-value">' + refugees + ' people died' + '</span>\n flied from ' + oricountry + ' to ' + country;
+    // + '.\n(' + countryRank + ' of ' + countryCount + ' ' + type + 's)'
 
-    console.log(title);
+    //console.log(title);
 
-    d3.select('body')
+    d3.select('#map-page')
         .append('div')
         .classed('mouse-tooltip', true)
-        .style('left', (d3.event.clientX - 5) + 'px')
-        .style('top', (d3.event.clientY - 5) + 'px');
+        .style('left', (d3.event.clientX - 105) + 'px')
+        .style('top', (d3.event.clientY - 85) + 'px');
+
+    //console.log(d3.event.clientX);
 
     //console.log("fdsjkfldjgiodfjgifdjgiofdjgi");
 
     $('.mouse-tooltip')
         .tooltip('destroy')
         .tooltip({
-        title: title,
-        html: true,
-        template: '<div class="tooltip link-' + type + '"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
-        placement: 'top',
-        container: 'body',
-        animation: true
-    })
+            title: title,
+            html: true,
+            template: '<div class="tooltip link-' + type + '"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
+            placement: 'top',
+            container: 'body',
+            animation: true
+        })
         .tooltip('show');
+    //console.log("hahahahahahahah");
+
 
 }
 
@@ -2002,7 +2014,7 @@ function gotoAndPlay(y) {
     d3.select('#play-button').attr('class', 'pause frame');
     d3.select('#play-button a').classed('blink', true);
 
-    //playTimer = setTimeout(gotoNextYear, 750);
+    playTimer = setTimeout(gotoNextYear, 1200);
 }
 
 function gotoAndStop(y) {
@@ -2091,44 +2103,12 @@ function toggleTypeMode() {
     d3.selectAll(".value-mode-value").classed("asylum", typeMode);
 }
 
-/*
- function updateToggleButtons() {
- $('#type-mode-button')
- .tooltip('destroy')
- .tooltip({
- title: 'switch to ' + ((typeMode) ? 'country of origin' : 'country of asylum'),
- html: true,
- template: '<div class="tooltip toggle"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
- placement: 'top',
- container: 'body',
- animation: true
- })
-
- $('#value-mode-button')
- .tooltip('destroy')
- .tooltip({
- title: 'switch to ' + ((valueMode) ? 'refugees' : 'refugees/population'),
- html: true,
- template: '<div class="tooltip toggle"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
- placement: 'top',
- container: 'body',
- animation: true
- })
-
- if (typeMode)
- d3.select('#value-mode-button').attr('class', 'toggle-button ' + ((valueMode) ? 'asylum-refugees-population' : 'asylum-refugees'));
- else
- d3.select('#value-mode-button').attr('class', 'toggle-button ' + ((valueMode) ? 'origin-refugees-population' : 'origin-refugees'));
-
- d3.select('#type-mode-button').attr('class', 'toggle-button ' + ((typeMode) ? 'asylums' : 'origins'));
- }
- */
 
 function getMaxFeature(country) {
     var parent = country;
 
     if (parent.geometry == undefined) {
-        console.log(country);
+        //console.log(country);
         return false;
     }
 
