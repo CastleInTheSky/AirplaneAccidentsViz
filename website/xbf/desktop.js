@@ -105,10 +105,6 @@ function load(error, mapData, countryCodeData, refugeeData, populationData, stor
 
     landLayer = mapLayers.append('g').attr('id', 'landLayer');
 
-    console.log("----------------------");
-    console.log(mapcountries.features);
-    console.log("----------------------");
-
 
     landLayer.selectAll('.land')
         .data(mapcountries.features)
@@ -263,7 +259,6 @@ function load(error, mapData, countryCodeData, refugeeData, populationData, stor
 
     nodes = originNodes
 
-
     asylumLinks.forEach(function(year, links) {
         links.forEach(function(code, link) {
             if (!nodes.get(year).has(code)) {
@@ -357,6 +352,7 @@ function load(error, mapData, countryCodeData, refugeeData, populationData, stor
         gotoAndPlay(yearDomain[0]);
     } else
         gotoURL();
+    gotoYear(2010);
     showMap(1500);
 
 
@@ -425,14 +421,11 @@ function load(error, mapData, countryCodeData, refugeeData, populationData, stor
      */
 
 
-
 }
 
 function updateCountryCentroids() {
     countryCentroids = d3.map();
-
     //console.log("fdksafjdiosgfjdigfdgfd");
-
     landLayer.selectAll('path').each(function(d) {
         if (d.id === 'ZAF') {
             countryCentroids.set(d.id, path.centroid(d));
@@ -617,7 +610,7 @@ function setupPlay() {
 
 function setupTimeline() {
     frameHeaderH = 10;
-    frameW = width / (yearRange.length + 1);
+    frameW = width / (yearRange.length + 20.3);
     frameH = 30 + frameHeaderH;
     // frameYOffset = ($.browser.mozilla) ? 50 : 0
     frameYOffset = 0;
@@ -926,11 +919,11 @@ function hideMapTooltips() {
 
 function updateMapNavSize() {
     var padding = 50;
-    var navwidth = width * .5 + padding / 2;
-    var col1minwidth = 512 * .3 - padding / 2;
-    var col2minwidth = 512 * .7 - padding / 2;
-    var col1width = (navwidth * .70 - padding);
-    var col2width = (navwidth * .70 - padding);
+    var navwidth = width * .3 + padding / 2;
+    var col1minwidth = 512 * .6 - padding / 2;
+    var col2minwidth = 512 * .5 - padding / 2;
+    var col1width = (navwidth * .5 - padding);
+    var col2width = (navwidth * .5 - padding);
 
     var mapNavBody = d3.select('#map-nav-body');
     var storyBody = d3.select('#story-body');
@@ -1527,7 +1520,7 @@ function animateInLink() {
 function linkMousedOver(d) {
     var country = codeCountries.get((typeMode) ? d[0].origin : d[0].asylum)
     var type = ((typeMode) ? 'origin' : 'asylum');
-    var direction = (typeMode) ? 'came from ' : 'went to '
+    var direction = (typeMode) ? 'came from ' : 'went to ';
 
     var countryCount = linkCountryRankScale.domain().length;
 
@@ -1605,7 +1598,7 @@ function updateStats() {
                     return b[0].refugees - a[0].refugees;
             }).slice(0, topCountryCount);
 
-        d3.select('#refugee-mode').html(((typeMode) ? 'RESIDING IN<br/> ' : 'TOTAL DEATH IN AIRPLANES TAKE OFF FROM <br/> ') + codeCountries.get(country.id));
+        d3.select('#refugee-mode').html(((typeMode) ? 'RESIDING IN<br/> ' : 'Total Death in airplanes take off from<br/><br/> ') + codeCountries.get(country.id));
         d3.select('#region').text(codeCountries.get(country.id));
         d3.select('#refugees').html(refugees);
         //d3.select('#population').text(population);
@@ -1615,9 +1608,9 @@ function updateStats() {
         var topLabel;
 
         if (countries <= 3)
-            topLabel = countries + ' ' + ((countries == 1) ? 'DESTINATION COUNTRY' : 'DESTINATION COUNTRIES');
+            topLabel = 'Total ' + countries + ' ' + ((countries == 1) ? 'destination country' : 'destination countries');
         else
-            topLabel = 'TOP ' + topCountryCount + ' of ' + countries + ' ' + 'DESTINATION COUNTRIES';//type + 's'
+            topLabel = 'Top ' + topCountryCount + ' of ' + countries + ' ' + 'destination countries';//type + 's'
 
         d3.select('#top-label').text(topLabel);
 
@@ -1633,7 +1626,7 @@ function updateStats() {
                     });
 
                 topValues
-                    .append('dd')
+                    .append('dt')
                     .datum(d)
                     .text(function(d) {
                         // return (valueMode) ? decimalFormat(d[0].refugeesPopulation) : numberFormat(d[0].refugees);
@@ -1666,7 +1659,7 @@ function updateStats() {
 
         else
             //topLabel = 'TOP ' + topCountryCount + ' of ' + countries + ' ' + type + 's';
-            topLabel = 'TOP ' + topCountryCount + ' of ' + countries + ' ' + 'TAKE OFF COUNTRIES';//type + 's'
+            topLabel = 'TOP ' + topCountryCount + ' of ' + countries + ' ' + 'COUNTRIES(TAKE OFF )';//type + 's'
             //topLabel = 'TOP ' + topCountryCount + ' of ' + countries + ' ' + 'DESTINATION COUNTRIES';//type + 's'
 
 

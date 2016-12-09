@@ -1,6 +1,4 @@
 
-
-
 .mysection{
 
     height: 120vh;
@@ -412,8 +410,18 @@ image.story-button {
     background-position: 0 -30px;
 }
 
-.ppppp{
+.map-nav-title{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
     text-align: left;
+}
+
+.map-nav-sub-title{
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 .value-mode-value {
@@ -423,6 +431,19 @@ image.story-button {
     font-size: 21px;
     font-family:'Gotham XNarrow SSm A', 'Gotham XNarrow SSm B';
     text-align: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.value-mode-value-sub {
+    color:#EF3753;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 15px;
+    font-family:'Gotham XNarrow SSm A', 'Gotham XNarrow SSm B';
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 .value-mode-value.asylum {
     color:#00d7ed;
