@@ -7,7 +7,7 @@
 
 .foreground path {
     fill: none;
-    stroke: steelblue;
+    stroke: grey;
     stroke-opacity: .7;
 }
 
@@ -17,12 +17,16 @@
     shape-rendering: crispEdges;
 }
 
-.axis line, .axis path {
+.phaseChart_axis line, .phaseChart_axis path {
     fill: none;
     stroke: #000;
     shape-rendering: crispEdges;
+
 }
 
-.axis text {
-    text-shadow: 0 1px 0 #fff;
+.phaseChart_axis text {
+
+    fill: grey;
+    opacity: 1;
+
 }
