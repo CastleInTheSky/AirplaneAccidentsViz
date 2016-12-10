@@ -1,6 +1,7 @@
-phaseChart = function(_parentElement, _data, _PhaseEventHandler){
+phaseChart = function(_parentElement, _data, _phaseData, _PhaseEventHandler){
     this.parentElement = _parentElement;
     this.phases = _data;
+    this.phaseData = _phaseData;
     this.PhaseEventHandler = _PhaseEventHandler;
 
     this.initVis();
@@ -30,8 +31,21 @@ phaseChart.prototype.initVis = function(){
         .attr('class', 'd3-tip')
         .offset([0, 0])
         .html(function(d) {
-            console.log(d);
-            return "<strong>Frequency:</strong> <span style='color:red'>" + "Good" + "</span>";
+            //console.log(vis.phaseData);
+            var string = "";
+            var index = parseInt(d["Year "]-1900);
+            for(var key in vis.phaseData[index]){
+                if(key=="Year "){
+                    string = string + "<strong style='color:Yellow'>" + key + ":</strong> <span style='color:Yellow'>" + Math.round(vis.phaseData[index][key]) + "</span><br>";
+                    string = string + "<span style='color:Yellow'>Accident Number in each phase:</span><br>";
+                }else{
+                    string = string + "<strong>" + key + ":</strong> <span style='color:red'>" + Math.round(vis.phaseData[index][key]) + "</span><br>";
+                }
+
+            }
+
+
+            return string;
         });
 
 
@@ -60,17 +74,17 @@ phaseChart.prototype.initVis = function(){
         .data(vis.phases)
         .enter().append("path")
         .attr("d", path)
-        .on("mouseover", function () {
+        .on("mouseover", function (d) {
             d3.select(this).style("stroke-width", 5);
             d3.select(this).style("stroke-opacity", 1);
             d3.select(this).style("stroke", "red");
-            vis.tip.show();
+            vis.tip.show(d);
         })
-        .on("mouseout", function () {
+        .on("mouseout", function (d) {
             d3.select(this).style("stroke-width", 1);
             d3.select(this).style("stroke-opacity", 0.5);
             d3.select(this).style("stroke", "grey");
-            vis.tip.hide();
+            vis.tip.hide(d);
         });
 
 
@@ -82,19 +96,19 @@ phaseChart.prototype.initVis = function(){
         .data(vis.phases)
         .enter().append("path")
         .attr("d", path)
-        .on("mouseover", function () {
+        .on("mouseover", function (d) {
             d3.select(this).style("stroke-width", 5);
             d3.select(this).style("stroke-opacity", 1);
             d3.select(this).style("stroke", "red");
             console.log("select tip");
-            vis.tip.show();
+            vis.tip.show(d);
 
         })
-        .on("mouseout", function () {
+        .on("mouseout", function (d) {
             d3.select(this).style("stroke-width", 1);
             d3.select(this).style("stroke-opacity", 0.5);
             d3.select(this).style("stroke", "grey");
-            vis.tip.hide();
+            vis.tip.hide(d);
 
 
         });

@@ -60,17 +60,19 @@ planeStatus.prototype.initVis = function(){
         .data(vis.status)
         .enter().append("path")
         .attr("d", path)
-        .on("mouseover", function () {
+        .on("mouseover", function (d) {
             d3.select(this).style("stroke-width", 5);
             d3.select(this).style("stroke-opacity", 1);
             d3.select(this).style("stroke", "red");
-            vis.tip.show();
+            console.log("d");
+            console.log(d);
+            vis.tip.show(d);
         })
-        .on("mouseout", function () {
+        .on("mouseout", function (d) {
             d3.select(this).style("stroke-width", 1);
             d3.select(this).style("stroke-opacity", 0.5);
             d3.select(this).style("stroke", "grey");
-            vis.tip.hide();
+            vis.tip.hide(d);
         });
 
 
@@ -82,25 +84,27 @@ planeStatus.prototype.initVis = function(){
         .data(vis.status)
         .enter().append("path")
         .attr("d", path)
-        .on("mouseover", function () {
+        .on("mouseover", function (d) {
             d3.select(this).style("stroke-width", 5);
             d3.select(this).style("stroke-opacity", 1);
             d3.select(this).style("stroke", "red");
             console.log("select tip");
-            vis.tip.show();
+            console.log("hellohello");
+            console.log(d);
+            vis.tip.show(d);
 
         })
-        .on("mouseout", function () {
+        .on("mouseout", function (d) {
             d3.select(this).style("stroke-width", 1);
             d3.select(this).style("stroke-opacity", 0.5);
             d3.select(this).style("stroke", "grey");
-            vis.tip.hide();
+            vis.tip.hide(d);
 
 
         });
 
-    vis.background.call(vis.tip);
-    vis.foreground.call(vis.tip);
+    vis.svg.call(vis.tip);
+   // vis.foreground.call(vis.tip);
 
     // Add a group element for each dimension.
     vis.g = vis.svg.selectAll(".dimension")
