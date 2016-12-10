@@ -684,7 +684,7 @@ var stageFader = (function() {
 			return;
 		}
 		var temp_clear = new createjs.Shape();
-		temp_clear.graphics.beginFill("rgba(20,20,20,"+(1 - Math.pow(1 - 0.7 , 1/((2/3)*stages)))+")").drawRect(0,0,w,h);
+		//temp_clear.graphics.beginFill("rgba(20,20,20,"+(1 - Math.pow(1 - 0.7 , 1/((2/3)*stages)))+")").drawRect(0,0,w,h);
 		stage.addChild(temp_clear);
 		counter++;
 		if (counter >= stages) {
@@ -717,7 +717,7 @@ function addCurve(i, curve) {
 
 	if (i === 0) {
 		var temp_cover = new createjs.Shape();
-		temp_cover.graphics.beginFill("rgba(20,20,20,1)").drawRect(0,0,w,h);
+		//temp_cover.graphics.beginFill("rgba(20,20,20,1)").drawRect(0,0,w,h);
 		stage.addChild(temp_cover);
 	}
 }

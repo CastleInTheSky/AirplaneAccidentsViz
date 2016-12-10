@@ -534,7 +534,7 @@ later
 /*#play-button a:hover {
     background-position: 0 -20px;
 }*/
- #play-button.frame {
+#play-button.frame {
     border: none;
     background-color: #000;
 }
