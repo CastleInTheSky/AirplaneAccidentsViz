@@ -5,8 +5,8 @@ var	canvas = document.getElementById("stage");
 var overlay = document.getElementById("overstage");
 var distributionCanvas = document.getElementById("distributionView");
 var life_strokeStyle = 1;
-//var life_strokeColor = ["rgba(2,97,254,0.25)", "rgba(1,24,200,0.25)", "rgba(58,11,178,0.25)", "rgba(64,0,117,0.25)"];
-var life_strokeColor = ["rgba(164,94,20,0.15)","rgba(149,74,1,0.15)","rgba(255,103,2,0.15)","rgba(255,215,0,0.15)","rgba(244,205,59,0.15)","rgba(241,125,1,0.15)","rgba(186,66,1,0.15)","rgba(224,69,0,0.15)","rgba(253,167,31,0.15)","rgba(237,132,0,0.15)]"];
+//var life_strokeColor = ["rgba(164,94,20,0.15)","rgba(149,74,1,0.15)","rgba(255,103,2,0.15)","rgba(255,215,0,0.15)","rgba(244,205,59,0.15)","rgba(241,125,1,0.15)","rgba(186,66,1,0.15)","rgba(224,69,0,0.15)","rgba(253,167,31,0.15)","rgba(237,132,0,0.15)]"];
+var life_strokeColor = ["rgba(163,20,20,0.15)","rgba(146,1,3,0.15)","rgba(178,76,86,0.15)","rgba(240,128,128,0.15)","rgba(243,57,97,0.15)","rgba(238,5,1,0.15)","rgba(181,1,28,0.15)","rgba(219,0,43,0.15)","rgba(252,50,27,0.15)","rgba(234,0,105,0.15)]"];
 var post_life_strokeStyle = 1;
 var post_life_strokeColor = "rgba(62,34,117,1)";
 var afterlife_strokeStyle = 1;
@@ -46,7 +46,7 @@ var pctTop = 0, pctBot = 0;
 var masterFilter = "nofilter";
 var inDistView = false;
 var distHistGroup;
-var distHistColors = {leftTop: "rgba(255,210,0,0.40)", leftBot: "rgba(255,109,2,0.40)", rightTop: "rgba(200,200,200,0.40)", rightBot: "rgba(162,162,162,0.40)"};
+var distHistColors = {leftTop: "rgba(241,52,82,0.20)", leftBot: "rgba(241,54,80,0.20)", rightTop: "rgba(200,200,200,0.20)", rightBot: "rgba(162,162,162,0.20)"};
 //var delayWatcher;
 var introTtip = [];
 var playingAnimation = true;
@@ -189,19 +189,19 @@ INITIALIZE
 function introzr() {
 	//called when the body loads, loads the HTML;
         function headFoot() {
-            $(".header").fadeIn(1000);
+            $(".header").fadeIn(200);
         }
 
         function axis() {
-            $(".axis, .axisLabel").fadeIn(1000);
+            $(".axis, .axisLabel").fadeIn(500);
         }
 
         function ui() {
-            $("#peoplebox, #yearsbox, #distSwitch, #menuBox, #blurb").fadeIn(1000);
+            $("#peoplebox, #yearsbox, #distSwitch, #menuBox, #blurb").fadeIn(200);
         }
 
         function canvas() {
-            $("#c").fadeIn(500);
+            $("#c").fadeIn(200);
         }
 
         //show all the UI stuff, begin the intro animation.
@@ -1350,19 +1350,19 @@ function curveFilter() {
 	this.oadult = function(item) {if (Math.floor(item.Age) > 30) {return true;} else {return false;}};
 	this.male = function(item) {if (item.Sex == "Male") {return true;} else {return false;}};
 	this.female = function(item) {if (item.Sex == "Female") {return true;} else {return false;}};
-	this.china = function(item) {if (item.Nation == "China") {return true;} else {return false;}};
-	this.malaysia = function(item) {if (item.Nation == "Malaysia") {return true;} else {return false;}};
-	this.france = function(item) {if (item.Nation == "France") {return true;} else {return false;}};
-	this.russia = function(item) {if (item.Nation == "Russia") {return true;} else {return false;}};
-	this.australia = function(item) {if (item.Nation == "Australia") {return true;} else {return false;}};
-	this.ukraine = function(item) {if (item.Nation == "Ukraine") {return true;} else {return false;}};
-	this.canada = function(item) {if (item.Nation == "Canada") {return true;} else {return false;}};
-	this.indonesia = function(item) {if (item.Nation == "Indonesia") {return true;} else {return false;}};
-	this.italy = function(item) {if (item.Nation == "Italy") {return true;} else {return false;}};
-	this.usa = function(item) {if (item.Nation == "USA") {return true;} else {return false;}};
-	this.austria = function(item) {if (item.Nation == "Austria") {return true;} else {return false;}};
-	this.netherlands = function(item) {if (item.Nation == "Netherlands") {return true;} else {return false;}};
-	this.new_zealand = function(item) {if (item.Nation == "New Zealand") {return true;} else {return false;}};
+	this.China = function(item) {if (item.Nation == "China") {return true;} else {return false;}};
+	this.Malaysia = function(item) {if (item.Nation == "Malaysia") {return true;} else {return false;}};
+	this.France = function(item) {if (item.Nation == "France") {return true;} else {return false;}};
+	this.Russia = function(item) {if (item.Nation == "Russia") {return true;} else {return false;}};
+	this.Australia = function(item) {if (item.Nation == "Australia") {return true;} else {return false;}};
+	this.Ukraine = function(item) {if (item.Nation == "Ukraine") {return true;} else {return false;}};
+	this.Canada = function(item) {if (item.Nation == "Canada") {return true;} else {return false;}};
+	this.Indonesia = function(item) {if (item.Nation == "Indonesia") {return true;} else {return false;}};
+	this.Italy = function(item) {if (item.Nation == "Italy") {return true;} else {return false;}};
+	this.USA = function(item) {if (item.Nation == "USA") {return true;} else {return false;}};
+	this.Austria = function(item) {if (item.Nation == "Austria") {return true;} else {return false;}};
+	this.Netherlands = function(item) {if (item.Nation == "Netherlands") {return true;} else {return false;}};
+	this.New_Zealand = function(item) {if (item.Nation == "New Zealand") {return true;} else {return false;}};
 
 	if (this instanceof curveFilter) {
 		return this;
@@ -2016,16 +2016,22 @@ function getDistTipText(x) {
 		insert3 = altSexDemonymDict[filterType][ageNum];
 		insert4 = ".";
 	} else if (groupNum == 3) {
-		insert1 = filterDisplayNamesDict[filterType]+" "+demonym;
+		insert1 = filterDisplayNamesDict[filterType];
 		insert2 = ".";
-		insert3 = demonym+" of "+altFilterDict[filterType];
+		insert3 = altFilterDict[filterType];
 		insert4 = ".";
-	} else if (groupNum >= 4) {
-		insert1 = "people";
-		insert2 = " "+filterDisplayNamesDict[filterType]+".";
-		insert3 = "people";
-		insert4 = " "+altFilterDict[filterType]+".";
-	}
+	};
+	// } else if (groupNum == 3) {
+	// 	insert1 = filterDisplayNamesDict[filterType]+" "+demonym;
+	// 	insert2 = ".";
+	// 	insert3 = demonym+" of "+altFilterDict[filterType];
+	// 	insert4 = ".";
+	// } else if (groupNum >= 4) {
+	// 	insert1 = "people";
+	// 	insert2 = " "+filterDisplayNamesDict[filterType]+".";
+	// 	insert3 = "people";
+	// 	insert4 = " "+altFilterDict[filterType]+".";
+	// }
 
 	var onlyTop = distributionPath[1][0][x].data.value < distributionPath[0][0][x].data.value ? "Only " : "";
 	var onlyBot = distributionPath[1][1][x].data.value < distributionPath[0][1][x].data.value ? "Only " : "";
