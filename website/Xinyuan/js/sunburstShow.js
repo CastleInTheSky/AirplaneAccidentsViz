@@ -37,8 +37,9 @@ sunburstShow.prototype.updateVis = function(){
         .append("text")
         .attr("class","explain")
         .attr("font-size", 30)
-        .attr("fill", "white");
-        //.attr("text-anchor", "middle");
+        .style("fill", "red")
+        .style("opacity", 0.7);
+    //.attr("text-anchor", "middle");
 
     vis.text.text(vis.key);
 
@@ -67,14 +68,14 @@ sunburstShow.prototype.updateVis = function(){
 
     vis.img.exit().remove();
 
-   /* vis.img = vis.svg.append("svg:image")
-        .attr("xlink:href", function(d){
-           // console.log("here");
-           return  "img/causes/Pilot Error.jpg";
-        }).attr("width", 400)
-        .attr("height", 400)
-        .attr("x", 0)
-        .attr("y", 0);*/
+    /* vis.img = vis.svg.append("svg:image")
+     .attr("xlink:href", function(d){
+     // console.log("here");
+     return  "img/causes/Pilot Error.jpg";
+     }).attr("width", 400)
+     .attr("height", 400)
+     .attr("x", 0)
+     .attr("y", 0);*/
 
     //vis.attr('xlink:href',function(d){
 
