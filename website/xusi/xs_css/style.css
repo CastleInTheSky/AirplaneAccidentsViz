@@ -8,7 +8,10 @@ body {
 .container {
 	width: 1300px;
 }
-
+p {
+	color: white;
+	font-size: 15px;
+}
 h1 {
 	font-size: 36px;
 	color: rgba(217, 27, 40, 0.75);
@@ -22,14 +25,18 @@ h2 {
 	margin-bottom: 30px;
 }
 
+h4 {
+	color: rgba(217, 27, 40, 0.75);
+}
+
 .brush {
 	fill: #ccc;
 	fill-opacity: .5;
 	pointer-events: none;
 }
 
-.axis line,
-.axis path {
+.xsaxis line,
+.xsaxis path {
   fill: none;
   stroke: rgba(246, 249, 255, 0.55);
   shape-rendering: crispEdges;
@@ -40,6 +47,7 @@ h2 {
 	font-size: 11px;
 	fill: rgba(246, 249, 255, 0.55);
 }
+
 
 
 .area {
@@ -61,4 +69,104 @@ h2 {
 	fill: none;
 
 	stroke-width: 1.5px;
+}
+/*********Search Box**********/
+.autocomplete-suggestions { border: 1px solid #999; background: #fff; cursor: default; overflow: auto; }
+.autocomplete-suggestion { padding: 10px 5px; font-size: 1.2em; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #f0f0f0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
+
+#searchfield { display: block; width: 100%; text-align: center; margin-bottom: 35px; }
+
+#searchfield form {
+	display: inline-block;
+	background: #eeefed;
+	padding: 0;
+	margin: 0;
+	padding: 5px;
+	border-radius: 3px;
+	margin: 5px 0 0 0;
+}
+#searchfield form .biginput {
+	width: 600px;
+	height: 40px;
+	padding: 0 10px 0 10px;
+	background-color: #fff;
+	border: 1px solid #c8c8c8;
+	border-radius: 3px;
+	color: #aeaeae;
+	font-weight:normal;
+	font-size: 1.5em;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+#searchfield form .biginput:focus {
+	color: #858585;
+}
+
+/**********Tooltip**************************************/
+.tooltip-title {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: 600;
+}
+
+.d3-tip {
+	line-height: 1;
+	padding: 12px;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+	box-sizing: border-box;
+	display: inline;
+	font-size: 10px;
+	width: 100%;
+	line-height: 1.5;
+	color: rgba(0, 0, 0, 0.6);
+	content: "\25BC";
+	position: absolute;
+	text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+	margin: -1px 0 0 0;
+	top: 100%;
+	left: 0;
+}
+
+tspan {
+	margin-left: 10px;
+}
+
+/********Scroll Bar**************/
+.scrollspy-example {
+	position: relative;
+	height: 200px;
+	margin-top: .5rem;
+	overflow: auto;
+	color:white;
+}
+
+.navbar-brand {
+	padding:0px 0px 0px 0px;
+}
+.navbar{
+	margin-bottom: 0px;
+}
+
+.fa-plane{
+	font-size: 10px;
+	color: rgba(217, 27, 40, 0.75);
+}
+
+/********modal********/
+.modal-content {
+	background-color: rgba(158, 158, 158, 0.65);
+	color : white;
 }

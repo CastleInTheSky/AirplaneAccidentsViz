@@ -54,11 +54,11 @@ AreaChart.prototype.initVis = function(){
         .orient("left");
 
     vis.svg.append("g")
-        .attr("class", "x-axis axis")
+        .attr("class", "x-axis xsaxis")
         .attr("transform", "translate(0," + vis.height + ")");
 
     vis.svg.append("g")
-        .attr("class", "y-axis axis");
+        .attr("class", "y-axis xsaxis");
 
     //draw the area chart
     vis.area = d3.svg.area()
@@ -69,7 +69,7 @@ AreaChart.prototype.initVis = function(){
     vis.selectValue = "total_fatalities";
 
     vis.data.forEach(function (d) {
-        d.key = yearFormattter.parse(d.key.toString())
+        d.key = yearFormatter.parse(d.key.toString())
     })
     //console.log(vis.data);
     // (Filter, aggregate, modify data)

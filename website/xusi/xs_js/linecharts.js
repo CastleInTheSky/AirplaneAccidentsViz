@@ -22,12 +22,19 @@ Linechart.prototype.initVis = function(){
         .append("g")
         .attr("transform", "translate(" + vis.margin.left + "," + vis.margin.top + ")");
 
+    vis.svg.append("g")
+        .append("text")
+        .text(vis.month)
+        .attr("x",vis.width/2 - 10)
+        .attr("y",-5)
+        .attr("fill","red");
+
     //set the x-axis and y-axis
     vis.x = d3.time.scale()
         .range([0,vis.width]);
 
     vis.x
-        .domain([yearFormattter.parse("1910"),yearFormattter.parse("2010")]);
+        .domain([yearFormatter.parse("1910"),yearFormatter.parse("2010")]);
 
     vis.y = d3.scale.linear()
         .range([vis.height, 0]);
@@ -44,11 +51,11 @@ Linechart.prototype.initVis = function(){
         .orient("left");
 
     vis.svg.append("g")
-        .attr("class", "x-axis axis")
+        .attr("class", "x-axis xsaxis")
         .attr("transform", "translate(0," + vis.height + ")");
 
     vis.svg.append("g")
-        .attr("class", "y-axis axis");
+        .attr("class", "y-axis xsaxis");
     //selection
     vis.selectValue = "total_fatalities";
     //line chart
@@ -90,7 +97,7 @@ Linechart.prototype.wrangleData = function(){
 
     vis.displayData.forEach(function (d) {
         d.values.forEach(function (d) {
-            d.key = yearFormattter.parse(d.key.toString())
+            d.key = yearFormatter.parse(d.key.toString())
         })
 
     })
@@ -133,7 +140,7 @@ Linechart.prototype.updateVis = function(){
 
     vis.months
         .attr("d", function(d) {
-            console.log(d.values);
+            //console.log(d.values);
             return vis.line(d.values); })
         .style("stroke", function(d) {
             if (d.key == vis.month) {return "rgba(217, 27, 40, 0.75)";}
@@ -156,12 +163,12 @@ Linechart.prototype.selectionChanged = function(brushRegion){
     var max = brushRegion[0] > brushRegion[1] ? brushRegion[0] : brushRegion[1];
     //filter initial form data!
     vis.filterData = vis.data.filter(function (d) {
-        return yearFormattter.parse((d.decade + 10).toString()) >= min && yearFormattter.parse((d.decade - 10).toString()) <= max;
+        return yearFormatter.parse((d.decade + 10).toString()) >= min && yearFormatter.parse((d.decade - 10).toString()) <= max;
     });
-    vis.x.domain([yearFormattter.parse(vis.filterData[0].decade.toString()),yearFormattter.parse(vis.filterData[vis.filterData.length - 1].decade.toString())]);
+    vis.x.domain([yearFormatter.parse(vis.filterData[0].decade.toString()),yearFormatter.parse(vis.filterData[vis.filterData.length - 1].decade.toString())]);
 
     //console.log(yearFormattter.parse(vis.filterData[0].decade.toString()),yearFormattter.parse(vis.filterData[vis.filterData.length - 1].decade.toString()));
-    console.log(vis.filterData);
+    //console.log(vis.filterData);
     // Update the visualization
     vis.wrangleData();
 

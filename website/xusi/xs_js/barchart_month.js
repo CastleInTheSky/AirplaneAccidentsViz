@@ -52,11 +52,11 @@ Barchart_month.prototype.initVis = function(){
         .orient("left");
 
     vis.barchart.append("g")
-        .attr("class", "x-axis axis")
+        .attr("class", "x-axis xsaxis")
         .attr("transform", "translate(0," + vis.height + ")");
 
     vis.barchart.append("g")
-        .attr("class", "y-axis axis");
+        .attr("class", "y-axis xsaxis");
 
     // Axis title
     vis.barchart.append("text")
@@ -108,7 +108,16 @@ Barchart_month.prototype.updateVis = function(){
         .data(this.displayData)
 
     bars.enter().append("rect")
-        .attr("class", "bar");
+        .attr("class", "bar")
+        .on("mouseover", function() {
+             d3.select(this)
+                 //.transition()
+                 .style("fill", "rgba(239, 28, 40, 0.42)");
+        })
+        .on("mouseout", function(d) {
+            d3.select(this)
+                .style("fill", "rgba(217, 27, 40, 0.75)");
+        });
 
     bars
         .transition()
@@ -122,6 +131,7 @@ Barchart_month.prototype.updateVis = function(){
         .attr("y", function(d){
             return vis.y(d.values[vis.selectValue]);
         });
+
 
     bars.exit().remove();
 
@@ -151,7 +161,7 @@ Barchart_month.prototype.selectionChanged = function(brushRegion){
     var max = brushRegion[0] > brushRegion[1] ? brushRegion[0] : brushRegion[1];
     //filter initial form data!
     vis.filterData = vis.data.filter(function (d) {
-        return yearFormattter.parse(d.year.toString()) >= min && yearFormattter.parse(d.year.toString()) <= max;
+        return yearFormatter.parse(d.year.toString()) >= min && yearFormatter.parse(d.year.toString()) <= max;
     });
     //console.log(vis.filterData);
     // Update the visualization

@@ -1,18 +1,17 @@
-phaseChart = function(_parentElement, _data, _phaseData, _PhaseEventHandler){
+phaseChart = function(_parentElement, _data){
     this.parentElement = _parentElement;
     this.phases = _data;
-    this.phaseData = _phaseData;
-    this.PhaseEventHandler = _PhaseEventHandler;
+    //this.fisheyeFunc = _fisheyeFunc;
 
     this.initVis();
 }
 
 phaseChart.prototype.initVis = function(){
     var vis = this;
-    vis.margin = { top: 0, right: 50, bottom: 100, left: 50 };
+    vis.margin = { top: 100, right: 50, bottom: 100, left: 50 };
 
     vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right;
-    vis.height = 500 - vis.margin.top - vis.margin.bottom;
+    vis.height = 600 - vis.margin.top - vis.margin.bottom;
 
     vis.svg = d3.select("#" + vis.parentElement).append("svg")
         .attr("width", vis.width + vis.margin.left + vis.margin.right)
@@ -27,43 +26,24 @@ phaseChart.prototype.initVis = function(){
     vis.axis = d3.svg.axis().orient("left");
     vis.fisheye = d3.fisheye.scale(d3.scale.identity).domain([0,vis.width]).focus(vis.width/2).distortion(3);
 
-    vis.tip = d3.tip()
-        .attr('class', 'd3-tip')
-        .offset([0, 0])
-        .html(function(d) {
-            //console.log(vis.phaseData);
-            var string = "";
-            var index = parseInt(d["Year "]-1900);
-            for(var key in vis.phaseData[index]){
-                if(key=="Year "){
-                    string = string + "<strong style='color:Yellow'>" + key + ":</strong> <span style='color:Yellow'>" + Math.round(vis.phaseData[index][key]) + "</span><br>";
-                    string = string + "<span style='color:Yellow'>Accident Number in each phase:</span><br>";
-                }else{
-                    string = string + "<strong>" + key + ":</strong> <span style='color:red'>" + Math.round(vis.phaseData[index][key]) + "</span><br>";
-                }
 
-            }
-
-
-            return string;
-        });
 
 
 
 
     // Extract the list of dimensions and create a scale for each.
     /*
-     vis.x.domain(vis.dimensions = d3.keys(vis.phases[0]).filter(function(d) {
-     return d != "Year " && d != "Total " && (vis.y[d] = d3.scale.linear()
-     .domain(d3.extent(vis.phases, function(p) { return +p[d]; }))
-     .range([vis.height, 0]));
-     }));
-     */
+    vis.x.domain(vis.dimensions = d3.keys(vis.phases[0]).filter(function(d) {
+        return d != "Year " && d != "Total " && (vis.y[d] = d3.scale.linear()
+                .domain(d3.extent(vis.phases, function(p) { return +p[d]; }))
+                .range([vis.height, 0]));
+    }));
+    */
     //revised
     vis.x.domain(vis.dimensions = d3.keys(vis.phases[0]).filter(function(d) {
         return d != "Year " && d != "Total " && (vis.y[d] = d3.scale.linear()
                 .domain([0,1])
-                .range([vis.height, 50]));
+                .range([vis.height, 0]));
     }));
 
 
@@ -73,21 +53,7 @@ phaseChart.prototype.initVis = function(){
         .selectAll("path")
         .data(vis.phases)
         .enter().append("path")
-        .attr("d", path)
-        .on("mouseover", function (d) {
-            d3.select(this).style("stroke-width", 5);
-            d3.select(this).style("stroke-opacity", 1);
-            d3.select(this).style("stroke", "red");
-            vis.tip.show(d);
-        })
-        .on("mouseout", function (d) {
-            d3.select(this).style("stroke-width", 1);
-            d3.select(this).style("stroke-opacity", 0.5);
-            d3.select(this).style("stroke", "grey");
-            vis.tip.hide(d);
-        });
-
-
+        .attr("d", path);
 
     // Add blue foreground lines for focus.
     vis.foreground = vis.svg.append("g")
@@ -95,26 +61,7 @@ phaseChart.prototype.initVis = function(){
         .selectAll("path")
         .data(vis.phases)
         .enter().append("path")
-        .attr("d", path)
-        .on("mouseover", function (d) {
-            d3.select(this).style("stroke-width", 5);
-            d3.select(this).style("stroke-opacity", 1);
-            d3.select(this).style("stroke", "red");
-            console.log("select tip");
-            vis.tip.show(d);
-
-        })
-        .on("mouseout", function (d) {
-            d3.select(this).style("stroke-width", 1);
-            d3.select(this).style("stroke-opacity", 0.5);
-            d3.select(this).style("stroke", "grey");
-            vis.tip.hide(d);
-
-
-        });
-
-    vis.background.call(vis.tip);
-    vis.foreground.call(vis.tip);
+        .attr("d", path);
 
     // Add a group element for each dimension.
     vis.g = vis.svg.selectAll(".dimension")
@@ -125,11 +72,11 @@ phaseChart.prototype.initVis = function(){
 
     // Add an axis and title.
     vis.g.append("g")
-        .attr("class", "phaseChart_axis")
-        .each(function(d) { d3.select(this).call(vis.axis.scale(vis.y[d]).ticks(5).tickFormat(d3.format(".0%"))); })
+        .attr("class", "axis")
+        .each(function(d) { d3.select(this).call(vis.axis.scale(vis.y[d])); })
         .append("text")
         .attr("text-anchor", "middle")
-        .attr("y", 20)
+        .attr("y", -9)
         .text(String);
 
     // Add and store a brush for each axis.
@@ -147,8 +94,6 @@ phaseChart.prototype.initVis = function(){
         vis.foreground.attr("d", path);
         vis.background.attr("d", path);
         vis.g.attr("transform", function(d) { return "translate(" + vis.fisheye(vis.x(d)) + ")"; });
-
-        $(vis.PhaseEventHandler).trigger("mouseMoved", d3.mouse(this)[0]);
     });
 
 
