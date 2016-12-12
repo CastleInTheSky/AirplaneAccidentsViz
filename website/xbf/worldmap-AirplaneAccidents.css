@@ -89,6 +89,7 @@
     stroke-opacity: 1;
     /*fill: #182128; */
     fill-opacity:1;
+    stroke: none;
 }
 .highlighted, .selected {
     fill: #000;
@@ -282,9 +283,11 @@ line.link-hitarea {
     font-size: 35px;
     font-family:'Chronicle SSm A', 'Chronicle SSm B';
     line-height: 36px;
+    stroke: none;
 }
 #year-region.asylum {
     color:#00d7ed;
+    stroke: none;
 }
 #stats {
     float:left;
@@ -315,14 +318,17 @@ line.link-hitarea {
     /*text-decoration: none;*/
     cursor: pointer;
     cursor: hand;
+    opacity: 0;
 }
 #story-head a:hover {
     /*border-bottom:1px solid #C4C4C4; 
     text-decoration: none;*/
+    opacity: 0;
 }
 #story-head p {
     width: 100%;
     height: 100%;
+    opacity: 0;
 }
 #story-head .badge {
     background-color:#000;
@@ -332,6 +338,7 @@ line.link-hitarea {
     font-style: normal;
     font-size: 12px;
     font-family:'Gotham XNarrow SSm A', 'Gotham XNarrow SSm B';
+    opacity: 0;
 }
 #story-body {
     float:left;
@@ -347,19 +354,21 @@ line.link-hitarea {
 }
 #story-body dd {
     margin-bottom: 0px;
+    opacity: 0;
 }
 #story-body-border {
     float:left;
     height: 100%;
     border-left: 1px solid #C4C4C4;
+    opacity: 0;
 }
 .story-button {
-    opacity: .5;
+    opacity: 0;
     cursor: pointer;
     cursor: hand;
 }
 image.story-button {
-    opacity: .5;
+    opacity: 0;
 }
 
 
@@ -531,9 +540,9 @@ later
     background: url(../img/pause.png) no-repeat;
     background-size: 20px;
 }
-/*#play-button a:hover {
+#play-button a:hover {
     background-position: 0 -20px;
-}*/
+}
 #play-button.frame {
     border: none;
     background-color: #000;
@@ -551,10 +560,14 @@ later
     text-align: left;
 }
 .frame.story > text {
-    font-weight: 700;
-    font-style: normal;
+    cursor: pointer;
+    cursor: hand;
     font-family:'Gotham XNarrow SSm A', 'Gotham XNarrow SSm B';
-    fill: #C4C4C4;
+    -webkit-transition: all 0.05s;
+    -moz-transition: all 0.05s;
+    -ms-transition: all 0.05s;
+    -o-transition: all 0.05s;
+    transition: all 0.05s;
     text-align: left;
 }
 .frame:hover {
@@ -575,6 +588,7 @@ later
 }
 .frame.selected > rect {
     fill: #C4C4C4;
+    stroke: none;
 }
 .frame-year {
     text-align: center;
@@ -591,6 +605,7 @@ later
     fill: #6B6B6B;
     text-anchor:middle;
     writing-mode: vertical-rl;
+    stroke: none;
 }
 .frame-refugees {
     -webkit-transition: all 0.75s;
@@ -606,6 +621,7 @@ later
     -ms-transition: all 0.75s;
     -o-transition: all 0.75s;
     transition: all 0.75s;
+    stroke: none;
 }
 .tooltip {
     font-weight: 400;

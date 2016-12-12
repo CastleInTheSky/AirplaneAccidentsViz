@@ -821,18 +821,15 @@ function updateMapNavSize() {
 
     d3.select('#map-nav-background')
         .style('width', navwidth + 'px')
-        .style('height', height + 'px');
+        .style('height', height - 1025 + 'px');
 
     d3.select('#map-nav-head').style('width', (navwidth - padding) + 'px');
 
     d3.select('#map-nav-body')
         .style('width', (storyBody.empty()) ? 'auto' : (navwidth - padding) + 'px')
-        .style('height', (height - 225 - padding) + 'px');
+        .style('height', (height - 1025 - padding) + 'px');
 
     d3.select('#stats').style('width', Math.max(col1minwidth, col1width) + 'px');
-
-
-
 
     if (!storyBody.empty()) {
         d3.select('#story-body-border').style('height', (height - 225) + 'px');
@@ -1520,13 +1517,9 @@ function updateStats() {
 
         if (countries <= 3)
             topLabel = countries + ' ' + 'TAKE OFF COUNTRIES';//type + ((countries == 1) ? '' : 's')
-            //topLabel = countries + ' ' + ((countries == 1) ? 'DESTINATION COUNTRY' : 'DESTINATION COUNTRIES');
 
         else
-            //topLabel = 'TOP ' + topCountryCount + ' of ' + countries + ' ' + type + 's';
             topLabel = 'TOP ' + topCountryCount + ' of ' + countries + ' ' + 'COUNTRIES(TAKE OFF )';//type + 's'
-            //topLabel = 'TOP ' + topCountryCount + ' of ' + countries + ' ' + 'DESTINATION COUNTRIES';//type + 's'
-
 
         d3.select('#top-label').text(topLabel);
 
