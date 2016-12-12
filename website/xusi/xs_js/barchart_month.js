@@ -187,6 +187,16 @@ Barchart_month.prototype.selectionChanged = function(brushRegion){
 Barchart_month.prototype.typeChange = function (value) {
     var vis = this;
     vis.selectValue = value;
+
+    if (vis.selectValue == "total_fatalities") {
+        console.log("yes");
+        $("#total_fatalities").css("background-color","red");
+        $("#total_accidents").css("background-color","grey");
+    }
+    else {
+        $("#total_fatalities").css("background-color","grey");
+        $("#total_accidents").css("background-color","red");
+    }
     console.log(vis.selectValue);
     vis.wrangleData();
 }

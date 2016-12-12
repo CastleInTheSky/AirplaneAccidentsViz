@@ -18,6 +18,7 @@ var side;
 //****************Search Box Init******************************//
 var dataList = document.getElementById('json-datalist');
 var input = document.getElementById('ajax');
+$("#total_fatalities").css("background-color","red");
 //$(".scroll").hide();
 //button onclick
 
@@ -287,10 +288,6 @@ function createVis(error, data, _ratings){
 		};
 
 	});
-
-
-
-
 
 
 	// $( "#cmp-airline" ).click(function() {

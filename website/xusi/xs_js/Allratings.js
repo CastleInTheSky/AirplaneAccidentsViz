@@ -131,7 +131,7 @@ Ratings.prototype.initVis = function() {
                 }
             })
             if (flag == 1) {
-                return "yellow"
+                return "rgba(255, 255, 0, 0.73)"
             }
             else{
                 return "rgba(128, 128, 128, 0.51)";
@@ -165,10 +165,10 @@ Ratings.prototype.update1 = function (plane) {
 
             if (flag == 1) {
                 if (d.Airline == plane) {
-                    return "red"
+                    return "rgba(217, 27, 40, 0.75)"
                 }
                 else {
-                    return "yellow"
+                    return "rgba(255, 255, 0, 0.73)"
                 }
 
             }
@@ -195,7 +195,7 @@ Ratings.prototype.update0 = function (plane) {
                 }
             })
             if (flag == 1) {
-                return "yellow"
+                return "rgba(255, 255, 0, 0.73)"
             }
             else{
                 return "rgba(128, 128, 128, 0.51)";

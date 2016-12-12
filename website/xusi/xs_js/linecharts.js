@@ -179,7 +179,7 @@ Linechart.prototype.selectionMonth1 = function (month) {
 
     vis.months
         .style("stroke", function(d) {
-            if (d.key == month) {return "#00d7ed";}
+            if (d.key == month) {return "#42DCA3";}
             else if (d.key == vis.month){
                 return "red";
             }

@@ -99,7 +99,7 @@ Airline.prototype.initVis = function() {
             d3.select(this).attr("fill","rgba(246, 249, 255, 0.55)")
         })
         .on("mouseover", function () {
-            d3.select(this).attr("fill","#83B86F")
+            d3.select(this).attr("fill","rgba(217, 27, 40, 0.75)")
         })
         .style("cursor", "pointer");
 
@@ -186,13 +186,13 @@ Airline.prototype.updateVis = function() {
         .attr("x", 45)
         .attr("y", 30)
         .attr("class","rankingnum")
-        .attr("fill","yellow")
+        .attr("fill","rgba(255, 255, 0, 0.73)")
         .on("mouseover",function () {
-            d3.select(this).attr("fill","red");
+            d3.select(this).attr("fill","rgba(217, 27, 40, 0.75)");
             $(vis.event1).trigger("hoverplane1",vis.displayData.Airline)
         })
         .on("mouseout",function () {
-            d3.select(this).attr("fill","yellow");
+            d3.select(this).attr("fill","rgba(255, 255, 0, 0.73)");
             $(vis.event0).trigger("hoverplane0",vis.displayData.Airline)
         })
         .style("cursor", "pointer");
@@ -202,7 +202,7 @@ Airline.prototype.updateVis = function() {
         .text(vis.displayData.Rating)
         .attr("x", 20)
         .attr("y", 30)
-        .attr("fill", "Yellow")
+        .attr("fill", "rgba(255, 255, 0, 0.87)")
         .style("font-size", 40);
 
     vis.svg.selectAll(".ratings")

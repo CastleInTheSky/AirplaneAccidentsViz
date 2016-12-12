@@ -25,6 +25,10 @@ h2 {
 	margin-bottom: 30px;
 }
 
+.sxsheader1 {
+	margin-bottom: 20px;
+}
+
 .brush {
 	fill: #ccc;
 	fill-opacity: .5;
@@ -172,10 +176,10 @@ tspan {
 	height:400px;
 }
 .modal-title {
-	color: #83B86F;
+	color: red;
 }
 .modal-content {
-	background-color: rgba(171, 50, 41, 0.58);
+	background-color: rgba(109, 121, 136, 0.9);
 	color: #d5d8d7;
 	margin-top: 100px;
 
@@ -192,20 +196,19 @@ tspan {
 	margin: 0 0 20px;
 	margin-top: 20px;
 	font-size: 20px;
-	color: #83B86F;
+	color: rgba(255, 0, 0, 0.78);
 }
 .narra h3{
 	margin: 0 0 20px;
 	font-size: 20px;
-	color: #83B86F;
+	color: rgba(255, 0, 0, 0.78);
 }
 
 
 .xsbtn-default:hover, .xsbtn-default:focus{
-	border: 1px solid #83B86F;
-	outline: none;
+	border: 1px solid rgba(255, 0, 0, 0.78);
 	color: black;
-	background-color: #83B86F;
+	background-color: rgba(255, 0, 0, 0.78);
 }
 /******button group*********/
 .wrapper {
@@ -216,7 +219,7 @@ tspan {
 }
 
 .xsbtn {
-
+	text-transform: uppercase;
 	display: inline-block;
 	padding: 6px 12px;
 	margin-bottom: 0;
@@ -238,6 +241,7 @@ tspan {
 	border-radius: 4px;
 }
 .addbtn {
+	text-transform: uppercase;
 	outline:none;
 	display: inline-block;
 	padding: 6px 12px;
