@@ -71,6 +71,24 @@ AreaChart.prototype.initVis = function(){
     vis.data.forEach(function (d) {
         d.key = yearFormatter.parse(d.key.toString())
     })
+
+    //Initialize brush component
+    vis.brush = d3.svg.brush()
+        .x(vis.x)
+        .on("brush", brushed);
+
+    // Append brush component
+    vis.svg.append("g")
+        .attr("class", "x brush")
+        .call(vis.brush)
+        .selectAll("rect")
+        .attr("y", -6)
+        .attr("height", vis.height + 7);
+
+    vis.path = vis.svg.append("path")
+        .datum(vis.data)
+        .attr("class", "fill");
+
     //console.log(vis.data);
     // (Filter, aggregate, modify data)
     vis.wrangleData();
@@ -111,23 +129,35 @@ AreaChart.prototype.updateVis = function(){
         .x(function(d) { return vis.x(d.key); })
         .y1(function(d) { return vis.y(d.values[vis.selectValue]); });
 
-    vis.svg.append("path")
-        .datum(vis.data)
-        .attr("class", "fill")
+
+    vis.path
+        .transition()
         .attr("d", vis.area);
 
-    //Initialize brush component
-    vis.brush = d3.svg.brush()
-        .x(vis.x)
-        .on("brush", brushed);
+    // vis.path = vis.svg.selectAll(".area")
+    //     .datum(vis.data)
+    //     .enter();
+    //
+    // vis.path.append("path")
+    //     .attr("class","area");
+    //
+    //
+    // vis.path
+    //     .attr("class", "fill")
+    //     .attr("d", vis.area);
+    //
+    // vis.path.exit().remove();
 
-    // Append brush component
-    vis.svg.append("g")
-        .attr("class", "x brush")
-        .call(vis.brush)
-        .selectAll("rect")
-        .attr("y", -6)
-        .attr("height", vis.height + 7);
+    vis.brush.x(vis.x)
+
 
 }
+
+AreaChart.prototype.typeChange = function (value) {
+    var vis = this;
+    vis.selectValue = value;
+    console.log(vis.selectValue);
+    vis.updateVis();
+}
+
 

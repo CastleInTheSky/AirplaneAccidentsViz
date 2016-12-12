@@ -1,10 +1,12 @@
 /**
  * Created by sophiasi on 12/4/16.
  */
-Airline = function(_parentElement, _data, _airline, _height){
+Airline = function(_parentElement, _data, _airline, _height,_event0,_event1){
     this.parentElement = _parentElement;
     this.data = _data;
     this.height = _height;
+    this.event0 = _event0;
+    this.event1 = _event1;
     this.airline = _airline;
     this.displayData = _data;
     this.initVis();
@@ -20,7 +22,7 @@ Airline.prototype.initVis = function() {
     vis.width = 900 - vis.margin.left - vis.margin.right;
     vis.height = vis.height - vis.margin.top - vis.margin.bottom;
 
-
+    vis.desc = ["IOSA Certification1","IOSA Certification2","EU Blacklist","Fatality","FAA endorsement","ICAO safety1","ICAO safety2"];
 
     // SVG drawing area
     vis.svg = d3.select("#" + vis.parentElement).append("svg")
@@ -89,6 +91,7 @@ Airline.prototype.initVis = function() {
     vis.button
         .append("text")
         .text("Reset")
+        .style("font-size","14px")
         .attr("y",10)
         .attr("fill","rgba(246, 249, 255, 0.55)")
         .on("click", function() { vis.reset()})
@@ -96,7 +99,7 @@ Airline.prototype.initVis = function() {
             d3.select(this).attr("fill","rgba(246, 249, 255, 0.55)")
         })
         .on("mouseover", function () {
-            d3.select(this).attr("fill","Red")
+            d3.select(this).attr("fill","#83B86F")
         })
         .style("cursor", "pointer");
 
@@ -109,18 +112,11 @@ Airline.prototype.initVis = function() {
     vis.tip = d3.tip()
         .attr('class', 'd3-tip')
         .offset(function () {
-            return [-5,0];
+            return [-10,0];
         });
 
-    vis.tiparea = vis.svg.append("g")
-        .attr("transform", "translate(250," + 0 + ")")
-        .append("svg")
-        .attr("x",0)
-        .attr("y",0)
-        .attr("width", 200)
-        .attr("height", 300);
 
-    vis.tiparea.call(vis.tip);
+    vis.svg.call(vis.tip);
 
 
     vis.descrip = vis.svg.append("g")
@@ -187,10 +183,20 @@ Airline.prototype.updateVis = function() {
 
     vis.name
         .text(" " + " " + vis.displayData.Airline)
-        .attr("x", 40)
+        .attr("x", 45)
         .attr("y", 30)
-        .attr("fill", "Yellow")
-        .style("font-size", 20);
+        .attr("class","rankingnum")
+        .attr("fill","yellow")
+        .on("mouseover",function () {
+            d3.select(this).attr("fill","red");
+            $(vis.event1).trigger("hoverplane1",vis.displayData.Airline)
+        })
+        .on("mouseout",function () {
+            d3.select(this).attr("fill","yellow");
+            $(vis.event0).trigger("hoverplane0",vis.displayData.Airline)
+        })
+        .style("cursor", "pointer");
+
 
     vis.rating
         .text(vis.displayData.Rating)
@@ -216,6 +222,19 @@ Airline.prototype.updateVis = function() {
                 else {
                     return "rgba(246, 249, 255, 0.55)"
                 }
+        })
+        .style("stroke","black")
+        .style("stroke-width",0.5)
+        .on("mouseover",function (d,i) {
+            vis.tip.html(vis.desc[i]+ "<br />"
+            + "<span style='color:yellow'>" + "Click to see more</span>").show();
+        })
+        .on("mouseout",function (d) {
+            vis.tip.hide();
+        })
+        .style("cursor", "pointer")
+        .on("click",function () {
+            $('#myModal2').modal('show');
         });
 
     //timeline
@@ -247,6 +266,7 @@ Airline.prototype.updateVis = function() {
             $("#modal-body").empty();
 
             var para = document.createElement("p");
+            para.setAttribute("class","narra");
             var node = document.createTextNode(d.narrative);
             para.appendChild(node);
 

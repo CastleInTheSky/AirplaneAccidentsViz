@@ -44,7 +44,9 @@ h2 {
 	fill: rgba(246, 249, 255, 0.55);
 }
 
-
+.brush .extent{
+	stroke: grey;
+}
 
 .area {
 	fill: #825a5a;
@@ -110,6 +112,7 @@ h2 {
 }
 
 .d3-tip {
+	font-size: 14px;
 	line-height: 1;
 	padding: 12px;
 	background: rgba(0, 0, 0, 0.6);
@@ -157,13 +160,131 @@ tspan {
 	margin-bottom: 0px;
 }
 
-.sixu-fa-plane{
+.plane{
 	font-size: 10px;
-	color: rgba(217, 27, 40, 0.75);
+	/*color: rgba(128, 128, 128, 0.51);*/
 }
 
 /********modal********/
+.modal-body{
+	overflow-y: scroll;
+	position: relative;
+	height:400px;
+}
+.modal-title {
+	color: #83B86F;
+}
 .modal-content {
-	background-color: rgba(158, 158, 158, 0.65);
-	color : white;
+	background-color: rgba(171, 50, 41, 0.58);
+	color: #d5d8d7;
+	margin-top: 100px;
+
+}
+.narra {
+	font-size: 15px;
+}
+.narra p {
+	margin: 0 0 15px;
+	 font-size: 15px;
+	color: #d5d8d7;
+ }
+.narra h2{
+	margin: 0 0 20px;
+	margin-top: 20px;
+	font-size: 20px;
+	color: #83B86F;
+}
+.narra h3{
+	margin: 0 0 20px;
+	font-size: 20px;
+	color: #83B86F;
+}
+
+
+.xsbtn-default:hover, .xsbtn-default:focus{
+	border: 1px solid #83B86F;
+	outline: none;
+	color: black;
+	background-color: #83B86F;
+}
+/******button group*********/
+.wrapper {
+	margin-top: 15px;
+	margin-bottom: 40px;
+	text-align: center;
+	display: block;
+}
+
+.xsbtn {
+
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+.addbtn {
+	outline:none;
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+.selected-plane-list {
+	padding: 3px 6px;
+	margin-left: 10px;
+	border-radius: 4px;
+}
+
+.typebtn {
+	outline:none;
+	background-color: grey;
+	/*color:red;*/
+	border-radius: 2px;
+	border: 0.5px solid black;
+	padding: 3px 6px;
+}
+
+/*****ranking******/
+.rankingnum {
+	/*fill:  yellow;*/
+	font-size: 20px;
+
+}
+
+.rankings-title{
+	text-anchor: start;
+	font-size: 24px;
+	fill: rgba(128, 128, 128, 0.91);
 }

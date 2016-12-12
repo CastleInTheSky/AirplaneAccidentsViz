@@ -13,7 +13,7 @@ Linechart.prototype.initVis = function(){
     //margin properties
     vis.margin = { top: 20, right: 0, bottom: 20, left: 40 };
     vis.width = 180 - vis.margin.left - vis.margin.right
-    vis.height = 140 - vis.margin.top - vis.margin.bottom
+    vis.height = 143 - vis.margin.top - vis.margin.bottom
 
     // SVG drawing area
     vis.svg = d3.select("#" + vis.parentElement).append("svg")
@@ -139,6 +139,7 @@ Linechart.prototype.updateVis = function(){
         .attr("class", "line")
 
     vis.months
+        .transition()
         .attr("d", function(d) {
             //console.log(d.values);
             return vis.line(d.values); })
@@ -172,6 +173,34 @@ Linechart.prototype.selectionChanged = function(brushRegion){
     // Update the visualization
     vis.wrangleData();
 
+}
+Linechart.prototype.selectionMonth1 = function (month) {
+    var vis = this;
+
+    vis.months
+        .style("stroke", function(d) {
+            if (d.key == month) {return "#00d7ed";}
+            else if (d.key == vis.month){
+                return "red";
+            }
+            else {return "rgba(184, 187, 193, 0.37)"}
+        });
+}
+Linechart.prototype.selectionMonth0 = function (month) {
+    var vis = this;
+
+    vis.months
+        .style("stroke", function(d) {
+            if (d.key == vis.month) {return "red";}
+            else {return "rgba(184, 187, 193, 0.37)"}});
+
+}
+
+Linechart.prototype.typeChange = function (value) {
+    var vis = this;
+    vis.selectValue = value;
+
+    vis.wrangleData();
 }
 
 
