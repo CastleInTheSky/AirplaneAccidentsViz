@@ -1,12 +1,11 @@
 var width = Math.max(1024, window.innerWidth),
     height = Math.max(500, window.innerHeight) - 40;
 
-var REFUGEE_MODE = 0;
-var REFUGEE_POPULATION_MODE = 1;
-var valueMode = REFUGEE_MODE;
+var POPULATION_MODE = 1;
+var valueMode = 0;
 
 var ORIGIN_MODE = 0;
-var ASYLUM_MODE = 1;
+var DESTIN_MODE = 1;
 var typeMode = ORIGIN_MODE;
 
 var playing = false;
@@ -32,7 +31,7 @@ var filteredCountryNodes, filteredCountryLinks;
 
 var pyear, year, yearDomain, yearRange;
 
-var refugeesMax, refugeesPopulationMax;
+var deadNumMax, deadNumMaxNum;
 
 var nodeSizeScale;
 var nodeSizeMax = 75;
@@ -64,26 +63,9 @@ function load(error, mapData, countryCodeData, peopleNumData, populationData, st
         .translate([0, 0])
         .scale(1)
         .scaleExtent([1, 100])
-//        .on('zoomstart', function() {
-            // IE doesn't support co-ordinates
-            //var dragCursorPosition = ($.browser.msie) ? '' : ' 4 4';
-            //var dragCursor = ($.browser.mozilla) ? '-moz-grabbing' : 'url(imgs/closedhand.cur)' + dragCursorPosition + ', move';
-
-            // Opera doesn't support url cursors and doesn't fall back well...
-            //if ($.browser.opera) dragCursor = 'move';
-
-            //document.getElementById('water').style.cursor = dragCursor;
-//        })
         .on('zoom', function() {
             mapZoomed();
         });
-//        .on('zoomend', function(d) {
-            // console.log(d3.event.sourceEvent.srcElement)
-            //var dragCursorPosition = ($.browser.msie) ? '' : ' 4 4';
-            //var dragCursor = ($.browser.mozilla) ? '-moz-grab' : 'url(imgs/openhand.cur)' + dragCursorPosition + ', move';
-            //document.getElementById('water').style.cursor = dragCursor;
-//        });
-
 
     d3.select('#map')
         .attr('width', width)
@@ -142,13 +124,7 @@ function load(error, mapData, countryCodeData, peopleNumData, populationData, st
             return leaves[0].name;
         })
         .map(countryCodeData, d3.map);
-/*
-    populations = d3.nest()
-        .key(function(d) {
-            return d.code;
-        })
-        .map(populationData, d3.map);
- */
+
     originStories = d3.nest()
         .key(function(d) {
             return d.year;
@@ -207,8 +183,6 @@ function load(error, mapData, countryCodeData, peopleNumData, populationData, st
             if (peopleNumInAP == 0)
                 peopleNumInAP = null;
 
-            //var population = (populations.has(code) && populations.get(code)[0][year]) ? populations.get(code)[0][year] : null;
-            //var refugeesPopulation = (peopleNumInAP && population) ? peopleNumInAP / population : null;
 
             var story = (stories.has(year) && stories.get(year).has(code)) ? stories.get(year).get(code)[0] : null;
 
@@ -216,8 +190,6 @@ function load(error, mapData, countryCodeData, peopleNumData, populationData, st
                 'year': year,
                 'code': code,
                 'peopleNumInAP': peopleNumInAP,
-                //'population': population,
-                //'refugeesPopulation': refugeesPopulation,
                 'story': story
             };
         })
@@ -241,8 +213,6 @@ function load(error, mapData, countryCodeData, peopleNumData, populationData, st
             if (peopleNumInAP == 0)
                 peopleNumInAP = null;
 
-            //var population = (populations.has(code) && populations.get(code)[0][year]) ? populations.get(code)[0][year] : null;
-            //var refugeesPopulation = (peopleNumInAP && population) ? peopleNumInAP / population : null;
 
             var story = (stories.has(year) && stories.get(year).has(code)) ? stories.get(year).get(code)[0] : null;
 
@@ -250,8 +220,6 @@ function load(error, mapData, countryCodeData, peopleNumData, populationData, st
                 'year': year,
                 'code': code,
                 'peopleNumInAP': peopleNumInAP,
-                //'population': population,
-                //'refugeesPopulation': refugeesPopulation,
                 'story': null
             };
         })
@@ -262,15 +230,12 @@ function load(error, mapData, countryCodeData, peopleNumData, populationData, st
     asylumLinks.forEach(function(year, links) {
         links.forEach(function(code, link) {
             if (!nodes.get(year).has(code)) {
-                //var population = (populations.has(code) && populations.get(code)[0][year]) ? populations.get(code)[0][year] : null;
                 var story = (stories.has(year) && stories.get(year).has(code)) ? stories.get(year).get(code)[0] : null;
 
                 nodes.get(year).set(code, {
                     'year': year,
                     'code': code,
                     'peopleNumInAP': null,
-                    //'population': population,
-                    //'refugeesPopulation': null,
                     'story': story
                 });
             }
@@ -280,14 +245,11 @@ function load(error, mapData, countryCodeData, peopleNumData, populationData, st
     stories.forEach(function(year, stories) {
         stories.forEach(function(code, story) {
             if (!nodes.get(year).has(code)) {
-                //var population = (populations.has(code) && populations.get(code)[0][year]) ? populations.get(code)[0][year] : null;
 
                 nodes.get(year).set(code, {
                     'year': year,
                     'code': code,
                     'peopleNumInAP': null,
-                    //'population': population,
-                    //'refugeesPopulation': null,
                     'story': story
                 });
             }
@@ -318,11 +280,11 @@ function load(error, mapData, countryCodeData, peopleNumData, populationData, st
         });
     });
 
-    refugeesMax = d3.max(allNodes, function(d) {
+    deadNumMax = d3.max(allNodes, function(d) {
         return parseFloat(d.peopleNumInAP);
     });
 
-    refugeesPopulationMax = d3.max(allNodes, function(d) {
+    deadNumMaxNum = d3.max(allNodes, function(d) {
         if (parseFloat(d.peopleNumInAP) / parseFloat(d.population) == Infinity)
             return false;
 
@@ -330,7 +292,7 @@ function load(error, mapData, countryCodeData, peopleNumData, populationData, st
     });
 
     nodeSizeScale = d3.scale.sqrt()
-        .domain([0, refugeesMax])
+        .domain([0, deadNumMax])
         .range([1, nodeSizeMax]);
 
     yearDomain = d3.extent(allNodes, function(d) {
@@ -346,68 +308,14 @@ function load(error, mapData, countryCodeData, peopleNumData, populationData, st
     updateMapNavSize();
     setupTimeline();
 
-/*
-
-    if (location.hash == '' || location.hash == '#' || location.hash == '#/') {
-        gotoAndPlay(yearDomain[0]);
-    } else
-        gotoURL();
-*/
     gotoYear(1968);
     showMap(1000);
-
-
-    /*
-     d3.select('#explore-button')
-     .attr('src', 'imgs/explore.png')
-     .on('click', function() {
-     explored = true;
-
-     hideHome();
-
-     if (location.hash == '' || location.hash == '#' || location.hash == '#/') {
-     gotoAndPlay(yearDomain[0]);
-     } else
-     gotoURL();
-
-     showMap(1500);
-     });
-
-     d3.select('#value-mode-button')
-     .on('click', function(d) {
-     toggleValueMode();
-
-     ga('send', 'event', 'button', 'click', 'value mode button');
-     });
-
-     d3.select('#type-mode-button')
-     .on('click', function(d) {
-     toggleTypeMode();
-
-     ga('send', 'event', 'button', 'click', 'type mode button');
-     });
-     */
 
 
     d3.select('#world-zoom-button')
         .on('click', function(d) {
             unselectMap();
             zoomToWorld();
-            /*
-             if (d3.select('#about-page').style('opacity') == 1) {
-             hideAbout();
-
-             if (!explored) {
-             explored = true;
-             gotoAndPlay(yearDomain[0]);
-             }
-
-             showMap();
-             } else {
-             unselectMap();
-             zoomToWorld();
-             }
-             */
         });
 
 
@@ -420,13 +328,11 @@ function load(error, mapData, countryCodeData, peopleNumData, populationData, st
 
      //updateToggleButtons()
 
-
-
 }
 
 function updateCountryCentroids() {
     countryCentroids = d3.map();
-    //console.log("fdksafjdiosgfjdigfdgfd");
+
     landLayer.selectAll('path').each(function(d) {
         if (d.id === 'ZAF') {
             countryCentroids.set(d.id, path.centroid(d));
@@ -457,24 +363,10 @@ function mapClicked(d) {
 }
 
 function mapZoomed() {
-    // console.log('mapZoomed')
+
 
     mapLayers.attr('transform',
         'translate(' + d3.event.translate + ')' + ' scale(' + d3.event.scale + ')');
-
-    // if (valueModernizr.csstransforms3d) {
-    //     console.log('csstransforms3d')
-
-    //     d3.event.translate.push(0)
-
-    //     mapLayers.attr('transform',
-    //         'translate3d(' + d3.event.translate + ')' + ' scale(' + d3.event.scale + ')');
-    // } else if (valueModernizr.csstransforms) {
-    //     console.log('csstransforms')
-
-    //     mapLayers.attr('transform',
-    //         'translate(' + d3.event.translate + ')' + ' scale(' + d3.event.scale + ')');
-    // }
 
     updateStrokeWeights();
     updateStoryButtonScale();
@@ -488,7 +380,7 @@ function zoomToCountry(country, duration) {
     var countryBounds = (country.id === 'RUS' || country.id === 'USA') ?
         path.bounds(getMaxFeature(country)) :
         countryBounds = path.bounds(country);
-    // var countryBounds = path.bounds(getMaxFeature(country))
+
 
     var countryH = countryBBox.height; //countryBounds[1][1] - countryBounds[0][1];
 
@@ -505,7 +397,7 @@ function zoomToCountry(country, duration) {
         }));
 
         var nodeR = nodeSizeScale(nodeValueMax) * 2;
-        // var nodeR = nodeSizeScale(nodeValue)*2;
+
         var nodeCX = e.attr('cx');
         var nodeCY = e.attr('cy');
 
@@ -524,7 +416,7 @@ function zoomToCountry(country, duration) {
             b = nodeBounds;
     }
 
-    //50 offest for navbar
+
     var navbarH = 60;
     var zoomSize = (height - navbarH) * .75 - navbarH;
     var zoomX = hasStory(country.id, year) ? width * .75 : width * .5;
@@ -549,7 +441,6 @@ function zoomToCountry(country, duration) {
 
     hideMapTooltips();
 
-    //d3.select('#world-zoom-button').transition().duration(duration).style('opacity', 1);
 }
 
 function zoomToWorld(duration) {
@@ -569,7 +460,6 @@ function zoomToWorld(duration) {
 
     hideMapTooltips();
 
-    //d3.select('#world-zoom-button').transition().duration(duration).style('opacity', 0);
 }
 
 function updateStrokeWeights() {
@@ -705,8 +595,6 @@ function updateTimeline() {
                     return d.peopleNumInAP;
                 });
 
-                //refugee = (peopleNumInAP) ? peopleNumInAP : 0;
-
                 return {
                     'peopleNumInAP': peopleNumInAP
                 };
@@ -764,8 +652,6 @@ function updateTimeline() {
             }
 
             var id = '#frame-' + d + '.frame';
-
-            //console.log(title);
 
             $(id)
                 .tooltip('destroy')
@@ -932,29 +818,6 @@ function updateMapNavSize() {
     var storyBody = d3.select('#story-body');
 
     var scrollBarW = 0; //17
-    // outer = mapNavBody.append('div')
-    //     // .style('visibility', 'hidden')
-    //     .style('overflow', 'hidden')
-    //     .style('width', '200px')
-    //     .style('height', '150px')
-    //     .style('background-color', 'red')
-
-    // noscroll = outer.node().offsetWidth;
-
-    // outer.style('overflow', 'scroll')
-
-    // inner = outer.append('div')
-    //     .style('width', '100%')
-    //     .style('height', '200px')
-
-    // scroll = inner.node().clientWidth;
-
-    // // outer.remove();
-
-    // scrollBarW = noscroll - scroll;
-    // console.log('noscroll = ' + noscroll)
-    // console.log('scroll = ' + scroll)
-    // console.log('scrollbar = ' + scrollBarW)
 
     d3.select('#map-nav-background')
         .style('width', navwidth + 'px')
@@ -994,20 +857,15 @@ function updateData() {
             .sort(d3.descending))
         .range(d3.range(1, filteredCountryNodes.values().length + 1));
 
-    nodeSizeScale.domain([0, (valueMode) ? refugeesPopulationMax : refugeesMax]);
+    nodeSizeScale.domain([0, (valueMode) ? deadNumMaxNum : deadNumMax]);
 
     worldNodes = d3.nest()
         .rollup(function(leaves) {
-            //var population = populations.get("WLD")[0][year];
             var peopleNumInAP = d3.sum(leaves, function(d) {
                 return d.peopleNumInAP;
             });
-            //var refugeesPopulation = peopleNumInAP / population;
-
             return {
-                //'population': d3.round(population),
                 'peopleNumInAP': d3.round(peopleNumInAP),
-                //'refugeesPopulation': d3.round(refugeesPopulation, 6)
             };
         })
         .map(countryNodes.values());
@@ -1178,7 +1036,6 @@ function updateNodeLinkSizes(r, duration) {
                 var p1 = countryCentroids.get(d[0].origin);
                 var p2 = countryCentroids.get(d[0].destination);
 
-                // var r = nodesLayer.select('#' + d[0].origin).attr('r')
                 var a = Math.atan2(p2[1] - p1[1], p2[0] - p1[0]);
 
                 var ox = Math.cos(a) * r;
@@ -1613,9 +1470,6 @@ function updateStats() {
         d3.select('#peopleNumInAP-mode').html(((typeMode) ? 'RESIDING IN<br/> ' : 'Total Death in airplanes take off from<br/><br/> ') + codeCountries.get(country.id));
         d3.select('#region').text(codeCountries.get(country.id));
         d3.select('#peopleNumInAP').html(peopleNumInAP);
-        //d3.select('#population').text(population);
-        //d3.select('#refugeesPopulation').html(refugeesPopulation);
-
 
         var topLabel;
 
@@ -1641,7 +1495,6 @@ function updateStats() {
                     .append('dt')
                     .datum(d)
                     .text(function(d) {
-                        // return (valueMode) ? decimalFormat(d[0].refugeesPopulation) : numberFormat(d[0].peopleNumInAP);
                         return numberFormat(d[0].peopleNumInAP);
                     });
             });
@@ -2164,52 +2017,6 @@ function orderFormat(n) {
         return n + 'th';
 }
 
-/*
- function showAbout(duration) {
- if (!duration)
- duration = 750;
-
- d3.select('#about-page')
- .style('display', 'block')
- .transition()
- .duration(duration)
- .style('opacity', 1);
-
- d3.select('#world-zoom-button').transition().duration(duration).style('opacity', 1);
-
- stop();
- }
-
- function hideAbout(duration) {
- if (!duration)
- duration = 750;
-
- d3.select('#about-page')
- .transition()
- .duration(duration)
- .style('opacity', 0)
- .each('end', function() {
- d3.select(this).style('display', 'none');
- });
-
- d3.select('#world-zoom-button').transition().duration(duration).style('opacity', 0);
- }
-
- function toggleAbout() {
- if (d3.select('#about-page').style('opacity') == 0) {
- showAbout();
- hideHome();
- hideMap();
- } else {
- hideAbout();
-
- if (explored)
- showMap();
- else
- showHome();
- }
- }
- */
 function showMap(duration) {
     if (!duration)
         duration = 750;
@@ -2231,24 +2038,6 @@ function hideMap(duration) {
 }
 
 function updateURL() {
-    /*
-     if (selected) {
-     var name = codeCountries.get(selected.id);
-     history.pushState(null, name + ' in ' + year, '/#/' + year + '/' + selected.id);
-
-     ga('send', 'pageview', {
-     'page': location.pathname + location.search + location.hash,
-     'title': name + ' in ' + year
-     });
-     } else {
-     history.pushState(null, 'World in ' + year, '/#/' + year);
-
-     ga('send', 'pageview', {
-     'page': location.pathname + location.search + location.hash,
-     'title': 'World in ' + year
-     });
-     }
-     */
 }
 
 function gotoURL() {
@@ -2279,54 +2068,6 @@ function gotoURL() {
             delay);
 }
 
-/*
- function windowResized() {
- width = Math.max(1024, window.innerWidth),
- height = Math.max(500, window.innerHeight) - 40;
-
- d3.select('#map')
- .attr('width', width)
- .attr('height', height)
- .call(zoom);
-
- projection
- .scale(height / 4)
- .translate([width / 2, height / 1.611]);
-
- path
- .projection(projection);
-
- waterLayer.selectAll('path')
- .attr('d', path);
-
- landLayer.selectAll('path')
- .attr('d', path);
-
- updateCountryCentroids();
-
- updateNodePositions();
-
- updateStoryButtonScale();
-
- if (selected) {
- var country = selected;
- unselectMap();
- selectMap(country);
- }
-
- updateMapNavSize();
- updateTimelineSizeAndPosition();
- }
-
- for (var i = 1; i <= 10; i++)
- $('<div>').addClass('item cover').attr('style', 'background-image:url(\'imgs/home-' + i + '.jpg\')').appendTo('#home-images');
-
- $('#home-images div:first').addClass('active');
-
- $('.carousel').carousel({
- interval: 7500
- });
- */
 
 
 queue()
@@ -2336,22 +2077,5 @@ queue()
     .defer(d3.json, 'xbf/data/populations.json')
     .defer(d3.csv, 'xbf/data/stories.csv')
     .await(load);
-/*
- if ($.browser.msie) {
- d3.select('.carousel-caption div')
- .append('p')
- .text('Sorry, this project doesn\'t work in Internet Explorerer. Best viewed Chrome or Firefox.')
- .style('color', '#f13452');
- //d3.select('#explore-button').remove();
- d3.select('#world-zoom-button').remove();
- } else {
- queue()
- .defer(d3.json, 'data/map.json')
- .defer(d3.json, 'data/countrycodes.json')
- .defer(d3.json, 'data/refugees2.json')
- .defer(d3.json, 'data/populations.json')
- .defer(d3.csv, 'data/stories.csv')
- .await(load);
- }
- */
+
 

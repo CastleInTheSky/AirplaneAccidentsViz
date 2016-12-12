@@ -2,31 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a6bb3b2-75a1-416e-b5df-f8b171acf2d4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/about/11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/about/22.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/about/4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/team/1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xbf/data/refugees.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xbf/data/refugees2.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xbf/data/temp/countries.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xbf/data/temp/countrycodes.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xbf/data/temp/map.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xbf/data/temp/populations.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xbf/data/temp/refugees.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xbf/data/temp/stories.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xbf/data/temp/stories.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xbf/data/temp/totals.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xbf/data/temp/xbf.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xbf/data/xbf.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xbf/data/xbf_data.csv" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/img/about/2.jpg" afterPath="$PROJECT_DIR$/website/img/about/2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/img/about/3.jpg" afterPath="$PROJECT_DIR$/website/img/about/3.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/img/team/2.jpg" afterPath="$PROJECT_DIR$/website/img/team/2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/img/team/3.jpg" afterPath="$PROJECT_DIR$/website/img/team/3.jpg" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/PIA.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/black.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/brazil.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/pic.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/website/img/sad_mom.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xbf/data/airplaneAccidents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xbf/desktop.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xbf/main.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/css/grayscale.css" afterPath="$PROJECT_DIR$/website/css/grayscale.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/index.html" afterPath="$PROJECT_DIR$/website/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xbf/desktop.js" afterPath="$PROJECT_DIR$/website/xbf/desktop.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,18 +36,28 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/website/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="293">
+              <caret line="449" column="18" lean-forward="true" selection-start-line="449" selection-start-column="18" selection-end-line="449" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/xbf/main.css">
+      <file leaf-file-name="worldmap-AirplaneAccidents.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/xbf/worldmap-AirplaneAccidents.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="592" column="29" lean-forward="true" selection-start-line="592" selection-start-column="29" selection-end-line="592" selection-end-column="29" />
+            <state relative-caret-position="-27">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="worldmap-AirplaneAccidents.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/xbf/worldmap-AirplaneAccidents.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -70,18 +66,8 @@
       <file leaf-file-name="grayscale.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/css/grayscale.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="65" column="20" lean-forward="false" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="desktop.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/xbf/desktop.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="613" column="45" lean-forward="false" selection-start-line="613" selection-start-column="45" selection-end-line="613" selection-end-column="45" />
+            <state relative-caret-position="323">
+              <caret line="352" column="27" lean-forward="true" selection-start-line="352" selection-start-column="27" selection-end-line="352" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -101,19 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Sad</find>
-      <find>20,</find>
-      <find>female</find>
-      <find>HOW COULD WE AVOI</find>
-      <find>1.jpg</find>
-      <find>/2.jpg</find>
-      <find>/3.jpg</find>
-      <find>h</find>
-      <find>bold</find>
-      <find>Sad wor</find>
-      <find>h1</find>
-      <find>text-muted</find>
-      <find>Num</find>
       <find>map</find>
       <find>.refugees</find>
       <find>refugees</find>
@@ -131,6 +104,19 @@
       <find>img-circle</find>
       <find>contact</find>
       <find>time</find>
+      <find>2.jpg</find>
+      <find>REFUGEE_POPULATION_MODE</find>
+      <find>REFUGEE_MODE</find>
+      <find>ASYLUM_MODE</find>
+      <find>refugeesMax</find>
+      <find>main</find>
+      <find>main.css</find>
+      <find>airplan</find>
+      <find>CAUSES ANALYSIS</find>
+      <find>downloads-bg</find>
+      <find>map-image</find>
+      <find>download-section-2</find>
+      <find>download-section</find>
     </findStrings>
     <replaceStrings>
       <replace>img</replace>
@@ -153,8 +139,8 @@
         <option value="$PROJECT_DIR$/website/ruizhao/rz_css/gunviz.css" />
         <option value="$PROJECT_DIR$/website/xbf/data/airplaneAccidents.json" />
         <option value="$PROJECT_DIR$/website/xbf/data/airplaneAccidents2.json" />
-        <option value="$PROJECT_DIR$/website/css/grayscale.css" />
         <option value="$PROJECT_DIR$/website/xbf/desktop.js" />
+        <option value="$PROJECT_DIR$/website/css/grayscale.css" />
         <option value="$PROJECT_DIR$/website/index.html" />
       </list>
     </option>
@@ -167,7 +153,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1440" />
+    <option name="width" value="836" />
     <option name="height" value="833" />
   </component>
   <component name="ProjectView">
@@ -227,134 +213,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="xbf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AirplaneAccidentsViz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AirplaneAccidentsViz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xbf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AirplaneAccidentsViz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AirplaneAccidentsViz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ruizhao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rz_libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AirplaneAccidentsViz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AirplaneAccidentsViz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ruizhao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rz_js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AirplaneAccidentsViz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AirplaneAccidentsViz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ruizhao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AirplaneAccidentsViz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AirplaneAccidentsViz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ruizhao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rz_data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AirplaneAccidentsViz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AirplaneAccidentsViz" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="website" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ruizhao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rz_css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -482,18 +340,20 @@
       <workItem from="1481352855046" duration="11523000" />
       <workItem from="1481517528325" duration="8533000" />
       <workItem from="1481528714464" duration="147000" />
-      <workItem from="1481529000352" duration="7084000" />
+      <workItem from="1481529000352" duration="7679000" />
+      <workItem from="1481541182553" duration="121000" />
+      <workItem from="1481568488473" duration="2822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59745000" />
+    <option name="totallyTimeSpent" value="63283000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="833" extended-state="0" />
+    <frame x="0" y="23" width="836" height="833" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21775898" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.201227" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -542,22 +402,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/website/xbf/desktop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32055">
-          <caret line="2137" column="29" lean-forward="true" selection-start-line="2137" selection-start-column="29" selection-end-line="2137" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/ruizhao/rz_js/gunviz.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19155">
-          <caret line="1277" column="48" lean-forward="false" selection-start-line="1277" selection-start-column="47" selection-end-line="1277" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/ruizhao/rz_css/gunviz.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -780,27 +624,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/xbf/data/refugees2.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4365">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/xbf/data/refugees.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="24" column="6" lean-forward="false" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/website/xbf/data/refugees2.json" />
+    <entry file="file://$PROJECT_DIR$/website/xbf/data/refugees.json" />
     <entry file="file://$PROJECT_DIR$/website/xbf/data/stories.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8157">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,7 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-453">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -816,7 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-15120">
           <caret line="236" column="49" lean-forward="true" selection-start-line="236" selection-start-column="49" selection-end-line="236" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,15 +651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="65441" column="23" lean-forward="false" selection-start-line="65441" selection-start-column="23" selection-end-line="65441" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/xbf/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="592" column="29" lean-forward="true" selection-start-line="592" selection-start-column="29" selection-end-line="592" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -848,30 +666,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-30">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/css/grayscale.css">
+    <entry file="file://$PROJECT_DIR$/website/xbf/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="65" column="20" lean-forward="false" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
+        <state relative-caret-position="588">
+          <caret line="617" column="15" lean-forward="true" selection-start-line="617" selection-start-column="15" selection-end-line="617" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/xbf/desktop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="613" column="45" lean-forward="false" selection-start-line="613" selection-start-column="45" selection-end-line="613" selection-end-column="45" />
+        <state relative-caret-position="595">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/xbf/worldmap-AirplaneAccidents.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/xbf/worldmap-AirplaneAccidents.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/css/grayscale.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="352" column="27" lean-forward="true" selection-start-line="352" selection-start-column="27" selection-end-line="352" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="293">
+          <caret line="449" column="18" lean-forward="true" selection-start-line="449" selection-start-column="18" selection-end-line="449" selection-end-column="18" />
           <folding />
         </state>
       </provider>

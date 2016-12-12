@@ -84,6 +84,12 @@ p {
   writing-mode: vertical-rl;
 }
 
+.my-footer{
+  font-size: inherit;
+  font-family: Arial;
+  color: grey;
+}
+
 /*-------------------------------------------*/
 .team-member {
     text-align: center;
@@ -346,6 +352,18 @@ a:focus {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+
+.download-section-3 {
+  width: 100%;
+  padding: 50px 0;
+  color: white;
+  background: url(../img/evaluation.png) no-repeat center center scroll;
+  background-color: black;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
 
 @media (min-width: 767px) {
