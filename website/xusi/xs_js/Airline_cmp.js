@@ -15,11 +15,11 @@ Airline = function(_parentElement, _data, _airline, _height,_event0,_event1){
 Airline.prototype.initVis = function() {
     var vis = this;
 
-    vis.margin = {top: 10, right: 20, bottom: 20, left: 30};
+    vis.margin = {top: 10, right: 20, bottom: 20, left: 0};
     vis.ratingbar = {height: 10, width: 20}
     vis.timepoint = {height: 30, width: 2}
     vis.button = {height: 20, width: 40}
-    vis.width = 900 - vis.margin.left - vis.margin.right;
+    vis.width = 850 - vis.margin.left - vis.margin.right;
     vis.height = vis.height - vis.margin.top - vis.margin.bottom;
 
     vis.desc = ["IOSA Certification1","IOSA Certification2","EU Blacklist","Fatality","FAA endorsement","ICAO safety1","ICAO safety2"];

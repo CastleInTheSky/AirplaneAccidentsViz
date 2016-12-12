@@ -267,6 +267,7 @@ function createVis(error, data, _ratings){
 			airlines_cmp.list = selected_airlines;
 			airlines_cmp.updateVis();
 
+
 			myButton.onclick=function() {
 				cmp_num -= 1
 				console.log(this.id);

@@ -322,3 +322,6 @@ tspan {
 	font-size: 24px;
 	fill: rgba(128, 128, 128, 0.91);
 }
+.rankcol {
+    width: 30%;
+}
