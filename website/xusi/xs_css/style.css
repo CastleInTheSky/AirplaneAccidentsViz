@@ -22,13 +22,13 @@ body {
 }
 
 .ref ul{
-	list-style: darkgrey;
+	list-style: darkgrey !important;
 	margin-left: 10px;
  }
 
 .ref li{
 	font-size: 11px;
-	list-style: darkgrey;
+	list-style: darkgrey !important;
 	margin-left: 20px;
 	margin-bottom: 10px;
 }
@@ -321,4 +321,7 @@ tspan {
 	text-anchor: start;
 	font-size: 24px;
 	fill: rgba(128, 128, 128, 0.91);
+}
+.rankcol {
+	width: 30%;
 }

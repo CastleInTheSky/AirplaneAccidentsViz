@@ -13,7 +13,7 @@ Ratings = function(_parentElement, _data, _allairlines, _height){
 Ratings.prototype.initVis = function() {
     var vis = this;
 
-    vis.margin = {top: 30, right: 20, bottom: 20, left: 70};
+    vis.margin = {top: 30, right: 0, bottom: 20, left: 50};
     vis.width = $("#"+vis.parentElement).width() - vis.margin.left - vis.margin.right;
     vis.height = vis.height - vis.margin.top - vis.margin.bottom;
     vis.ratingbar = {height: 10, width: 20};
@@ -121,7 +121,9 @@ Ratings.prototype.initVis = function() {
         //     //vis.tip.hide()
         //      })
         .append("xhtml:span")
-        .attr("class", "fa fa-plane plane")
+        .attr("class", "fa fa-plane plane");
+
+    vis.planes
         .style("color",function (d) {
             var flag = 0
             vis.allairlines.forEach(function (yes) {
