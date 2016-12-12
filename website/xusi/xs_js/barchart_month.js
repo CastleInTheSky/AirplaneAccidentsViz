@@ -4,9 +4,11 @@
  * Sum the number of air accidents/ total fatalities by month
  */
 
-Barchart_month = function(_parentElement, _data){
+Barchart_month = function(_parentElement, _data, _event1, _event0){
     this.parentElement = _parentElement;
     this.data = _data;
+    this.event1 = _event1;
+    this.event0 = _event0;
     this.displayData = _data;
     this.initVis();
 }
@@ -59,17 +61,17 @@ Barchart_month.prototype.initVis = function(){
         .attr("class", "y-axis xsaxis");
 
     // Axis title
-    vis.barchart.append("text")
-        .attr("x", -50)
+    vis.title = vis.barchart.append("text")
+        .attr("x", -30)
         .attr("y", -8)
-        .text("Fatalities")
-        .attr("fill","rgba(217, 27, 40, 0.75)");
+        .attr("fill","rgba(217, 27, 40, 0.75)")
+        .style("font-size","14px");
 
     //default selection
     vis.selectValue = "total_fatalities";
 
     vis.filterData = vis.data;
-    //console.log(vis.data);
+
     // (Filter, aggregate, modify data)
     vis.wrangleData();
 }
@@ -86,7 +88,7 @@ Barchart_month.prototype.wrangleData = function(){
             "total_fatalities": d3.sum(leaves, function(d) {return d["total_fatalities"];})} })
         .entries(vis.filterData);
 
-    //console.log(vis.displayData);
+    console.log(vis.displayData);
 
     vis.updateVis();
 
@@ -101,7 +103,15 @@ Barchart_month.prototype.updateVis = function(){
         return d.values[vis.selectValue]
     })]);
 
-
+    //update title
+    vis.title.text(function () {
+        if (vis.selectValue == "total_accidents") {
+            return "Accidents";
+        }
+        else {
+            return "Fatalities";
+        }
+    })
 
     // Draw actual bars
     var bars = vis.barchart.selectAll(".bar")
@@ -109,15 +119,20 @@ Barchart_month.prototype.updateVis = function(){
 
     bars.enter().append("rect")
         .attr("class", "bar")
-        .on("mouseover", function() {
+        .on("mouseover", function(d) {
              d3.select(this)
                  //.transition()
                  .style("fill", "rgba(239, 28, 40, 0.42)");
+            $(vis.event1).trigger("selectMonth1", d.key);
+
         })
         .on("mouseout", function(d) {
             d3.select(this)
                 .style("fill", "rgba(217, 27, 40, 0.75)");
-        });
+
+            $(vis.event0).trigger("selectMonth0", d.key)
+        })
+        .style("cursor", "pointer");
 
     bars
         .transition()
@@ -167,4 +182,21 @@ Barchart_month.prototype.selectionChanged = function(brushRegion){
     // Update the visualization
     vis.wrangleData();
 
+}
+
+Barchart_month.prototype.typeChange = function (value) {
+    var vis = this;
+    vis.selectValue = value;
+
+    if (vis.selectValue == "total_fatalities") {
+        console.log("yes");
+        $("#total_fatalities").css("background-color","rgba(217, 27, 40, 0.75)");
+        $("#total_accidents").css("background-color","grey");
+    }
+    else {
+        $("#total_fatalities").css("background-color","grey");
+        $("#total_accidents").css("background-color","rgba(217, 27, 40, 0.75)");
+    }
+    console.log(vis.selectValue);
+    vis.wrangleData();
 }

@@ -13,10 +13,13 @@ var temp;
 var linechart = [];
 var selected_airlines = [];
 var side;
+var cmp_num = 0;
+
 
 //****************Search Box Init******************************//
 var dataList = document.getElementById('json-datalist');
 var input = document.getElementById('ajax');
+$("#total_fatalities").css("background-color","rgba(217, 27, 40, 0.75)");
 //$(".scroll").hide();
 //button onclick
 
@@ -158,30 +161,134 @@ function createVis(error, data, _ratings){
 	// });
 	searchBox();
 
+	var event_select_month1 = {};
+	var event_select_month0 = {};
+
+
 
 
 	//draw vis
-	barchart_month = new Barchart_month("barchart_month", clean_data)
+	barchart_month = new Barchart_month("barchart_month", clean_data,event_select_month1,event_select_month0)
 	areachart = new AreaChart("areachart",clean_data_year.slice(0, -3));
 
 	for (i =0; i<=11; i++) {
 		linechart[i] = new Linechart("linechart", months[i], clean_data);
 	}
+	//bing event
+
+	$(event_select_month1).bind("selectMonth1", function(event,month){
+
+		for (i =0; i<=11; i++) {
+			linechart[i].selectionMonth1(month);
+		}
+	});
+
+	$(event_select_month0).bind("selectMonth0", function(event,month){
+
+		for (i =0; i<=11; i++) {
+			linechart[i].selectionMonth0(month);
+		}
+	});
 
 
-	var descrip_event = {};
-	airlines_cmp = new Airlines("airline-cmp","ranking", ratings, descrip_event);
+
+	var event_hover0 = {};
+	var event_hover1 = {};
+
+	airlines_cmp = new Airlines("airline-cmp","ranking", ratings, event_hover0,event_hover1);
+
+	$(event_hover0).bind("hoverplane0", function(event,plane){
+		airlines_cmp.hoverPlane0(plane);
+	});
+	$(event_hover1).bind("hoverplane1", function(event,plane){
+		airlines_cmp.hoverPlane1(plane);
+	});
 
 
+
+
+
+
+
+	$(".typebtn").click(function () {
+
+		var selectvalue = $(this).attr("id")
+		console.log(selectvalue);
+		areachart.typeChange(selectvalue);
+
+		for (i =0; i<=11; i++) {
+			linechart[i].typeChange(selectvalue);
+		}
+		barchart_month.typeChange(selectvalue);
+
+	})
 
 	$( "#add-airline" ).click(function() {
 
 
-		//test
+
+
+		// var inp = document.getElementById("ajax");
+		// inp.placeholder = "Type in airlines to compare...";
 
 		var value = $('#ajax').val();
-		selected_airlines.push(value);
-		input.placeholder = "Type in airlines"; //need to be updated
+		var flag = 0;
+		selected_airlines.forEach(function (d,i) {
+			if (value == d) {
+				flag = 1
+
+			}
+		})
+		if (flag == 0 && cmp_num<=5) {
+			selected_airlines.push(value);
+			var myButton = document.createElement("input");
+			myButton.type = "button";
+			myButton.value = value;
+			myButton.onmouseover = function () {
+
+				myButton.style.color = "red";
+				myButton.value = "Delete"
+			}
+			myButton.onmouseout = function () {
+
+				myButton.style.color = "white";
+				myButton.value = value;
+			}
+			myButton.setAttribute("class", "xsbtn btn-secondary selected-plane-list");
+			myButton.setAttribute("id", value);
+			myButton.style.borderRadius = 8;
+			var placeHolder = document.getElementById("selected-plane-list");
+			placeHolder.appendChild(myButton);
+
+			//remove previous
+			d3.selectAll(".eachplane").remove();
+			d3.selectAll(".sideranking").remove();
+			//draw new
+			airlines_cmp.list = selected_airlines;
+			airlines_cmp.updateVis();
+
+			myButton.onclick=function() {
+				cmp_num -= 1
+				console.log(this.id);
+				var airline = this.id;
+				//console.log(airline);
+				var index = selected_airlines.indexOf(airline);
+				selected_airlines.splice(index, 1);
+				//console.log(selected_airlines);
+
+				$(this).remove();
+
+				d3.selectAll(".eachplane").remove();
+				d3.selectAll(".sideranking").remove();
+				//draw new
+				airlines_cmp.list = selected_airlines;
+				airlines_cmp.updateVis();
+
+
+			};
+		}
+
+		// $("#ajax")[0].reset();
 
 		// var ul = document.getElementById("air-list");
 		// var li = document.createElement("li");
@@ -189,41 +296,13 @@ function createVis(error, data, _ratings){
 		// li.style.height = "35px";
 		// li.setAttribute("class", "list-group-item"); // added line
 		// ul.appendChild(li);
-		var myButton = document.createElement("input");
-		myButton.type = "button";
-		myButton.value = value;
-		myButton.setAttribute("class", "btn btn-secondary selected-plane-list");
-		myButton.setAttribute("id", "btn" + value);
-		var placeHolder = document.getElementById("selected-plane-list");
-		placeHolder.appendChild(myButton);
 
-		//remove previous
-		d3.selectAll(".eachplane").remove();
-		//draw new
-		airlines_cmp.list = selected_airlines;
-		airlines_cmp.updateVis();
 
-		myButton.onclick=function() {
-			console.log(this.id);
-			var airline = this.value;
-			//console.log(airline);
-			var index = selected_airlines.indexOf(airline);
-			selected_airlines.splice(index, 1);
-			//console.log(selected_airlines);
 
-			$(this).remove();
 
-			d3.selectAll(".eachplane").remove();
-			//draw new
-			airlines_cmp.list = selected_airlines;
-			airlines_cmp.updateVis();
-		};
+
 
 	});
-
-
-
-
 
 
 	// $( "#cmp-airline" ).click(function() {
