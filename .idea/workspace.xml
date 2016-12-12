@@ -2,39 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a6bb3b2-75a1-416e-b5df-f8b171acf2d4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/Xinyuan/data/plane_status.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/Xinyuan/js/planeStatus.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xusi/xs_css/_DS_Store" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xusi/xs_fonts/_DS_Store" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xusi/xs_js/_DS_Store" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xusi/xs_js/agevis.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xusi/xs_js/countvis.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/website/xusi/xs_js/priovis.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_data/data.xlsx" afterPath="$PROJECT_DIR$/website/xusi/xs_data/data.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/website/xusi/xs_fonts/glyphicons-halflings-regular.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/website/xusi/xs_fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/website/xusi/xs_fonts/glyphicons-halflings-regular.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/website/xusi/xs_fonts/glyphicons-halflings-regular.woff2" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/.idea/workspace.xml" afterPath="$PROJECT_DIR$/website/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/Xinyuan/css/causeAndPhase.css" afterPath="$PROJECT_DIR$/website/Xinyuan/css/causeAndPhase.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/Xinyuan/js/causeAndPhase.js" afterPath="$PROJECT_DIR$/website/Xinyuan/js/causeAndPhase.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/Xinyuan/js/phaseChart.js" afterPath="$PROJECT_DIR$/website/Xinyuan/js/phaseChart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/Xinyuan/js/sunburstChart.js" afterPath="$PROJECT_DIR$/website/Xinyuan/js/sunburstChart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/Xinyuan/js/sunburstShow.js" afterPath="$PROJECT_DIR$/website/Xinyuan/js/sunburstShow.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/index.html" afterPath="$PROJECT_DIR$/website/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_css/bootstrap.min.css" afterPath="$PROJECT_DIR$/website/xusi/xs_css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/ruizhao/rz_css/gunviz.css" afterPath="$PROJECT_DIR$/website/ruizhao/rz_css/gunviz.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_css/style.css" afterPath="$PROJECT_DIR$/website/xusi/xs_css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_data/data.csv" afterPath="$PROJECT_DIR$/website/xusi/xs_data/data.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/website/xusi/xs_fonts/glyphicons-halflings-regular.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_js/Areachart.js" afterPath="$PROJECT_DIR$/website/xusi/xs_js/Areachart.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_js/Airline_cmp.js" afterPath="$PROJECT_DIR$/website/xusi/xs_js/Airline_cmp.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_js/Airlines.js" afterPath="$PROJECT_DIR$/website/xusi/xs_js/Airlines.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_js/barchart_month.js" afterPath="$PROJECT_DIR$/website/xusi/xs_js/barchart_month.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_js/bootstrap.min.js" afterPath="$PROJECT_DIR$/website/xusi/xs_js/bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_js/jquery.min.js" afterPath="$PROJECT_DIR$/website/xusi/xs_js/jquery.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_js/jquery.min.map" afterPath="$PROJECT_DIR$/website/xusi/xs_js/jquery.min.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_js/linecharts.js" afterPath="$PROJECT_DIR$/website/xusi/xs_js/linecharts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_js/main.js" afterPath="$PROJECT_DIR$/website/xusi/xs_js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_js/queue.v1.min.js" afterPath="$PROJECT_DIR$/website/xusi/xs_js/queue.v1.min.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,21 +31,80 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="gunviz.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/ruizhao/rz_css/gunviz.css">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/website/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+            <state relative-caret-position="235">
+              <caret line="592" column="135" selection-start-line="592" selection-start-column="135" selection-end-line="592" selection-end-column="135" />
+              <folding>
+                <marker date="1481573418000" expanded="true" signature="37798:38056" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Airlines.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/Airlines.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="795">
+              <caret line="53" column="10" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="10" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Airline_cmp.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/Airline_cmp.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="127" column="46" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
+              <folding>
+                <marker date="1481572721000" expanded="true" signature="6768:6780" ph="..." />
+                <marker date="1481572721000" expanded="true" signature="8702:8731" ph="..." />
+                <marker date="1481572721000" expanded="true" signature="8835:8864" ph="..." />
+                <marker date="1481572721000" expanded="true" signature="8974:8986" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Allratings.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/Allratings.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/website/index.html">
+      <file leaf-file-name="linecharts.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/linecharts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2470">
-              <caret line="460" column="49" lean-forward="false" selection-start-line="460" selection-start-column="49" selection-end-line="460" selection-end-column="49" />
+            <state relative-caret-position="300">
+              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="barchart_month.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/barchart_month.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="66" column="45" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="57" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -78,91 +113,19 @@
       <file leaf-file-name="grayscale.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/css/grayscale.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1725">
-              <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="7" selection-end-column="15" />
+            <state relative-caret-position="295">
+              <caret line="302" column="42" selection-start-line="302" selection-start-column="42" selection-end-line="302" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/xbf/main.css">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/xusi/xs_css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="15" />
+            <state relative-caret-position="241">
+              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="desktop.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/website/xbf/desktop.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="657">
-              <caret line="355" column="19" lean-forward="false" selection-start-line="355" selection-start-column="19" selection-end-line="355" selection-end-column="19" />
-              <folding>
-                <element signature="n#!!block;n#updateCountryCentroids#0" expanded="false" />
-                <element signature="n#!!block;n#mapMousedOut#0" expanded="false" />
-                <element signature="n#!!block;n#mapClicked#0" expanded="false" />
-                <element signature="n#!!block;n#mapZoomed#0" expanded="false" />
-                <element signature="n#!!block;n#zoomToCountry#0" expanded="false" />
-                <element signature="n#!!block;n#zoomToWorld#0" expanded="false" />
-                <element signature="n#!!block;n#updateStrokeWeights#0" expanded="false" />
-                <element signature="n#!!block;n#setupPlay#0" expanded="false" />
-                <element signature="n#!!block;n#setupTimeline#0" expanded="false" />
-                <element signature="n#!!block;n#updateTimeline#0" expanded="false" />
-                <element signature="n#!!block;n#updateTimelineSizeAndPosition#0" expanded="false" />
-                <element signature="n#!!block;n#updateMap#0" expanded="false" />
-                <element signature="n#!!block;n#updateMapTooltips#0" expanded="false" />
-                <element signature="n#!!block;n#updateMapTooltipColor#0" expanded="false" />
-                <element signature="n#!!block;n#hideMapTooltips#0" expanded="false" />
-                <element signature="n#!!block;n#updateMapNavSize#0" expanded="false" />
-                <element signature="n#!!block;n#updateNodes#0" expanded="false" />
-                <element signature="n#!!block;n#updateNodeStrokes#0" expanded="false" />
-                <element signature="n#!!block;n#setupNode#0" expanded="false" />
-                <element signature="n#!!block;n#updateNodeSize#0" expanded="false" />
-                <element signature="n#!!block;n#updateNodePositions#0" expanded="false" />
-                <element signature="n#!!block;n#updateNodeLinkSizes#0" expanded="false" />
-                <element signature="n#!!block;n#selectMap#0" expanded="false" />
-                <element signature="n#!!block;n#unselectMap#0" expanded="false" />
-                <element signature="n#!!block;n#highlightMap#0" expanded="false" />
-                <element signature="n#!!block;n#unhighlightMap#0" expanded="false" />
-                <element signature="n#!!block;n#setupLink#0" expanded="false" />
-                <element signature="n#!!block;n#setupLinkLineAndStroke#0" expanded="false" />
-                <element signature="n#!!block;n#updateLinks#0" expanded="false" />
-                <element signature="n#!!block;n#updateLinkPositionAndOpacity#0" expanded="false" />
-                <element signature="n#!!block;n#animateInLink#0" expanded="false" />
-                <element signature="n#!!block;n#linkMousedOver#0" expanded="false" />
-                <element signature="n#!!block;n#linkMousedOut#0" expanded="false" />
-                <element signature="n#!!block;n#updateStats#0" expanded="false" />
-                <element signature="n#!!block;n#hasStory#0" expanded="false" />
-                <element signature="n#!!block;n#countryStories#0" expanded="false" />
-                <element signature="n#!!block;n#updateStoryHead#0" expanded="false" />
-                <element signature="n#!!block;n#updateStoryBody#0" expanded="false" />
-                <element signature="n#!!block;n#showStoryBody#0" expanded="false" />
-                <element signature="n#!!block;n#hideStoryBody#0" expanded="false" />
-                <element signature="n#!!block;n#updateStoryButtons#0" expanded="false" />
-                <element signature="n#!!block;n#updateStoryButtonScale#0" expanded="false" />
-                <element signature="n#!!block;n#gotoYear#0" expanded="false" />
-                <element signature="n#!!block;n#getNextCountryYear#0" expanded="false" />
-                <element signature="n#!!block;n#getPreviousCountryYear#0" expanded="false" />
-                <element signature="n#!!block;n#gotoNextYear#0" expanded="false" />
-                <element signature="n#!!block;n#gotoPreviousYear#0" expanded="false" />
-                <element signature="n#!!block;n#gotoAndStop#0" expanded="false" />
-                <element signature="n#!!block;n#play#0" expanded="false" />
-                <element signature="n#!!block;n#stop#0" expanded="false" />
-                <element signature="n#!!block;n#toggleValueMode#0" expanded="false" />
-                <element signature="n#!!block;n#toggleTypeMode#0" expanded="false" />
-                <element signature="n#!!block;n#getMaxFeature#0" expanded="false" />
-                <element signature="n#!!block;n#decimalFormat#0" expanded="false" />
-                <element signature="n#!!block;n#orderFormat#0" expanded="false" />
-                <element signature="e#61834#62633#0" expanded="false" />
-                <element signature="n#!!block;n#showMap#0" expanded="false" />
-                <element signature="n#!!block;n#hideMap#0" expanded="false" />
-                <element signature="n#!!block;n#updateURL#0" expanded="false" />
-                <element signature="n#!!block;n#gotoURL#0" expanded="false" />
-                <element signature="e#64197#65096#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -215,14 +178,19 @@
       <list>
         <option value="$PROJECT_DIR$/website/css/main.css" />
         <option value="$PROJECT_DIR$/website/Xinyuan/js/causeAndPhase.js" />
-        <option value="$PROJECT_DIR$/website/xusi/xs_js/main.js" />
         <option value="$PROJECT_DIR$/website/xbf/data/refugees.json" />
         <option value="$PROJECT_DIR$/website/css/flexslider.css" />
         <option value="$PROJECT_DIR$/website/xbf/desktop.js" />
         <option value="$PROJECT_DIR$/website/xbf/main.css" />
-        <option value="$PROJECT_DIR$/website/css/grayscale.css" />
         <option value="$PROJECT_DIR$/website/ruizhao/rz_js/gunviz.js" />
         <option value="$PROJECT_DIR$/website/ruizhao/rz_css/gunviz.css" />
+        <option value="$PROJECT_DIR$/website/xusi/xs_js/Airlines.js" />
+        <option value="$PROJECT_DIR$/website/css/grayscale.css" />
+        <option value="$PROJECT_DIR$/website/xusi/xs_js/Airline_cmp.js" />
+        <option value="$PROJECT_DIR$/website/xusi/xs_js/barchart_month.js" />
+        <option value="$PROJECT_DIR$/website/xusi/xs_css/style.css" />
+        <option value="$PROJECT_DIR$/website/xusi/xs_js/main.js" />
+        <option value="$PROJECT_DIR$/website/xusi/xs_js/linecharts.js" />
         <option value="$PROJECT_DIR$/website/index.html" />
       </list>
     </option>
@@ -234,10 +202,20 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="81" />
+    <option name="x" value="3" />
     <option name="y" value="23" />
-    <option name="width" value="1358" />
-    <option name="height" value="833" />
+    <option name="width" value="1436" />
+    <option name="height" value="877" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -254,8 +232,15 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AirplaneAccidentsViz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="AirplaneAccidentsViz" />
@@ -277,6 +262,68 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AirplaneAccidentsViz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AirplaneAccidentsViz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xusi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xs_js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AirplaneAccidentsViz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AirplaneAccidentsViz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xusi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AirplaneAccidentsViz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AirplaneAccidentsViz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xusi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="xs_css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -440,13 +487,30 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AirplaneAccidentsViz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AirplaneAccidentsViz" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="website" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -457,6 +521,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js.eslint.eslintPackage" value="" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/AirplaneAccidentsViz/website/index.html">
@@ -469,12 +534,6 @@
       <method />
     </configuration>
     <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
       <config-file value="" />
       <node-interpreter value="project" />
       <envs />
@@ -550,17 +609,18 @@
       <workItem from="1481310111692" duration="81000" />
       <workItem from="1481313519157" duration="616000" />
       <workItem from="1481352855046" duration="11523000" />
+      <workItem from="1481512424868" duration="12041000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43981000" />
+    <option name="totallyTimeSpent" value="56022000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="81" y="23" width="1358" height="833" extended-state="0" />
+    <frame x="3" y="23" width="1436" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23335826" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16254418" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -599,6 +659,14 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -609,120 +677,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/website/ruizhao/rz_css/gunviz.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2985">
-          <caret line="199" column="22" lean-forward="false" selection-start-line="199" selection-start-column="22" selection-end-line="199" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4935">
-          <caret line="329" column="31" lean-forward="false" selection-start-line="329" selection-start-column="31" selection-end-line="329" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/xbf/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7830">
-          <caret line="522" column="31" lean-forward="true" selection-start-line="522" selection-start-column="31" selection-end-line="522" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/xbf/desktop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#updateCountryCentroids#0" expanded="false" />
-            <element signature="n#!!block;n#mapMousedOut#0" expanded="false" />
-            <element signature="n#!!block;n#mapClicked#0" expanded="false" />
-            <element signature="n#!!block;n#mapZoomed#0" expanded="false" />
-            <element signature="n#!!block;n#zoomToCountry#0" expanded="false" />
-            <element signature="n#!!block;n#zoomToWorld#0" expanded="false" />
-            <element signature="n#!!block;n#updateStrokeWeights#0" expanded="false" />
-            <element signature="n#!!block;n#setupPlay#0" expanded="false" />
-            <element signature="n#!!block;n#setupTimeline#0" expanded="false" />
-            <element signature="n#!!block;n#updateTimeline#0" expanded="false" />
-            <element signature="n#!!block;n#updateTimelineSizeAndPosition#0" expanded="false" />
-            <element signature="n#!!block;n#updateMap#0" expanded="false" />
-            <element signature="n#!!block;n#updateMapTooltips#0" expanded="false" />
-            <element signature="n#!!block;n#updateMapTooltipColor#0" expanded="false" />
-            <element signature="n#!!block;n#hideMapTooltips#0" expanded="false" />
-            <element signature="n#!!block;n#updateMapNavSize#0" expanded="false" />
-            <element signature="n#!!block;n#updateNodes#0" expanded="false" />
-            <element signature="n#!!block;n#updateNodeStrokes#0" expanded="false" />
-            <element signature="n#!!block;n#setupNode#0" expanded="false" />
-            <element signature="n#!!block;n#updateNodeSize#0" expanded="false" />
-            <element signature="n#!!block;n#updateNodePositions#0" expanded="false" />
-            <element signature="n#!!block;n#updateNodeLinkSizes#0" expanded="false" />
-            <element signature="n#!!block;n#selectMap#0" expanded="false" />
-            <element signature="n#!!block;n#unselectMap#0" expanded="false" />
-            <element signature="n#!!block;n#highlightMap#0" expanded="false" />
-            <element signature="n#!!block;n#unhighlightMap#0" expanded="false" />
-            <element signature="n#!!block;n#setupLink#0" expanded="false" />
-            <element signature="n#!!block;n#setupLinkLineAndStroke#0" expanded="false" />
-            <element signature="n#!!block;n#updateLinks#0" expanded="false" />
-            <element signature="n#!!block;n#updateLinkPositionAndOpacity#0" expanded="false" />
-            <element signature="n#!!block;n#animateInLink#0" expanded="false" />
-            <element signature="n#!!block;n#linkMousedOver#0" expanded="false" />
-            <element signature="n#!!block;n#linkMousedOut#0" expanded="false" />
-            <element signature="n#!!block;n#updateStats#0" expanded="false" />
-            <element signature="n#!!block;n#hasStory#0" expanded="false" />
-            <element signature="n#!!block;n#countryStories#0" expanded="false" />
-            <element signature="n#!!block;n#updateStoryHead#0" expanded="false" />
-            <element signature="n#!!block;n#updateStoryBody#0" expanded="false" />
-            <element signature="n#!!block;n#showStoryBody#0" expanded="false" />
-            <element signature="n#!!block;n#hideStoryBody#0" expanded="false" />
-            <element signature="n#!!block;n#updateStoryButtons#0" expanded="false" />
-            <element signature="n#!!block;n#updateStoryButtonScale#0" expanded="false" />
-            <element signature="n#!!block;n#gotoYear#0" expanded="false" />
-            <element signature="n#!!block;n#getNextCountryYear#0" expanded="false" />
-            <element signature="n#!!block;n#getPreviousCountryYear#0" expanded="false" />
-            <element signature="n#!!block;n#gotoNextYear#0" expanded="false" />
-            <element signature="n#!!block;n#gotoPreviousYear#0" expanded="false" />
-            <element signature="n#!!block;n#gotoAndStop#0" expanded="false" />
-            <element signature="n#!!block;n#play#0" expanded="false" />
-            <element signature="n#!!block;n#stop#0" expanded="false" />
-            <element signature="n#!!block;n#toggleValueMode#0" expanded="false" />
-            <element signature="n#!!block;n#toggleTypeMode#0" expanded="false" />
-            <element signature="n#!!block;n#getMaxFeature#0" expanded="false" />
-            <element signature="n#!!block;n#decimalFormat#0" expanded="false" />
-            <element signature="n#!!block;n#orderFormat#0" expanded="false" />
-            <element signature="e#61834#62633#0" expanded="false" />
-            <element signature="n#!!block;n#showMap#0" expanded="false" />
-            <element signature="n#!!block;n#hideMap#0" expanded="false" />
-            <element signature="n#!!block;n#updateURL#0" expanded="false" />
-            <element signature="n#!!block;n#gotoURL#0" expanded="false" />
-            <element signature="e#64197#65096#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/ruizhao/rz_css/gunviz.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2985">
-          <caret line="199" column="22" lean-forward="false" selection-start-line="199" selection-start-column="22" selection-end-line="199" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/website/xbf/desktop.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32055">
-          <caret line="2137" column="29" lean-forward="true" selection-start-line="2137" selection-start-column="29" selection-end-line="2137" selection-end-column="29" />
+          <caret line="2137" column="29" selection-start-line="2137" selection-start-column="29" selection-end-line="2137" selection-end-column="29" />
           <folding>
             <element signature="n#!!block;n#updateCountryCentroids#0" expanded="false" />
             <element signature="n#!!block;n#mapMousedOut#0" expanded="false" />
@@ -792,7 +750,7 @@
     <entry file="file://$PROJECT_DIR$/website/ruizhao/rz_js/gunviz.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19155">
-          <caret line="1277" column="48" lean-forward="false" selection-start-line="1277" selection-start-column="47" selection-end-line="1277" selection-end-column="48" />
+          <caret line="1277" column="48" selection-start-line="1277" selection-start-column="47" selection-end-line="1277" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -800,7 +758,7 @@
     <entry file="file://$PROJECT_DIR$/website/ruizhao/rz_css/gunviz.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -808,7 +766,7 @@
     <entry file="file://$PROJECT_DIR$/website/ruizhao/rz_js/gunviz.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19155">
-          <caret line="1277" column="48" lean-forward="false" selection-start-line="1277" selection-start-column="47" selection-end-line="1277" selection-end-column="48" />
+          <caret line="1277" column="48" selection-start-line="1277" selection-start-column="47" selection-end-line="1277" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -816,7 +774,7 @@
     <entry file="file://$PROJECT_DIR$/website/ruizhao/rz_css/gunviz.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -824,7 +782,7 @@
     <entry file="file://$PROJECT_DIR$/website/ruizhao/rz_js/gunviz.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19155">
-          <caret line="1277" column="48" lean-forward="false" selection-start-line="1277" selection-start-column="47" selection-end-line="1277" selection-end-column="48" />
+          <caret line="1277" column="48" selection-start-line="1277" selection-start-column="47" selection-end-line="1277" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -832,228 +790,201 @@
     <entry file="file://$PROJECT_DIR$/website/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7005">
-          <caret line="467" column="0" lean-forward="false" selection-start-line="467" selection-start-column="0" selection-end-line="467" selection-end-column="0" />
-          <folding />
+          <caret line="467" column="0" selection-start-line="467" selection-start-column="0" selection-end-line="467" selection-end-column="0" />
+          <folding>
+            <marker date="1481573418000" expanded="true" signature="37798:38056" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="13" />
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/Xinyuan/js/sunburstShow.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/Xinyuan/js/sunburstChart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/Xinyuan/js/phaseChart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/Xinyuan/js/fisheye.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/Xinyuan/js/causeAndPhase.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1481573418000" expanded="true" signature="37798:38056" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/css/main.css" />
     <entry file="file://$PROJECT_DIR$/website/css/main.css" />
-    <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/agevis.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="16" column="64" lean-forward="false" selection-start-line="16" selection-start-column="64" selection-end-line="16" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/agevis.js" />
     <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/Areachart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
-          <caret line="19" column="62" lean-forward="false" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
+          <caret line="19" column="62" selection-start-line="19" selection-start-column="62" selection-end-line="19" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/barchart_month.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1290">
-          <caret line="36" column="20" lean-forward="false" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/countvis.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="17" column="64" lean-forward="false" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/linecharts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/priovis.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/countvis.js" />
+    <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/priovis.js" />
     <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/queue.v1.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/Xinyuan/js/sunburstShow.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/Xinyuan/js/sunburstChart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/ruizhao/rz_libraries/dictionary.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4248">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-198">
-          <caret line="21" column="28" lean-forward="false" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/Xinyuan/js/phaseChart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/Xinyuan/js/fisheye.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/Xinyuan/js/causeAndPhase.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/xbf/data/map.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4770">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/xbf/data/countrycodes.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
-          <caret line="186" column="44" lean-forward="true" selection-start-line="186" selection-start-column="44" selection-end-line="186" selection-end-column="44" />
+          <caret line="186" column="44" selection-start-line="186" selection-start-column="44" selection-end-line="186" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/xbf/data/countries.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/xbf/data/xbf_data.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/xbf/data/xbf.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/xbf/data/refugees.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/xbf/data/refugees2.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/css/mobile.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-27">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/css/flexslider.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-27">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/ruizhao/rz_js/gunviz.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="199" column="59" selection-start-line="199" selection-start-column="52" selection-end-line="199" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/xbf/desktop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="657">
-          <caret line="355" column="19" lean-forward="false" selection-start-line="355" selection-start-column="19" selection-end-line="355" selection-end-column="19" />
+        <state relative-caret-position="4245">
+          <caret line="355" column="19" selection-start-line="355" selection-start-column="19" selection-end-line="355" selection-end-column="19" />
           <folding>
             <element signature="n#!!block;n#updateCountryCentroids#0" expanded="false" />
             <element signature="n#!!block;n#mapMousedOut#0" expanded="false" />
@@ -1120,43 +1051,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/ruizhao/rz_js/gunviz.js">
+    <entry file="file://$PROJECT_DIR$/website/xbf/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="199" column="59" lean-forward="false" selection-start-line="199" selection-start-column="52" selection-end-line="199" selection-end-column="59" />
+        <state relative-caret-position="-2210">
+          <caret line="147" column="61" selection-start-line="147" selection-start-column="60" selection-end-line="147" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/xbf/main.css">
+    <entry file="file://$PROJECT_DIR$/website/img/map-image.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/img/Airlines.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/css/grayscale.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="15" />
+        <state relative-caret-position="295">
+          <caret line="302" column="42" selection-start-line="302" selection-start-column="42" selection-end-line="302" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/barchart_month.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="66" column="45" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/Airline_cmp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="127" column="46" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
+          <folding>
+            <marker date="1481572721000" expanded="true" signature="6768:6780" ph="..." />
+            <marker date="1481572721000" expanded="true" signature="8702:8731" ph="..." />
+            <marker date="1481572721000" expanded="true" signature="8835:8864" ph="..." />
+            <marker date="1481572721000" expanded="true" signature="8974:8986" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/Allratings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="57" selection-start-line="21" selection-start-column="57" selection-end-line="21" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/xusi/xs_css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/linecharts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/xusi/xs_js/Airlines.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="53" column="10" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="10" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/ruizhao/rz_css/gunviz.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/website/css/grayscale.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1725">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="7" selection-end-column="15" />
+        <state relative-caret-position="15">
+          <caret line="1" column="589" selection-start-line="1" selection-start-column="589" selection-end-line="1" selection-end-column="589" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/website/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2470">
-          <caret line="460" column="49" lean-forward="false" selection-start-line="460" selection-start-column="49" selection-end-line="460" selection-end-column="49" />
-          <folding />
+        <state relative-caret-position="235">
+          <caret line="592" column="135" selection-start-line="592" selection-start-column="135" selection-end-line="592" selection-end-column="135" />
+          <folding>
+            <marker date="1481573418000" expanded="true" signature="37798:38056" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

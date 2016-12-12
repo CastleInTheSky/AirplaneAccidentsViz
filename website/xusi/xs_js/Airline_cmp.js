@@ -125,7 +125,7 @@ Airline.prototype.initVis = function() {
     vis.descrip
         .append("text")
         .attr("y",15)
-        .attr("fill", "red")
+        .attr("fill", "rgba(217, 27, 40, 0.75)")
         .attr("class","descrip");
 
     vis.descrip
@@ -161,12 +161,18 @@ Airline.prototype.initVis = function() {
 
 Airline.prototype.wrangleData = function(){
     var vis = this;
-
     vis.data.forEach(function (d) {
         if (d.Airline == vis.airline){
             vis.displayData = d
+            cmp_num += 1;
+            //console.log(cmp_num);
+            //console.log(vis.displayData.Accidents == undefined);
+
         }
     })
+    if (vis.displayData.Accidents == undefined){
+        vis.displayData.Accidents = [];
+    }
 
     //console.log(vis.displayData);
 
@@ -292,8 +298,8 @@ Airline.prototype.updateVis = function() {
         .on("mouseover",function (d) {
             //vis.tip.html(d.narrative).show();
             vis.tip.html( function () {
-                return "Date: <span style='color:red'>" + dateFormatter(d.date) + "</span>"+ "<br />" +
-                    "Fatalities/Total: <span style='color:red'> " + d.total_fatalities + "/" + d.total_occupants+ "</span>" + "<br />"
+                return "Date: <span style='color:rgba(217, 27, 40, 0.75)'>" + dateFormatter(d.date) + "</span>"+ "<br />" +
+                    "Fatalities/Total: <span style='color:rgba(217, 27, 40, 0.75)'> " + d.total_fatalities + "/" + d.total_occupants+ "</span>" + "<br />"
                     + "<span style='color:yellow'>" + "Click to see more</span>"
             }).show();
 

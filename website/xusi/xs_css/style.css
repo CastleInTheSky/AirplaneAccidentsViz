@@ -5,9 +5,37 @@ body {
 	background-color: rgb(58, 50, 50);
 }
 
+.xsairlines {
+	width: 100%;
+	padding: 50px 0;
+	color: white;
+	background: url(../xs_img/45.pic_hd.jpg) no-repeat center center scroll;
+	background-color: black;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}
+
 .container {
 	width: 1300px;
 }
+
+.ref ul{
+	list-style: darkgrey;
+	margin-left: 10px;
+ }
+
+.ref li{
+	font-size: 11px;
+	list-style: darkgrey;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+.ref h3 {
+	margin-left: 20px;
+}
+
 p {
 	color: white;
 	font-size: 15px;
@@ -176,7 +204,7 @@ tspan {
 	height:400px;
 }
 .modal-title {
-	color: red;
+	color: rgba(217, 27, 40, 0.75);
 }
 .modal-content {
 	background-color: rgba(109, 121, 136, 0.9);
@@ -196,19 +224,19 @@ tspan {
 	margin: 0 0 20px;
 	margin-top: 20px;
 	font-size: 20px;
-	color: rgba(255, 0, 0, 0.78);
+	color: rgba(217, 27, 40, 0.75);
 }
 .narra h3{
 	margin: 0 0 20px;
 	font-size: 20px;
-	color: rgba(255, 0, 0, 0.78);
+	color: rgba(217, 27, 40, 0.75);
 }
 
 
 .xsbtn-default:hover, .xsbtn-default:focus{
-	border: 1px solid rgba(255, 0, 0, 0.78);
+	border: 1px solid rgba(217, 27, 40, 0.75);
 	color: black;
-	background-color: rgba(255, 0, 0, 0.78);
+	background-color: rgba(217, 27, 40, 0.75);
 }
 /******button group*********/
 .wrapper {
@@ -219,6 +247,7 @@ tspan {
 }
 
 .xsbtn {
+    background-color: rgba(217, 27, 40, 0.75);
 	text-transform: uppercase;
 	display: inline-block;
 	padding: 6px 12px;
@@ -266,6 +295,7 @@ tspan {
 }
 
 .selected-plane-list {
+	text-transform: capitalize;
 	padding: 3px 6px;
 	margin-left: 10px;
 	border-radius: 4px;

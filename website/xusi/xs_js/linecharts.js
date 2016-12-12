@@ -27,7 +27,7 @@ Linechart.prototype.initVis = function(){
         .text(vis.month)
         .attr("x",vis.width/2 - 10)
         .attr("y",-5)
-        .attr("fill","red");
+        .attr("fill","rgba(217, 27, 40, 0.75)");
 
     //set the x-axis and y-axis
     vis.x = d3.time.scale()
@@ -181,7 +181,7 @@ Linechart.prototype.selectionMonth1 = function (month) {
         .style("stroke", function(d) {
             if (d.key == month) {return "#42DCA3";}
             else if (d.key == vis.month){
-                return "red";
+                return "rgba(217, 27, 40, 0.75)";
             }
             else {return "rgba(184, 187, 193, 0.37)"}
         });
@@ -191,7 +191,7 @@ Linechart.prototype.selectionMonth0 = function (month) {
 
     vis.months
         .style("stroke", function(d) {
-            if (d.key == vis.month) {return "red";}
+            if (d.key == vis.month) {return "rgba(217, 27, 40, 0.75)";}
             else {return "rgba(184, 187, 193, 0.37)"}});
 
 }

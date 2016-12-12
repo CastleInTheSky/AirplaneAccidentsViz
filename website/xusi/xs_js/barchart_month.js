@@ -64,7 +64,7 @@ Barchart_month.prototype.initVis = function(){
     vis.title = vis.barchart.append("text")
         .attr("x", -30)
         .attr("y", -8)
-        .attr("fill","red")
+        .attr("fill","rgba(217, 27, 40, 0.75)")
         .style("font-size","14px");
 
     //default selection
@@ -190,12 +190,12 @@ Barchart_month.prototype.typeChange = function (value) {
 
     if (vis.selectValue == "total_fatalities") {
         console.log("yes");
-        $("#total_fatalities").css("background-color","red");
+        $("#total_fatalities").css("background-color","rgba(217, 27, 40, 0.75)");
         $("#total_accidents").css("background-color","grey");
     }
     else {
         $("#total_fatalities").css("background-color","grey");
-        $("#total_accidents").css("background-color","red");
+        $("#total_accidents").css("background-color","rgba(217, 27, 40, 0.75)");
     }
     console.log(vis.selectValue);
     vis.wrangleData();

@@ -63,7 +63,7 @@ Airlines.prototype.updateVis = function() {
     vis.ratings = new Ratings(vis.parentElement_descrip,vis.rankings,vis.list_sorted,600);
 
 
-
+    cmp_num = 0;
     vis.list.forEach(function (d,i) {
         vis.airlines[i] = new Airline(vis.parentElement_ratings, vis.data, vis.list_sorted[i], vis.height_each,vis.event0,vis.event1);
     })
