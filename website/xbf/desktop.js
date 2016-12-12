@@ -52,7 +52,7 @@ var frameYOffset, frameHeaderH, frameW, frameH;
 
 var explored = false;
 
-function load(error, mapData, countryCodeData, refugeeData, populationData, storiesData) {
+function load(error, mapData, countryCodeData, peopleNumData, populationData, storiesData) {
     projection = d3.geo.mercator()
         .scale(height / 4)
         .translate([width / 2, height / 1.6]);
@@ -171,21 +171,21 @@ function load(error, mapData, countryCodeData, refugeeData, populationData, stor
             return d.origin;
         })
         .key(function(d) {
-            return d.asylum;
+            return d.destination;
         })
-        .map(refugeeData, d3.map);
+        .map(peopleNumData, d3.map);
 
     asylumLinks = d3.nest()
         .key(function(d) {
             return d.year;
         })
         .key(function(d) {
-            return d.asylum;
+            return d.destination;
         })
         .key(function(d) {
             return d.origin;
         })
-        .map(refugeeData, d3.map);
+        .map(peopleNumData, d3.map);
 
     links = originLinks;
 
@@ -200,62 +200,62 @@ function load(error, mapData, countryCodeData, refugeeData, populationData, stor
             var year = leaves[0].year;
             var code = leaves[0].origin;
 
-            var refugees = d3.sum(leaves, function(leaf) {
-                return leaf.refugees;
+            var peopleNumInAP = d3.sum(leaves, function(leaf) {
+                return leaf.peopleNumInAP;
             });
 
-            if (refugees == 0)
-                refugees = null;
+            if (peopleNumInAP == 0)
+                peopleNumInAP = null;
 
             //var population = (populations.has(code) && populations.get(code)[0][year]) ? populations.get(code)[0][year] : null;
-            //var refugeesPopulation = (refugees && population) ? refugees / population : null;
+            //var refugeesPopulation = (peopleNumInAP && population) ? peopleNumInAP / population : null;
 
             var story = (stories.has(year) && stories.get(year).has(code)) ? stories.get(year).get(code)[0] : null;
 
             return {
                 'year': year,
                 'code': code,
-                'refugees': refugees,
+                'peopleNumInAP': peopleNumInAP,
                 //'population': population,
                 //'refugeesPopulation': refugeesPopulation,
                 'story': story
             };
         })
-        .map(refugeeData, d3.map);
+        .map(peopleNumData, d3.map);
 
     asylumNodes = d3.nest()
         .key(function(d) {
             return d.year;
         })
         .key(function(d) {
-            return d.asylum;
+            return d.destination;
         })
         .rollup(function(leaves) {
             var year = leaves[0].year;
-            var code = leaves[0].asylum;
+            var code = leaves[0].destination;
 
-            var refugees = d3.sum(leaves, function(leaf) {
-                return leaf.refugees;
+            var peopleNumInAP = d3.sum(leaves, function(leaf) {
+                return leaf.peopleNumInAP;
             });
 
-            if (refugees == 0)
-                refugees = null;
+            if (peopleNumInAP == 0)
+                peopleNumInAP = null;
 
             //var population = (populations.has(code) && populations.get(code)[0][year]) ? populations.get(code)[0][year] : null;
-            //var refugeesPopulation = (refugees && population) ? refugees / population : null;
+            //var refugeesPopulation = (peopleNumInAP && population) ? peopleNumInAP / population : null;
 
             var story = (stories.has(year) && stories.get(year).has(code)) ? stories.get(year).get(code)[0] : null;
 
             return {
                 'year': year,
                 'code': code,
-                'refugees': refugees,
+                'peopleNumInAP': peopleNumInAP,
                 //'population': population,
                 //'refugeesPopulation': refugeesPopulation,
                 'story': null
             };
         })
-        .map(refugeeData, d3.map);
+        .map(peopleNumData, d3.map);
 
     nodes = originNodes
 
@@ -268,7 +268,7 @@ function load(error, mapData, countryCodeData, refugeeData, populationData, stor
                 nodes.get(year).set(code, {
                     'year': year,
                     'code': code,
-                    'refugees': null,
+                    'peopleNumInAP': null,
                     //'population': population,
                     //'refugeesPopulation': null,
                     'story': story
@@ -285,7 +285,7 @@ function load(error, mapData, countryCodeData, refugeeData, populationData, stor
                 nodes.get(year).set(code, {
                     'year': year,
                     'code': code,
-                    'refugees': null,
+                    'peopleNumInAP': null,
                     //'population': population,
                     //'refugeesPopulation': null,
                     'story': story
@@ -308,7 +308,7 @@ function load(error, mapData, countryCodeData, refugeeData, populationData, stor
         })
         .map(allNodes, d3.map).keys();
 
-    allLinks = refugeeData;
+    allLinks = peopleNumData;
 
     allStories = [];
 
@@ -319,14 +319,14 @@ function load(error, mapData, countryCodeData, refugeeData, populationData, stor
     });
 
     refugeesMax = d3.max(allNodes, function(d) {
-        return parseFloat(d.refugees);
+        return parseFloat(d.peopleNumInAP);
     });
 
     refugeesPopulationMax = d3.max(allNodes, function(d) {
-        if (parseFloat(d.refugees) / parseFloat(d.population) == Infinity)
+        if (parseFloat(d.peopleNumInAP) / parseFloat(d.population) == Infinity)
             return false;
 
-        return parseFloat(d.refugees) / parseFloat(d.population);
+        return parseFloat(d.peopleNumInAP) / parseFloat(d.population);
     });
 
     nodeSizeScale = d3.scale.sqrt()
@@ -353,7 +353,7 @@ function load(error, mapData, countryCodeData, refugeeData, populationData, stor
     } else
         gotoURL();
 */
-    gotoYear(1950);
+    gotoYear(1968);
     showMap(1000);
 
 
@@ -497,11 +497,11 @@ function zoomToCountry(country, duration) {
     if (filteredCountryNodes.has(country.id)) {
         var e = nodesLayer.select('#' + country.id);
 
-        // var nodeValue = e.data()[0].refugees
+        // var nodeValue = e.data()[0].peopleNumInAP
         var nodeValueMax = d3.max(allNodes.filter(function(d) {
             return d.code == country.id;
         }).map(function(d) {
-            return (valueMode) ? d.refugeesPopulation : d.refugees;
+            return (valueMode) ? d.refugeesPopulation : d.peopleNumInAP;
         }));
 
         var nodeR = nodeSizeScale(nodeValueMax) * 2;
@@ -611,7 +611,7 @@ function setupPlay() {
 
 function setupTimeline() {
     frameHeaderH = 10;
-    frameW = width / (yearRange.length + 20.3);
+    frameW = width / (yearRange.length + 20.6);
     frameH = 30 + frameHeaderH;
     // frameYOffset = ($.browser.mozilla) ? 50 : 0
     frameYOffset = 0;
@@ -665,7 +665,7 @@ function setupTimeline() {
         .attr('id', function(d) {
             return 'frame-' + d;
         })
-        .attr('class', 'frame-refugees')
+        .attr('class', 'frame-peopleNumInAP')
         .attr('x', function(d, i) {
             return frameW * (i) + frameW * 3;
         })
@@ -689,26 +689,26 @@ function updateTimeline() {
         })
         .rollup(function(leaves) {
             if (valueMode) {
-                var refugees = d3.sum(leaves, function(d) {
-                    return d.refugees;
+                var peopleNumInAP = d3.sum(leaves, function(d) {
+                    return d.peopleNumInAP;
                 });
                 var population = d3.sum(leaves, function(d) {
                     return d.population;
                 });
-                var refugeesPopulation = (refugees && population) ? refugees / population : 0;
+                var refugeesPopulation = (peopleNumInAP && population) ? peopleNumInAP / population : 0;
 
                 return {
                     'refugeesPopulation': refugeesPopulation
                 };
             } else {
-                var refugees = d3.sum(leaves, function(d) {
-                    return d.refugees;
+                var peopleNumInAP = d3.sum(leaves, function(d) {
+                    return d.peopleNumInAP;
                 });
 
-                refugee = (refugees) ? refugees : 0;
+                //refugee = (peopleNumInAP) ? peopleNumInAP : 0;
 
                 return {
-                    'refugees': refugees
+                    'peopleNumInAP': peopleNumInAP
                 };
             }
         })
@@ -723,7 +723,7 @@ function updateTimeline() {
     var domain = (valueMode) ? d3.extent(nodesData.values(), function(d) {
         return d.refugeesPopulation;
     }) : d3.extent(nodesData.values(), function(d) {
-        return d.refugees;
+        return d.peopleNumInAP;
     });
 
     var refugeesScale = d3.scale.linear()
@@ -745,17 +745,17 @@ function updateTimeline() {
             if (nodesData.has(d)) {
                 var nodeData = nodesData.get(d);
 
-                var value = (valueMode) ? decimalFormat(nodeData.refugeesPopulation) : numberFormat(nodeData.refugees)
+                var value = (valueMode) ? decimalFormat(nodeData.refugeesPopulation) : numberFormat(nodeData.peopleNumInAP)
 
                 var valueLabel;
 
-                valueLabel = (valueMode) ? (' persons were world refugees') : ' total death'
+                valueLabel = (valueMode) ? (' persons were world peopleNumInAP') : ' total death'
 
                 if (selected) {
                     var name = codeCountries.get(selected.id);
 
                     if (typeMode)
-                        valueLabel = (valueMode) ? (' persons reside in ' + name) : ' refugees reside in ' + name;
+                        valueLabel = (valueMode) ? (' persons reside in ' + name) : ' peopleNumInAP reside in ' + name;
                     else
                         valueLabel = (valueMode) ? (' persons from ' + name + ' left') : ' death from ' + name;
                 }
@@ -779,12 +779,12 @@ function updateTimeline() {
                 .mouseover(updateMapTooltipColor)
         });
 
-    timelineLayer.selectAll('.frame-refugees')
+    timelineLayer.selectAll('.frame-peopleNumInAP')
         .transition()
         .duration(500)
         .style('fill', function(d) {
             if (nodesData.has(d)) {
-                var value = (valueMode) ? nodesData.get(d).refugeesPopulation : nodesData.get(d).refugees;
+                var value = (valueMode) ? nodesData.get(d).refugeesPopulation : nodesData.get(d).peopleNumInAP;
 
                 if (value > 0)
                     return refugeesScale(value);
@@ -818,7 +818,7 @@ function updateTimelineSizeAndPosition() {
         })
         .attr('width', frameW);
 
-    timelineLayer.selectAll('.frame-refugees')
+    timelineLayer.selectAll('.frame-peopleNumInAP')
         .data(yearRange, function(d) {
             return d;
         })
@@ -868,18 +868,18 @@ function updateMapTooltips() {
         var name = codeCountries.get(code);
         var title = name;
 
-        if (nodeData.refugees > 0) {
-            var value = (valueMode) ? decimalFormat(nodeData.refugeesPopulation) : numberFormat(nodeData.refugees);
+        if (nodeData.peopleNumInAP > 0) {
+            var value = (valueMode) ? decimalFormat(nodeData.refugeesPopulation) : numberFormat(nodeData.peopleNumInAP);
 
             var valueLabel;
 
             if (typeMode)
-                valueLabel = (valueMode) ? (' persons in ' + name) : 'refugees reside in ' + name;
+                valueLabel = (valueMode) ? (' persons in ' + name) : 'peopleNumInAP reside in ' + name;
             else
                 valueLabel = (valueMode) ? (' persons left ' + name) : 'in airplanes from ' + name;
 
             var originCount = nodeRankScale.domain().length;
-            var worldRank = orderFormat(nodeRankScale((valueMode) ? nodeData.refugeesPopulation : nodeData.refugees));
+            var worldRank = orderFormat(nodeRankScale((valueMode) ? nodeData.refugeesPopulation : nodeData.peopleNumInAP));
 
 
             title = '<span class="tooltip-value">' + value + ' people died' + '</span>\n' + valueLabel + '\n(' + worldRank + ' of ' + originCount + ((typeMode) ? ' asylums)' : ' origins)');
@@ -989,7 +989,7 @@ function updateData() {
 
     nodeRankScale = d3.scale.ordinal()
         .domain(filteredCountryNodes.values().map(function(d) {
-            return (valueMode) ? d.refugeesPopulation : d.refugees;
+            return (valueMode) ? d.refugeesPopulation : d.peopleNumInAP;
         })
             .sort(d3.descending))
         .range(d3.range(1, filteredCountryNodes.values().length + 1));
@@ -999,14 +999,14 @@ function updateData() {
     worldNodes = d3.nest()
         .rollup(function(leaves) {
             //var population = populations.get("WLD")[0][year];
-            var refugees = d3.sum(leaves, function(d) {
-                return d.refugees;
+            var peopleNumInAP = d3.sum(leaves, function(d) {
+                return d.peopleNumInAP;
             });
-            //var refugeesPopulation = refugees / population;
+            //var refugeesPopulation = peopleNumInAP / population;
 
             return {
                 //'population': d3.round(population),
-                'refugees': d3.round(refugees),
+                'peopleNumInAP': d3.round(peopleNumInAP),
                 //'refugeesPopulation': d3.round(refugeesPopulation, 6)
             };
         })
@@ -1031,7 +1031,7 @@ function updateData() {
 
     linkWorldRankScale = d3.scale.ordinal()
         .domain(filteredWorldLinks.map(function(d) {
-            return d.refugees;
+            return d.peopleNumInAP;
         })
             .sort(d3.descending))
         .range(d3.range(1, filteredWorldLinks.length + 1));
@@ -1141,7 +1141,7 @@ function updateNodeSize(e) {
     var duration = 750;
 
     var d = e.datum();
-    var r = nodeSizeScale((valueMode) ? d.refugeesPopulation : d.refugees);
+    var r = nodeSizeScale((valueMode) ? d.refugeesPopulation : d.peopleNumInAP);
 
     e
         .classed('invisible', (r == 1))
@@ -1176,7 +1176,7 @@ function updateNodeLinkSizes(r, duration) {
 
             if (e.node()) {
                 var p1 = countryCentroids.get(d[0].origin);
-                var p2 = countryCentroids.get(d[0].asylum);
+                var p2 = countryCentroids.get(d[0].destination);
 
                 // var r = nodesLayer.select('#' + d[0].origin).attr('r')
                 var a = Math.atan2(p2[1] - p1[1], p2[0] - p1[0]);
@@ -1301,9 +1301,9 @@ function setupLink(d) {
     e
         .attr('id', function(d) {
             if (typeMode)
-                return d[0].asylum + '-' + d[0].origin;
+                return d[0].destination + '-' + d[0].origin;
             else
-                return d[0].origin + '-' + d[0].asylum;
+                return d[0].origin + '-' + d[0].destination;
         })
         .attr('class', 'link')
         .style('pointer-events', function(d) {
@@ -1318,10 +1318,10 @@ function setupLinkLineAndStroke(e) {
     var d = e.datum();
 
     var p1 = countryCentroids.get(d[0].origin);
-    var p2 = countryCentroids.get(d[0].asylum);
+    var p2 = countryCentroids.get(d[0].destination);
 
     if (p1 && p2) {
-        var r = nodesLayer.select('#' + ((typeMode) ? d[0].asylum : d[0].origin)).attr('r');
+        var r = nodesLayer.select('#' + ((typeMode) ? d[0].destination : d[0].origin)).attr('r');
         var a = Math.atan2(p2[1] - p1[1], p2[0] - p1[0]);
 
         var ox = Math.cos(a) * r;
@@ -1337,7 +1337,7 @@ function setupLinkLineAndStroke(e) {
         var opacity = 1;
 
         if (linksData.length > 1)
-            opacity = linkOpacityScale(d[0].refugees);
+            opacity = linkOpacityScale(d[0].peopleNumInAP);
 
         e
             .append('line')
@@ -1390,23 +1390,23 @@ function updateLinks() {
 
     linkCountryRankScale = d3.scale.ordinal()
         .domain(linksData.map(function(d) {
-            return d[0].refugees;
+            return d[0].peopleNumInAP;
         })
             .sort(d3.descending))
         .range(d3.range(1, linksData.length + 1));
 
     linkOpacityScale = d3.scale.sqrt()
         .domain(d3.extent(linksData, function(d) {
-            return d[0].refugees;
+            return d[0].peopleNumInAP;
         }))
         .range([.2, 1]);
 
     var link = linksLayer.selectAll('g.link')
         .data(linksData, function(d) {
             if (typeMode)
-                return d[0].asylum + '-' + d[0].origin;
+                return d[0].destination + '-' + d[0].origin;
             else
-                return d[0].origin + '-' + d[0].asylum;
+                return d[0].origin + '-' + d[0].destination;
         });
 
     link
@@ -1433,7 +1433,7 @@ function updateLinkPositionAndOpacity(e) {
     var d = d3.select(this).datum();
 
     if (e.node()) {
-        var nodeData = nodesLayer.select('#' + ((typeMode) ? d[0].asylum : d[0].origin)).datum();
+        var nodeData = nodesLayer.select('#' + ((typeMode) ? d[0].destination : d[0].origin)).datum();
         var linksData = [];
 
         if (selected)
@@ -1444,12 +1444,12 @@ function updateLinkPositionAndOpacity(e) {
         var opacity = 1;
 
         if (linksData.length > 1)
-            opacity = linkOpacityScale(d[0].refugees);
+            opacity = linkOpacityScale(d[0].peopleNumInAP);
 
         var p1 = countryCentroids.get(d[0].origin);
-        var p2 = countryCentroids.get(d[0].asylum);
+        var p2 = countryCentroids.get(d[0].destination);
 
-        var r = nodeSizeScale((valueMode) ? nodeData.refugeesPopulation : nodeData.refugees);
+        var r = nodeSizeScale((valueMode) ? nodeData.refugeesPopulation : nodeData.peopleNumInAP);
         var a = Math.atan2(p2[1] - p1[1], p2[0] - p1[0]);
 
         var ox = Math.cos(a) * r;
@@ -1489,12 +1489,12 @@ function animateInLink() {
 
         var d = e.datum();
 
-        var nodeData = nodesLayer.select('#' + ((typeMode) ? d[0].asylum : d[0].origin)).datum();
+        var nodeData = nodesLayer.select('#' + ((typeMode) ? d[0].destination : d[0].origin)).datum();
 
         var p1 = countryCentroids.get(d[0].origin);
-        var p2 = countryCentroids.get(d[0].asylum);
+        var p2 = countryCentroids.get(d[0].destination);
 
-        var r = nodeSizeScale((valueMode) ? nodeData.refugeesPopulation : nodeData.refugees);
+        var r = nodeSizeScale((valueMode) ? nodeData.refugeesPopulation : nodeData.peopleNumInAP);
         var a = Math.atan2(p2[1] - p1[1], p2[0] - p1[0]);
 
         var ox = Math.cos(a) * r;
@@ -1524,19 +1524,19 @@ function animateInLink() {
 }
 
 function linkMousedOver(d) {
-    var country = codeCountries.get((typeMode) ? d[0].origin : d[0].asylum);
+    var country = codeCountries.get((typeMode) ? d[0].origin : d[0].destination);
     var oricountry = codeCountries.get(d[0].origin);
     var type = ((typeMode) ? 'origin' : 'asylum');
     var direction = (typeMode) ? 'came from ' : 'went to ';
 
     var countryCount = linkCountryRankScale.domain().length;
 
-    var countryRank = orderFormat(linkCountryRankScale(d[0].refugees));
-    var worldRank = linkWorldRankScale(d[0].refugees);
+    var countryRank = orderFormat(linkCountryRankScale(d[0].peopleNumInAP));
+    var worldRank = linkWorldRankScale(d[0].peopleNumInAP);
 
-    var refugees = numberFormat(d[0].refugees);
+    var peopleNumInAP = numberFormat(d[0].peopleNumInAP);
 
-    var title = '<span class="tooltip-value">' + refugees + ' people died' + '</span>\n flied from ' + oricountry + ' to ' + country;
+    var title = '<span class="tooltip-value">' + peopleNumInAP + ' people died' + '</span>\n flied from ' + oricountry + ' to ' + country;
     // + '.\n(' + countryRank + ' of ' + countryCount + ' ' + type + 's)'
 
     //console.log(title);
@@ -1581,7 +1581,7 @@ function updateStats() {
         var country = (selected) ? selected : highlighted;
         var nodeData = nodes.get(year).get(country.id);
 
-        var refugees = (nodeData && nodeData.refugees) ? numberFormat(nodeData.refugees) : 'N/A';
+        var peopleNumInAP = (nodeData && nodeData.peopleNumInAP) ? numberFormat(nodeData.peopleNumInAP) : 'N/A';
         var population = (nodeData && nodeData.population) ? numberFormat(nodeData.population) : 'N/A';
         var refugeesPopulation = (nodeData && nodeData.refugeesPopulation) ? decimalFormat(nodeData.refugeesPopulation) : 'N/A';
 
@@ -1590,7 +1590,7 @@ function updateStats() {
         if (links.get(year).has(country.id)) {
             linksData = links.get(year).get(country.id).values();
             linksData.map(function(d) {
-                d[0].refugeesPopulation = d[0].refugees / nodeData.population;
+                d[0].refugeesPopulation = d[0].peopleNumInAP / nodeData.population;
                 return d;
             });
         }
@@ -1598,7 +1598,7 @@ function updateStats() {
         var countries = linksData.length;
 
         linksData.forEach(function(value, i) {
-            if (!countryCentroids.get(value[0].origin) || !countryCentroids.get(value[0].asylum))
+            if (!countryCentroids.get(value[0].origin) || !countryCentroids.get(value[0].destination))
                 linksData.splice(i, 1);
         });
 
@@ -1607,12 +1607,12 @@ function updateStats() {
                 if (valueMode) {
                     return b[0].refugeesPopulation - a[0].refugeesPopulation;
                 } else
-                    return b[0].refugees - a[0].refugees;
+                    return b[0].peopleNumInAP - a[0].peopleNumInAP;
             }).slice(0, topCountryCount);
 
-        d3.select('#refugee-mode').html(((typeMode) ? 'RESIDING IN<br/> ' : 'Total Death in airplanes take off from<br/><br/> ') + codeCountries.get(country.id));
+        d3.select('#peopleNumInAP-mode').html(((typeMode) ? 'RESIDING IN<br/> ' : 'Total Death in airplanes take off from<br/><br/> ') + codeCountries.get(country.id));
         d3.select('#region').text(codeCountries.get(country.id));
-        d3.select('#refugees').html(refugees);
+        d3.select('#peopleNumInAP').html(peopleNumInAP);
         //d3.select('#population').text(population);
         //d3.select('#refugeesPopulation').html(refugeesPopulation);
 
@@ -1634,15 +1634,15 @@ function updateStats() {
                     .append('dt')
                     .datum(d)
                     .text(function(d) {
-                        return codeCountries.get(((typeMode) ? d[0].origin : d[0].asylum));
+                        return codeCountries.get(((typeMode) ? d[0].origin : d[0].destination));
                     });
 
                 topValues
                     .append('dt')
                     .datum(d)
                     .text(function(d) {
-                        // return (valueMode) ? decimalFormat(d[0].refugeesPopulation) : numberFormat(d[0].refugees);
-                        return numberFormat(d[0].refugees);
+                        // return (valueMode) ? decimalFormat(d[0].refugeesPopulation) : numberFormat(d[0].peopleNumInAP);
+                        return numberFormat(d[0].peopleNumInAP);
                     });
             });
         } else {
@@ -1654,12 +1654,12 @@ function updateStats() {
         var countries = filteredCountryNodes.keys().length;
         var nodesData = filteredCountryNodes.values()
             .sort(function(a, b) {
-                return (valueMode) ? b.refugeesPopulation - a.refugeesPopulation : b.refugees - a.refugees;
+                return (valueMode) ? b.refugeesPopulation - a.refugeesPopulation : b.peopleNumInAP - a.peopleNumInAP;
             }).slice(0, topCountryCount);
 
-        d3.select('#refugee-mode').text('TOTAL DEATH ALL OVER THE WORLD');
+        d3.select('#peopleNumInAP-mode').text('TOTAL DEATH ALL OVER THE WORLD');
         d3.select('#region').text('World');
-        d3.select('#refugees').text(numberFormat(worldNodes.refugees));
+        d3.select('#peopleNumInAP').text(numberFormat(worldNodes.peopleNumInAP));
         d3.select('#population').text(numberFormat(worldNodes.population));
         d3.select('#refugeesPopulation').text(decimalFormat(worldNodes.refugeesPopulation));
 
@@ -1691,7 +1691,7 @@ function updateStats() {
                 .append('dd')
                 .datum(d)
                 .text(function(d) {
-                    return (valueMode) ? decimalFormat(d.refugeesPopulation) : numberFormat(d.refugees);
+                    return (valueMode) ? decimalFormat(d.refugeesPopulation) : numberFormat(d.peopleNumInAP);
                 });
         });
     }
@@ -2054,14 +2054,13 @@ function togglePlay() {
 }
 
 
-//refugee or refugeePopulation
 
 function toggleValueMode() {
     valueMode = !valueMode;
 
     //updateToggleButtons()
 
-    d3.select('#refugees').classed('value-mode-value', !valueMode);
+    d3.select('#peopleNumInAP').classed('value-mode-value', !valueMode);
     d3.select('#refugeesPopulation').classed('value-mode-value', valueMode);
     d3.selectAll(".value-mode-value").classed("asylum", typeMode);
 
@@ -2333,7 +2332,7 @@ function gotoURL() {
 queue()
     .defer(d3.json, 'xbf/data/map.json')
     .defer(d3.json, 'xbf/data/countrycodes.json')
-    .defer(d3.json, 'xbf/data/refugees.json')
+    .defer(d3.json, 'xbf/data/airplaneAccidents2.json')
     .defer(d3.json, 'xbf/data/populations.json')
     .defer(d3.csv, 'xbf/data/stories.csv')
     .await(load);

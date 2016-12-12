@@ -56,6 +56,34 @@ p {
   font-size: 15px;
 }
 
+.text-muted2 {
+  color: rgba(241, 52, 82, .75);
+  font-size: 15px;
+}
+.img-circle-my{
+  width: 180px;
+  height: 180px;
+  border-radius:50%;
+}
+
+
+.frame-year {
+  text-align: center;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  font-family:'Gotham XNarrow SSm A', 'Gotham XNarrow SSm B';
+  -webkit-transition: all 0.75s;
+  -moz-transition: all 0.75s;
+  -ms-transition: all 0.75s;
+  -o-transition: all 0.75s;
+  transition: all 0.75s;
+  pointer-events: none;
+  fill: #6B6B6B;
+  text-anchor:middle;
+  writing-mode: vertical-rl;
+}
+
 /*-------------------------------------------*/
 .team-member {
     text-align: center;
