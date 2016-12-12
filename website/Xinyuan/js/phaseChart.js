@@ -1,9 +1,10 @@
 phaseChart = function(_parentElement, _data, _phaseData, _PhaseEventHandler){
     this.parentElement = _parentElement;
+    this.originalPhases = _data;
     this.phases = _data;
     this.phaseData = _phaseData;
     this.PhaseEventHandler = _PhaseEventHandler;
-
+    //console.log(this.phases);
     this.initVis();
 }
 
@@ -49,8 +50,32 @@ phaseChart.prototype.initVis = function(){
         });
 
 
+    vis.updateVis();
 
 
+
+
+}
+
+phaseChart.prototype.wrangleData = function(){
+    var vis = this;
+    var start=document.getElementById("StartYear").value;
+    var end=document.getElementById("EndYear").value;
+    if(start==""){
+        start=1900;
+    }
+    if(end==""){
+        end=2014;
+    }
+
+    vis.phases = vis.originalPhases.filter(function(d){ return d["Year "]>= start && d["Year "]<= end;});
+    vis.svg.selectAll("*").remove();
+    vis.updateVis();
+}
+
+
+phaseChart.prototype.updateVis = function(){
+    var vis = this;
     // Extract the list of dimensions and create a scale for each.
     /*
      vis.x.domain(vis.dimensions = d3.keys(vis.phases[0]).filter(function(d) {
@@ -82,8 +107,8 @@ phaseChart.prototype.initVis = function(){
         })
         .on("mouseout", function (d) {
             d3.select(this).style("stroke-width", 1);
-            d3.select(this).style("stroke-opacity", 0.5);
-            d3.select(this).style("stroke", "grey");
+            d3.select(this).style("stroke-opacity", 0.4);
+            d3.select(this).style("stroke", "#ccc");
             vis.tip.hide(d);
         });
 
@@ -106,8 +131,8 @@ phaseChart.prototype.initVis = function(){
         })
         .on("mouseout", function (d) {
             d3.select(this).style("stroke-width", 1);
-            d3.select(this).style("stroke-opacity", 0.5);
-            d3.select(this).style("stroke", "grey");
+            d3.select(this).style("stroke-opacity", 0.4);
+            d3.select(this).style("stroke", "#ccc");
             vis.tip.hide(d);
 
 
@@ -163,14 +188,18 @@ phaseChart.prototype.initVis = function(){
     function brush() {
         var actives = vis.dimensions.filter(function(p) { return !vis.y[p].brush.empty(); }),
             extents = actives.map(function(p) { return vis.y[p].brush.extent(); });
+
         vis.foreground.style("display", function(d) {
+
             return actives.every(function(p, i) {
                 return extents[i][0] <= d[p] && d[p] <= extents[i][1];
             }) ? null : "none";
+        }).style("stroke", function(d){
+
+            return "steelblue";
         });
+
     }
 
 
-
 }
-

@@ -266,37 +266,37 @@ function brushed() {
 
 
 
-function wrap(text, width, vis) {
-
-		console.log(text.text());
-		var temp = 0;
-		var words = text.text().split(/\s+/).reverse(),
-			word,
-			line = [],
-			lineNumber = 0,
-			lineHeight = 1.1, // ems
-			y = text.attr("y"),
-			tspan = text.text(null).append("tspan").attr("x", 10).attr("y", y).attr("dy", 0 + "em");
-		while (word = words.pop()) {
-			line.push(word);
-			tspan.text(line.join(" "));
-			if (tspan.node().getComputedTextLength() > width) {
-				line.pop();
-				tspan.text(line.join(" "));
-				line = [word];
-				tspan = text.append("tspan").attr("x", 10).attr("y", y).attr("dy", ++ lineNumber * lineHeight + "em").text(word);
-				vis.lines = lineNumber + 1;
-				temp = 1
-			}
-
-		}
-		if (temp == 0) {
-			vis.lines = 1;
-		}
-
-
-		console.log(vis.lines);
-}
+// function wrap(text, width, vis) {
+//
+// 		console.log(text.text());
+// 		var temp = 0;
+// 		var words = text.text().split(/\s+/).reverse(),
+// 			word,
+// 			line = [],
+// 			lineNumber = 0,
+// 			lineHeight = 1.1, // ems
+// 			y = text.attr("y"),
+// 			tspan = text.text(null).append("tspan").attr("x", 10).attr("y", y).attr("dy", 0 + "em");
+// 		while (word = words.pop()) {
+// 			line.push(word);
+// 			tspan.text(line.join(" "));
+// 			if (tspan.node().getComputedTextLength() > width) {
+// 				line.pop();
+// 				tspan.text(line.join(" "));
+// 				line = [word];
+// 				tspan = text.append("tspan").attr("x", 10).attr("y", y).attr("dy", ++ lineNumber * lineHeight + "em").text(word);
+// 				vis.lines = lineNumber + 1;
+// 				temp = 1
+// 			}
+//
+// 		}
+// 		if (temp == 0) {
+// 			vis.lines = 1;
+// 		}
+//
+//
+// 		console.log(vis.lines);
+// }
 
 function searchBox() {
 

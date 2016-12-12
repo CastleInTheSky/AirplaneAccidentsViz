@@ -427,6 +427,18 @@
     <section id="contact4" class="container content-section text-center">
 
         <div class="row">
+            <form class="form-inline pull-left input-sm" id="phaseForm">
+                <div class="form-group">
+                    <label class="sr-only" for="StartYear">Start Year</label>
+                    <input type="text" class="form-control" id="StartYear" value="1900" placeholder="Start Year(>=1990)">
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="EndYear">End Year</label>
+                    <input type="text" class="form-control" id="EndYear" value="2014" placeholder="End Year(<=2014)">
+                </div>
+                <button type="button" class="btn btn-primary" id="PhaseSubmit" onclick="updatePhaseChart()">Submit</button>
+            </form>
+
             <div class="col-md-12">
                 <div id="plane_status"></div>
             </div>

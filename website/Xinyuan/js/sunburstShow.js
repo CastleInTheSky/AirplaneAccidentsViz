@@ -1,7 +1,8 @@
-sunburstShow = function(_parentElement, _data){
+sunburstShow = function(_parentElement, _data, _explainData){
     this.parentElement = _parentElement;
     this.hierarchy = _data;
-    this.key = "Default";
+    this.explanation = _explainData;
+    this.key = "Plane Crash Causes";
     this.initVis();
 }
 
@@ -9,7 +10,7 @@ sunburstShow.prototype.initVis = function() {
     var vis = this;
 
     var vis = this;
-    vis.margin = { top: 100, right: 50, bottom: 20, left: 100 };
+    vis.margin = { top: 50, right: 50, bottom: 0, left: 100 };
 
     vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right;
     vis.height = 500 - vis.margin.top - vis.margin.bottom;
@@ -46,6 +47,42 @@ sunburstShow.prototype.updateVis = function(){
     vis.text.exit().remove();
 
 
+   var string = vis.explanation[vis.key];
+    //wrap(vis.string, 30);
+
+    vis.p = vis.svg.selectAll("text.explanation")
+        .data(vis.key, function(d){
+            return vis.key;
+        });
+
+
+    vis.p.enter()
+        .append("text");
+       vis.p.text(string)
+        .call(wrap,vis.width,vis)
+        .attr("class","explanation")
+        .attr("x", 0)
+        .attr("y", 50);
+
+
+        // text(function(d){
+        //     console.log(string);
+        //     return string;
+        // });
+
+
+    vis.p.style("fill", "grey")
+        .style("opacity", 1);
+     //   .attr("class","explanation")
+     //    .attr("font-size", 20)
+     //    .style("color", "white")
+     //    .style("opacity", 1);
+    //.attr("text-anchor", "middle");
+
+
+    vis.p.exit().remove();
+
+
     vis.img = vis.svg.selectAll(".img")
         .data(vis.key, function(d){
             return vis.key;
@@ -54,15 +91,15 @@ sunburstShow.prototype.updateVis = function(){
     vis.img.enter()
         .append("svg:image")
         .attr("class","img")
-        .attr("width", 400)
-        .attr("height", 400)
+        .attr("width", 450)
+        .attr("height", 250)
         .attr("x", 0)
-        .attr("y", 0);
+        .attr("y", 150);
 
     vis.img.attr("xlink:href", function(d){
         // console.log("here");
-        //return  "Xinyuan/img/causes/"+ vis.key+ ".jpg";
-        return  "Xinyuan/img/causes/"+ "Default"+ ".jpg";
+        return  "Xinyuan/img/causes/"+ vis.key+ ".jpg";
+        //return  "Xinyuan/img/causes/"+ "Default"+ ".jpg";
 
     });
 
@@ -78,6 +115,7 @@ sunburstShow.prototype.updateVis = function(){
      .attr("y", 0);*/
 
     //vis.attr('xlink:href',function(d){
+
 
 
 }

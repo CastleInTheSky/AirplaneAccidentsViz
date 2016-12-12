@@ -3,7 +3,7 @@ sunburstChart = function(_parentElement, _data, _myEventHandler){
     this.hierarchy = _data;
     // this.displayData =this.data;
     this.sunburstEventHandler = _myEventHandler;
-    console.log(_data);
+  //  console.log(_data);
     this.initVis();
 }
 
@@ -44,9 +44,11 @@ sunburstChart.prototype.initVis = function(){
     // for a data point. The input parameter
     // should be a data point as defined/created
     // by the partition layout.
+    var causeCount=0;
+    var causes={"Other":0,"Weather":1,"Mechanical":2,"Sabotage":3,"Pilot Error":4};
     var color = function(d) {
         var colors;
-        console.log(d);
+        //console.log(d);
         // if (!d.parent) {
         //
         //     // colors = d3.scale.category10()
@@ -80,27 +82,37 @@ sunburstChart.prototype.initVis = function(){
         //         d.children[child.idx].color = colors(i);
         //     });
         // }
+
+        var causeColorScale = d3.scale.linear()
+                .domain([0,4])
+                .range(['#3c0d15', '#f13452']);
+
+
+
         if(d.depth==0){
-            d.color = "red";
+            d.color = "black";
         }
         if(d.depth==1){
-            d.color = "#C70039";
+            //d.color = "#C70039";
+
+            d.color = causeColorScale(causes[d.key]);
+            causeCount=causeCount+1;
         }
         if(d.depth==2){
-            d.color = "silver";
+            d.color = "rgba(120,111,111,1)";
         }
         return d.color;
     };
 
     var opacity= function(d) {
         if(d.depth==0){
-            d.opacity = 0.8;
+            d.opacity = 1;
         }
         if(d.depth==1){
-            d.opacity = 0.8;
+            d.opacity = 1;
         }
         if(d.depth==2){
-            d.opacity = 0.5;
+            d.opacity = 1;
         }
         return d.opacity;
     };
@@ -121,15 +133,17 @@ sunburstChart.prototype.initVis = function(){
             return Math.max(0, vis.y(d.y));
         })
         .outerRadius(function(d) {
-            return Math.max(0, vis.y(d.y + d.dy)*1.3);
+            return Math.max(0, vis.y(d.y + d.dy)*1.36);
         });
 
+    vis.newHierarchy = vis.partition.nodes(vis.hierarchy);
     // Construct the visualization.
     vis.path = vis.svg.selectAll("path")
-        .data(vis.partition.nodes(vis.hierarchy))
+        .data(vis.newHierarchy)
         .enter().append("path")
         .attr("d", vis.arc)
-        .attr("stroke", "#fff")
+        .attr("stroke", "black")
+        .attr("stroke-opacity",0.5)
         .attr("fill-rule", "evenodd")
         .attr("fill", color)
         .attr("fill-opacity", opacity)
@@ -145,11 +159,12 @@ sunburstChart.prototype.initVis = function(){
         .attr("transform", "translate(" + 0 + "," + (12 + vis.height/2)  +")")
         .style("pointer-events", "none");
 
-    vis.text = vis.svg.selectAll("text").data(vis.partition.nodes(vis.hierarchy));
+    vis.text = vis.svg.selectAll("text").data(vis.newHierarchy);
     vis.textEnter = vis.text.enter().append("text")
         .style("fill-opacity", 1)
         .style("fill", function(d) {
             // return brightness(d3.rgb(colour(d))) < 125 ? "#eee" : "#000";
+            if(d.depth==1){return "white";}
             return "black";
         })
         .attr("text-anchor", function(d) {
@@ -160,7 +175,7 @@ sunburstChart.prototype.initVis = function(){
         })
         .attr("dy", "-0.3em")
         .style("font-size", 11)
-        .style("font-weight", "bold")
+       // .style("font-weight", "bold")
         .attr("transform", function(d) {
             var multiline = (d.key || "").split(" ").length > 1,
                 angle = vis.x(d.x + d.dx / 2) * 180 / Math.PI - 90,
@@ -173,11 +188,54 @@ sunburstChart.prototype.initVis = function(){
         .on("click", click);
     vis.textEnter.append("tspan")
         .attr("x", 0)
-        .text(function(d) { return d.depth ? d.key.split(" ")[0] : ""; });
+        .text(function(d) {
+           // if(d.depth==2){return "";}
+            if(d.key=="Pilot Error"){return d.key;}
+
+            var len = d.key.split(" ").length;
+            var firstLineCount = len%2==0? len/2:(len+1)/2;
+
+            if(d.key=="Excessive landing speed"){firstLineCount=1;}
+            if(d.key=="Descending below minima"){firstLineCount=1;}
+            if(d.key=="Wrong runway takeoff or landing"){return "Wrong runway";}
+            if(d.key=="Midair collision caused by both pilots"){firstLineCount=2;}
+            if(d.key=="Improperly loaded cargo"){firstLineCount=1;}
+
+            var secondLineCount = len-firstLineCount;
+            var splitKey = d.key.split(" ");
+            var firstLine = splitKey.slice(0, firstLineCount);
+            return d.depth ? firstLine.join(" ") : "";
+        });
     vis.textEnter.append("tspan")
         .attr("x", 0)
         .attr("dy", "1em")
-        .text(function(d) { return d.depth ? d.key.split(" ")[1] || "" : ""; });
+        .text(function(d) {
+           // if(d.depth==2){return "";}
+            if(d.key=="Pilot Error"){return "";}
+            // return d.depth ? d.key.split(" ")[1] || "" : "";
+
+            var len = d.key.split(" ").length;
+            var firstLineCount = len%2==0? len/2:(len+1)/2;
+
+            if(d.key=="Excessive landing speed"){firstLineCount=1;}
+            if(d.key=="Descending below minima"){firstLineCount=1;}
+            if(d.key=="Wrong runway takeoff or landing"){return "takeoff/landing";}
+            if(d.key=="Midair collision caused by both"){firstLineCount=2;}
+            if(d.key=="Improperly loaded cargo"){firstLineCount=1;}
+
+            var secondLineCount = len-firstLineCount;
+            var splitKey = d.key.split(" ");
+            var secondLine = splitKey.slice(firstLineCount, len);
+            return d.depth ? secondLine.join(" ") : "";
+
+        });
+
+    // console.log(vis.hierarchy);
+    // vis.textEnter.attr("x", 0)
+    //     .text(function(d){
+    //         return d.key;
+    //     })
+    //     .call(wrap, 200, vis);
 
     // Add the title.
     /*  vis.svg.append("text")
@@ -242,12 +300,41 @@ sunburstChart.prototype.initVis = function(){
 
         $(vis.sunburstEventHandler).trigger("selectionChanged", d.key);
 
+
+        //highlight
+        // if(d.depth==1){
+        //     //hight itself and its children
+        //
+        // }
+        // if(d.depth==2){
+        //     //hight itself and its parent
+        // }
+
+
+        // Then highlight only those that are an ancestor of the current segment.
+        vis.svg.selectAll("path")
+            .filter(function(data) {
+                if(d.depth==1){
+                    return data==d || data.parent==d;
+                }
+                if(d.depth==2){
+                    return data==d || d.parent==data;
+                }
+                return false;
+            })
+            .style("fill", "rgba(204,102,0,1)");
+
     }
     // Handle mouse leaving a data point
     // by disabling the tooltip.
     function mouseout() {
         vis.tooltip.transition()
+        vis.tooltip.transition()
             .attr("fill-opacity", 0);
+
+        vis.svg.selectAll("path")
+            .style("fill", color);
+
     }
 
     function isParentOf(p, c) {

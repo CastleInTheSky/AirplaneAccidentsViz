@@ -8,10 +8,10 @@ planeStatus = function(_parentElement, _data){
 
 planeStatus.prototype.initVis = function(){
     var vis = this;
-    vis.margin = { top: 100, right: 50, bottom: 20, left: 50 };
+    vis.margin = { top: 50, right: 50, bottom: 20, left: 50 };
 
     vis.width = $("#" + vis.parentElement).width() - vis.margin.left - vis.margin.right;
-    vis.height = 400 - vis.margin.top - vis.margin.bottom;
+    vis.height = 200 - vis.margin.top - vis.margin.bottom;
 
     vis.svg = d3.select("#" + vis.parentElement).append("svg")
         .attr("width", vis.width + vis.margin.left + vis.margin.right)
@@ -113,8 +113,10 @@ planeStatus.prototype.initVis = function(){
         .attr("class", "dimension")
         .attr("transform", function(d) { return "translate(" + vis.fisheye(vis.x(d)) + ")"; });
 
-    var height = [300,250,200,100,100,150,200,250,300];
+    var height = [1,0.5,0.3,0.1,0.1,0.3,0.5,0.8,1];
+    var rotateAngle = [45,30,20,0,45,45,90,90,45];
     var count=-1;
+    var count1=-1;
     // Add an axis and title.
     vis.g.append("g")
         .attr("class", "phaseChart_axis")
@@ -123,13 +125,20 @@ planeStatus.prototype.initVis = function(){
         .attr("y", function (d) {
             //console.log(height);
             count=count+1;
-            return height[count];
+            return height[count]*vis.height;
 
         })
         .attr('font-family', 'FontAwesome')
-        .attr('font-size', function(d) { return '3em';} )
+        .attr('font-size', function(d) { return '1em';} )
         .style("fill", "white")
-        .text(function(d) { return '\uf072' });
+        .text(function(d) { return '\uf0fb' })
+        // .attr("transform", function(d){
+        //     count1=count1+1;
+        //     //return "rotate("+rotateAngle[count1]+")";
+        //     return "rotate(45)translate(100,0)";
+        // })
+
+    ;
 
 
 
@@ -162,13 +171,17 @@ planeStatus.prototype.initVis = function(){
 
     // Handles a brush event, toggling the display of foreground lines.
     function brush() {
+        //console.log("entering brush");
         var actives = vis.dimensions.filter(function(p) { return !vis.y[p].brush.empty(); }),
             extents = actives.map(function(p) { return vis.y[p].brush.extent(); });
+       // console.log(extents);
         vis.foreground.style("display", function(d) {
+           // console.log("fffffdispay");
             return actives.every(function(p, i) {
                 return extents[i][0] <= d[p] && d[p] <= extents[i][1];
             }) ? null : "none";
         });
+
     }
 
 

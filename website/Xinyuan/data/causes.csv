@@ -9,7 +9,7 @@ Pilot Error,Excessive landing speed
 Pilot Error,Missed runway
 Pilot Error,Fuel starvation
 Pilot Error,Navigation error
-Pilot Error,Wrong runway takeoff/landing
+Pilot Error,Wrong runway takeoff or landing
 Pilot Error,Midair collision caused by both pilots
 Mechanical,Engine failure
 Mechanical,Equipment failure
@@ -20,7 +20,7 @@ Weather,Severe turbulence
 Weather,Windshear
 Weather,Mountain wave
 Weather,Poor visibility
-Weather,Heave rain
+Weather,Heavy rain
 Weather,Severe winds
 Weather,Icing
 Weather,Thunderstorms
@@ -37,4 +37,4 @@ Other,Fuel contamination
 Other,Pilot incapacitation
 Other,Obstruction on runway
 Other,Midair collision caused by other plane
-Other,Fire/smoke in flight
+Other,Fire or smoke in flight
