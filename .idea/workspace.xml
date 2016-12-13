@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5a6bb3b2-75a1-416e-b5df-f8b171acf2d4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/index.html" afterPath="$PROJECT_DIR$/website/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_css/style.css" afterPath="$PROJECT_DIR$/website/xusi/xs_css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_js/Airline_cmp.js" afterPath="$PROJECT_DIR$/website/xusi/xs_js/Airline_cmp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_js/Allratings.js" afterPath="$PROJECT_DIR$/website/xusi/xs_js/Allratings.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/website/xusi/xs_js/main.js" afterPath="$PROJECT_DIR$/website/xusi/xs_js/main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,8 +26,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/website/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="614" column="42" selection-start-line="614" selection-start-column="42" selection-end-line="614" selection-end-column="42" />
+            <state relative-caret-position="364">
+              <caret line="636" column="24" selection-start-line="636" selection-start-column="24" selection-end-line="636" selection-end-column="24" />
               <folding>
                 <marker date="1481583518000" expanded="true" signature="37800:38058" ph="..." />
               </folding>
@@ -190,7 +185,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="3" />
+    <option name="x" value="2" />
     <option name="y" value="23" />
     <option name="width" value="1436" />
     <option name="height" value="877" />
@@ -580,6 +575,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="5a6bb3b2-75a1-416e-b5df-f8b171acf2d4" name="Default" comment="" />
@@ -597,15 +595,15 @@
       <workItem from="1481310111692" duration="81000" />
       <workItem from="1481313519157" duration="616000" />
       <workItem from="1481352855046" duration="11523000" />
-      <workItem from="1481512424868" duration="17837000" />
+      <workItem from="1481512424868" duration="18621000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61818000" />
+    <option name="totallyTimeSpent" value="62602000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="3" y="23" width="1436" height="877" extended-state="6" />
+    <frame x="2" y="23" width="1436" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16254418" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1138,8 +1136,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/website/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="614" column="42" selection-start-line="614" selection-start-column="42" selection-end-line="614" selection-end-column="42" />
+        <state relative-caret-position="364">
+          <caret line="636" column="24" selection-start-line="636" selection-start-column="24" selection-end-line="636" selection-end-column="24" />
           <folding>
             <marker date="1481583518000" expanded="true" signature="37800:38058" ph="..." />
           </folding>
