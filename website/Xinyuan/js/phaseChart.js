@@ -37,8 +37,8 @@ phaseChart.prototype.initVis = function(){
             var index = parseInt(d["Year "]-1900);
             for(var key in vis.phaseData[index]){
                 if(key=="Year "){
-                    string = string + "<strong style='color:Yellow'>" + key + ":</strong> <span style='color:Yellow'>" + Math.round(vis.phaseData[index][key]) + "</span><br>";
-                    string = string + "<span style='color:Yellow'>Accident Number in each phase:</span><br>";
+                    string = string + "<strong style='color:GoldenRod'>" + key + ":</strong> <span style='color:GoldenRod'>" + Math.round(vis.phaseData[index][key]) + "</span><br>";
+                    string = string + "<span style='color:GoldenRod'>Accident Number in each phase:</span><br>";
                 }else{
                     string = string + "<strong>" + key + ":</strong> <span style='color:red'>" + Math.round(vis.phaseData[index][key]) + "</span><br>";
                 }

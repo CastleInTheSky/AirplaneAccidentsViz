@@ -58,17 +58,17 @@ canvas {
 	display: none;
 }
 
-.header h1 {
-	font-family: 'Chronicle SSm A', 'Chronicle SSm B';
-	position: relative;
-	color: rgba(178,34,34,1);
-	margin: 0;
-	font-size: 20px;
-	font-weight: 700;
-	letter-spacing: 2px;
-	padding-left: 22px;
-	top: 14px;
-}
+/*.header h1 {*/
+	/*font-family: 'Chronicle SSm A', 'Chronicle SSm B';*/
+	/*position: relative;*/
+	/*color: rgba(178,34,34,1);*/
+	/*margin: 0;*/
+	/*font-size: 20px;*/
+	/*font-weight: 700;*/
+	/*letter-spacing: 2px;*/
+	/*padding-left: 22px;*/
+	/*top: 14px;*/
+/*}*/
 
 .header h2 {
 	color: rgba(255,255,255,0.4);
