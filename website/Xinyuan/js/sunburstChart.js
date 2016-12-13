@@ -106,13 +106,13 @@ sunburstChart.prototype.initVis = function(){
 
     var opacity= function(d) {
         if(d.depth==0){
-            d.opacity = 1;
+            d.opacity = 0.6;
         }
         if(d.depth==1){
-            d.opacity = 1;
+            d.opacity = 0.6;
         }
         if(d.depth==2){
-            d.opacity = 1;
+            d.opacity = 0.6;
         }
         return d.opacity;
     };
@@ -322,7 +322,7 @@ sunburstChart.prototype.initVis = function(){
                 }
                 return false;
             })
-            .style("fill", "rgba(204,102,0,1)");
+            .style("fill", "#ccc");
 
     }
     // Handle mouse leaving a data point
