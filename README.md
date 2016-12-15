@@ -1,7 +1,7 @@
 # AirplaneAccidentsViz
 Final project of CS171, Data Visualization 2016, Harvard
 
-“Damn it, we are going to crash!” 
+- “Damn it, we are going to crash!” 
         
         - Airplane accidents visualization.
 
@@ -15,7 +15,8 @@ This website is to help people get a better idea of airplane accidents. We have 
 
 
 Screencast video url: https://youtu.be/DS42lDdm8hA
-Demo1.0 website url: castleinthesky.github.io
+
+Demo1.0 website url: http://castleinthesky.github.io
 
 
 Main visualization features:
@@ -35,6 +36,8 @@ Main visualization features:
 * An interative search box to compare safety ratings of added airlines;
   - zooming or clicking timelines can see accidents details;
 
-A lot of work need to be done before this website can be published to public. However, we got "Best Project Award 2016 CS171". Woooooo!
+A lot of work need to be done before this website can be published to public. 
+
+However, we got "Best Project Award 2016 CS171". Woooooo!
 
 ![image](https://github.com/CastleInTheSky/AirplaneAccidentsViz/blob/master/award/runner-up.jpg)
